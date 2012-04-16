@@ -1,0 +1,54 @@
+ContainerDetailDocument : AjaxUpdateContainer {
+	id = "ContainerDetailDocument";
+	style = "height:513px;padding:7px 3px;";
+	class = "assistantModule";
+}
+DocumentDetailToolBar : CktlAjaxToolbar {
+	
+}
+Supprimer : CktlAjaxButton {
+	id = "Supprimer_Document";
+	onClickBefore = "confirm('Etes-vous sûr de vouloir supprimer ce document ?')";
+	action = supprimerUnDocument;
+	// onFailure = "function (){ErreurContainerUpdate();}";
+	onFailure = application.onFailureMessage;
+  	onSuccess = "function () {ContainerSchemaConventionUpdate();ContainerDetailUpdate();}";
+	disabled = isSupprimerDocumentDisabled;
+	title = titreSupprimer;
+	text = "Supprimer";
+	style = "font-size:small;vertical-align:bottom;";
+	type = "delete_document";
+}
+Visualiser : CktlAjaxButton {
+	id = "Visualiser_Document";
+	text = "Visualiser";
+	title = titreVisualiser;
+	href = href;
+	dialogIDForOpen = "VisualiserDocumentModalBox";
+	type = "view_document";
+}
+
+FormDocument : WOForm {
+  id = "FormDocument";
+  name="FormDocumentName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+
+Date : CktlAjaxDatePicker {
+	dateValue = avenantDocument.document;
+}
+
+MotsCles : WOTextField {
+	value = avenantDocument.document.motsClefs;
+	class = "useMaxWidth";
+}
+Objet : WOTextField {
+	value = avenantDocument.document.objet;
+	class = "useMaxWidth";
+}
+
+JSDisabledAutocompleteTF : WOJavaScript {
+	scriptString = disabledTFScript;
+}

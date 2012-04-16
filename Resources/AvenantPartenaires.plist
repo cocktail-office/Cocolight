@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+		<dict>
+			<key>libelle</key>
+			<string>Principal</string>
+			<key>component</key>
+			<string>CktlAjaxTVCheckBoxCell</string>
+			<key>associations</key>
+			<dict>
+				<key>checked</key>
+				<string>ctrl.cpPrincipal</string>
+				<key>disabled</key>
+				<string>ctrl.nePeutEditerPartenaires</string>
+			</dict>
+			<key>updateContainer</key>
+			<string>TableView</string>
+			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Nature</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartenaire.partenaire.persType</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>partenaire.persType</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft useMinWidth</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Partenaire</string>
+            <key>component</key>
+            <string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartenaire.partenaire.persLibelle</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>partenaire.persLibelle</string>
+			<key>headerCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Contribution</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartenaire.cpMontant</string>
+				<key>formatter</key>
+				<string>application.app2DecimalesFormatter</string>
+				<key>classCss</key>
+				<string>&quot; alignToRight useMaxWidth &quot;</string>
+				<key>size</key>
+				<string>10</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>cpMontant</string>
+			<key>rowCssClass</key>
+			<string>alignToRight useMinWidth nowrap</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Signature</string>
+			<key>component</key>
+			<string>CktlAjaxTVTextFieldCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartenaire.cpDateSignature</string>
+				<key>dateformat</key>
+				<string>&quot; %d/%m/%Y &quot;</string>
+				<key>classCss</key>
+				<string>alignToCenter useMinWidth</string>
+				<key>size</key>
+				<string>10</string>
+				<key>disabled</key>
+				<string>ctrl.nePeutEditerPartenaires</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>cpMontant</string>
+			<key>rowCssClass</key>
+			<string>alignToRight useMinWidth nowrap</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Référence</string>
+			<key>component</key>
+			<string>CktlAjaxTVTextFieldCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartenaire.cpReferenceExterne</string>
+				<key>size</key>
+				<string>10</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot; &nbsp; &quot;</string>
+				<key>classCss</key>
+				<string>&quot; alignToLeft &quot;</string>
+				<key>disabled</key>
+                <string>ctrl.nePeutEditerPartenaires</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>cpReferenceExterne</string>
+			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth nowrap</string>
+		</dict>
+	</array>
+</dict>
+</plist>

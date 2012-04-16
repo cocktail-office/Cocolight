@@ -1,0 +1,70 @@
+# Paramètres de connexion à la base, à changer selon configuration
+dbConnectURLGLOBAL = jdbc:oracle:thin:@o-desespoir.univ-pau.fr:1521:gestest
+dbConnectUserGLOBAL = grhum
+dbConnectPasswordGLOBAL = clement
+
+#dbConnectURLGLOBAL = jdbc:oracle:thin:@localhost:1521:cktl
+#dbConnectUserGLOBAL = grhum
+#dbConnectPasswordGLOBAL = grhum 
+
+
+dbEOPrototypesEntityGLOBAL=EOJDBCOraclePrototypes
+
+APP_USE_MAIL=YES
+GHRUM_HOST_MAIL=smtp.univ-pau.fr
+ROOT_GED_GROUPE_PARTENAIRE=1801
+
+er.component.clickToOpen=true
+wolips.password=passepar2
+wolips.host=localhost
+wolips.port=9485
+
+#er.extensions.maxPageReplacementCacheSize=5
+
+
+
+#er.extensions.ERXEC.traceOpenLocks=true
+#er.extensions.ERXEC.markOpenLocks=true
+#er.extensions.ERXApplication.useSessionStoreDeadlockDetection=true
+
+#log4j.logger.er.extensions.ERXEC.LockLogger=DEBUG
+#log4j.logger.er.extensions.ERXEC.LockTrace=DEBUG
+
+log4j.logger.org.cocktail.cocolight.serveur.util.Editions=DEBUG
+#log4j.logger.er.extensions.ERXApplication.RequestHandling=DEBUG
+#log4j.logger.er.transaction.adaptor.EOAdaptorDebugEnabled=DEBUG
+#log4j.logger.er.extensions.appserver.ajax.ERXAjaxSession=DEBUG
+
+#########################################################################
+# ERXAdaptorChannelDelegate
+#########################################################################
+## Enable delegate to emit SQL debugging info. The Logger used is
+## log4j.category.er.extensions.ERXAdaptorChannelDelegate.sqlLogging
+er.extensions.ERXAdaptorChannelDelegate.enabled=true
+
+## How long a statement must run to cause a log message. Messages with longer than
+## error also emit a stack-trace
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.debug=0
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.info=100
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.warn=2000
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.error=15000
+
+## MaxLength of the message
+er.extensions.ERXAdaptorChannelDelegate.trace.maxLength = 3000
+
+## What entities to watch
+er.extensions.ERXAdaptorChannelDelegate.trace.entityMatchPattern = .*
+
+## Actually set the log level
+log4j.logger.er.extensions.ERXAdaptorChannelDelegate.sqlLogging=debug
+
+WOStatisticsPassword=pouet
+er.extensions.erxStats.enabled=true
+er.extensions.erxStats.traceCollectingEnabled=true
+
+BUDGET_LIGHT_CONV_SIMPLE=true
+# AUTRES_ORGANS_BUDGET=108340,108342
+APP_USE_CAS=YES
+
+er.attachment.Acte.document.file.filesystemPath = /Users/julien/Documents/00_scratch/ged/actes
+

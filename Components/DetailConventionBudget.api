@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+        <wo wocomponentcontent="false" class="DetailConventionBudget.java">
+            <binding name="tranche"/>
+        <validation message="'contrat' is a required binding.">
+            <unbound name="tranche"/>
+        </validation>
+    
+        
+    <binding name="modeDepense"/>
+    <binding name="prevision"/>
+        <validation message="'selectedPrevision' is a required binding.">
+            <unbound name="prevision"/>
+        </validation>
+    <validation message="'modeDepense' is a required binding.">
+            <unbound name="modeDepense"/>
+        </validation>
+        </wo>
+</wodefinitions>

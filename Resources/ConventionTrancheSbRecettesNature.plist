@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+		<dict>
+			<key>libelle</key>
+			<string>Date Prév.</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRecette.srDatePrev</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&quot;</string>
+				<key>dateformat</key>
+				<string>&quot; %d/%m/%Y &quot;</string>				
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToCenter useMinWidth nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>
+			<key>orderKeyPath</key>
+			<string>srDatePrev</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Montant</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRecette.srMontantHt</string>
+				<key>formatter</key>
+				<string>application.app2DecimalesFormatter</string>
+				<key>classCss</key>
+				<string>&quot;alignToRight nowrap&quot;</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;0,00&quot;</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToCenter nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToRight nowrap</string>
+			<key>orderKeyPath</key>
+			<string>srMontantHt</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Libellé</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRecette.srLibelle</string>
+				<key>length</key>
+				<string>20</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&nbsp;&quot;</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>orderKeyPath</key>
+			<string>srLibelle</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>CR</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRecette.organ.longString</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&quot;</string>
+			</dict>
+			<key>headerCssStyle</key>
+			<string>width:25%</string>
+			<key>headerCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>orderKeyPath</key>
+			<string>organ.longString</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Nature</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRecette.planco.pcoNumEtLibelle</string>
+				<key>length</key>
+				<string>20</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&quot;</string>
+			</dict>
+			<key>headerCssStyle</key>
+			<string>width:25%</string>
+			<key>headerCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>orderKeyPath</key>
+			<string>planco.libelleLong</string>
+		</dict>
+	</array>
+</dict>
+</plist>

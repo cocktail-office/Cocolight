@@ -1,0 +1,56 @@
+<webobject name = "Wrapper">
+
+	<webobject name = "ContainerSchemaConvention">
+	  <div id="SchemaConvention" class = "schemaConvention">
+	  	<h4>Dossier </h4>
+	  	<div>
+	  	  <webobject name = "ContratTreeView"/>
+	  	</div>
+	  </div>
+	  <webobject name = "ContainerMenuSchema">
+	    <table style="width:100%;" class="menuConv">
+	      <tbody>
+	        <tr height = "100%"><td width="100%">
+			  <webobject name = "IsContratSelectionne">
+			     <webobject name = "AddAvenant"/>
+			     <webobject name = "SupprimerConv" />
+			     <webobject name = "ValiderConv" />
+			     <webobject name = "SimpleMenu">
+			         <div class = "menuitem"><webobject name = "ImpCon">les généralités</webobject></div>
+			         <div class = "menuitem"><webobject name = "ImpSuiviExec">le suivi d'exécution détaillé</webobject></div>
+			         <div class = "menuitem"><webobject name = "ImpSuiviComptable">le suivi comptable</webobject></div>
+			         <div class = "menuitem"><webobject name = "ImpCreditsPosParConv">les crédits positionnés par convention</webobject></div>
+			         <div class = "menuitem"><webobject name = "ImpCreditsPosParLigneCredit">les crédits positionnés par ligne de crédits</webobject></div>
+			     </webobject>
+			  </webobject>
+			  <webobject name = "IsAvenantSelectionne">
+			     <webobject name = "HLSupprimerAvenant"/>
+                 <webobject name = "ValiderAvenant" />
+			  </webobject>
+            </td></tr>
+		  </tbody>
+		</table>
+	  </webobject>
+	</webobject>
+
+  <webobject name = "ContainerDetail">
+
+     <webobject name = "IsAfficherDetailConvention">
+       <webobject name = "ConventionDetail"/>
+     </webobject>
+    
+     <webobject name = "IsAfficherDetailAvenant">
+       <webobject name = "AvenantDetail"/>
+     </webobject>
+    
+     <webobject name = "IsAfficherDetailDocument">
+       <webobject name = "DocumentDetail"/>
+     </webobject>
+
+  </webobject>
+
+  <webobject name = "AddAvenantModalBox"></webobject>
+  <webobject name = "PrintModalBox">
+      <webobject name = "ReportingMonitor"></webobject>
+  </webobject>
+</webobject>

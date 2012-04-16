@@ -1,0 +1,436 @@
+HasTranches : WOConditional {
+    condition = dgTranchesAnnuelles.allObjects.count;
+}
+
+HasNoTranche : WOConditional {
+    condition = dgTranchesAnnuelles.allObjects.count;
+    negate = true;
+}
+
+ContainerAvenantBudget : AjaxUpdateContainer {
+    id = "ContainerAvenantBudget";
+}
+
+ContainerBudgetDetail : AjaxUpdateContainer {
+    id = "ContainerBudgetDetail";
+}
+
+FormAvenantBudget : ERXWOForm {
+  id = "FormAvenantBudget";
+  name="FormAvenantBudgetName";
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+
+TableViewTranchesAnnuelles : CktlAjaxTableView {
+    id = "TableViewTranchesAnnuellesBudget";
+    dg = dgTranchesAnnuelles;
+    disabled = true;
+    item = currentTrancheAnnuelle;
+    colonnes = dicoTranchesAnnuelles.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    updateContainerID = "ContainerAvenantBudget";
+    callbackOnSelectionner = refreshDepensesEtRecettes;
+}
+
+TabsNatureDest : AjaxTabbedPanel {
+    id = "TabbedPanelNatureDest";
+    busyDiv = "MyBusyDivID";
+}
+
+TabDepenses : AjaxTabbedPanelTab {
+    name = depensesTab.libelle;
+    isSelected = depensesTab.selected;
+    refreshOnSelect = true;
+    id = "TabBudgetDepenses";
+    isVisible = tabDepensesVisible;
+}
+
+TabRecettes : AjaxTabbedPanelTab {
+    name = recettesTab.libelle;
+    isSelected = recettesTab.selected;
+    refreshOnSelect = true;
+    id = "TabBudgetRecettes";
+    isVisible = tabRecettesVisible;
+}
+
+TabReport : AjaxTabbedPanelTab {
+    name = "Report de crédits";
+    isSelected = reportTab.selected;
+    refreshOnSelect = true;
+    id = "TabReport";
+    isVisible = tabReportVisible;
+}
+
+ReportCredits : ReportCredits {
+    trancheSource = selectedTranche;
+}
+
+NoExerciceOuvertOuEnPreparation : WOConditional {
+    condition = exerceOuvertOuPreparation;
+    negate = true;
+}
+
+Else : WOConditional {
+	condition = exerceOuvertOuPreparation;
+}
+
+Exercice : WOString {
+    value = exercice.exeExercice;
+}
+
+TableViewDepenses : CktlAjaxTableView {
+    id = "TableViewDepensesByNature"; 
+	dg = dgDepenses;
+    disabled = true;
+    item = currentDepense;
+    colonnes = dicoDepenses.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    width = "200px";
+    height = "90px";
+    updateContainerID = "ContainerBudgetDetail";
+    callbackOnSelectionner = refreshCreditsDepenses;
+}
+
+TableViewRecettes : CktlAjaxTableView {
+    id = "TableViewRecettesByNature"; 
+	dg = dgRecettes;
+    disabled = true;
+    item = currentRecette;
+    colonnes = dicoRecettes.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    width = "200px";
+    height = "90px";
+    updateContainerID = "ContainerBudgetDetail";
+    callbackOnSelectionner = refreshCreditsRecettes;
+}
+
+TableViewCreditsRecettes : CktlAjaxTableView {
+    id = "TableViewCreditsRecettes"; 
+    dg = dgCreditsRecettes;
+    disabled = true;
+    item = currentCreditPositionneRec;
+    colonnes = dicoCreditsPositionnesRec.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    width = "514px";
+}
+
+TableViewCreditsRecettesToolBar : CktlAjaxToolbar {
+}
+
+AjouterCreditRec : CktlAjaxButton {
+    action = ajouterCreditRecette;
+    type = "new";
+    dialogIDForOpen = "AjoutCreditRecModal";
+    enabled = selectedRecettes;
+}
+
+SupprimerCreditRec : CktlAjaxButton {
+    action = supprimerCreditRecette;
+    type = "delete";
+    onClickBefore = "confirm('Êtes-vous sûr de vouloir supprimer ce postionnement de crédit ?')";
+    updateContainerID = "ContainerAvenantBudget";
+    enabled = selectedCreditsRecettesPos;
+}
+
+TableViewCreditsDepenses : CktlAjaxTableView {
+    id = "TableViewCreditsDepenses"; 
+	dg = dgCreditsDepenses;
+    disabled = true;
+    item = currentCreditPositionne;
+    colonnes = dicoCreditsPositionnes.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    width = "514px";
+}
+
+TableViewCreditsDepensesRecap : CktlAjaxTableView {
+    id = "TableViewCreditsDepensesRecap"; 
+	dg = dgCreditsDepensesRecap;
+    disabled = true;
+    item = currentTrancheBudget;
+    colonnes = dicoCreditsPositionnesRecap.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    width = "732px";
+}
+
+TableViewCreditsDepensesToolBar : CktlAjaxToolbar {
+}
+
+AjouterCreditDep : CktlAjaxButton {
+	action = ajouterCreditDepense;
+	type = "new";
+	dialogIDForOpen = "AjoutCreditDepModal";
+	enabled = selectedDepenses;
+}
+
+SupprimerCreditDep : CktlAjaxButton {
+	action = supprimerCreditDepense;
+	type = "delete";
+	onClickBefore = "confirm('Êtes-vous sûr de vouloir supprimer ce postionnement de crédit ?')";
+	updateContainerID = "ContainerAvenantBudget";
+	enabled = selectedCreditsDepensesPos;
+}
+
+AjoutCreditDepModal : CktlAjaxWindow {
+    id = "AjoutCreditDepModal";
+    width = "600";
+    height = "350";
+    title = "Positionner un crédit";
+}
+
+LigneBudg : ERXOptGroupPopupButton {
+	label = groupeOrganLabel;
+	group = groupeOrgan;
+    id = "LigneBudg";
+    list = organs;
+    item = currentOrgan;
+    selection = newTrancheBudget.organ;
+    displayString = currentOrgan.longString;
+    noSelectionString = "Sélectionner une ligne budgétaire";
+}
+
+TypeCredit :  WOPopUpButton {
+    id = "TCPos";
+    list = typesCreditDepense;
+    item = currentTypeCredit;
+    selection = newTrancheBudget.typeCredit;
+    displayString = currentTypeCredit.tcdCodeEtLibAbrege;
+    noSelectionString = "Sélectionner un type de crédit";
+}
+
+HasTypeCredit : WOConditional {
+	condition = typesCreditDepense.count;
+}
+
+HasNoTypeCredit : WOConditional {
+	condition = typesCreditDepense.count;
+    negate = true;
+}
+
+AjoutCreditDepContainer : AjaxUpdateContainer {
+	id = "AjoutCreditDepContainer";
+	style = "padding:10px;";
+}
+
+MontantObs : AjaxObserveField {
+    updateContainerID = "PctContainer";
+    elementName = "span";
+}
+
+PctObs : AjaxObserveField {
+    updateContainerID = "MontantContainer";	
+    elementName = "span";
+}
+
+PctContainer : AjaxUpdateContainer {
+	id = "PctContainer";
+}
+
+MontantContainer : AjaxUpdateContainer {
+	id = "MontantContainer";
+}
+
+PctMontant : WOTextField {
+	value = newTrancheBudgetPct;
+	formatter = application.app2DecimalesFormatter;
+	class = "pctMontant";
+	size = 3;
+}
+
+Montant : WOTextField {
+	value = newTrancheBudget.tbMontant;
+	formatter = application.app2DecimalesFormatter;
+}
+
+FormCreditDep : WOForm {
+	
+}
+
+NatureDepPrev : WOString {
+	value = selectedDepenses.planco.pcoNumEtLibelle;
+}
+
+MontantDepPrev : WOString {
+	value = selectedDepenses.montant;
+	formatter = application.app2DecimalesFormatter;
+}
+
+CRsDepPrev : WOString {
+	value = organsForDepenses;
+	escapeHTML = false;
+}
+
+TotalAPositionner : WOString {
+	value = selectedDepenses.montant;
+	formatter = application.app2DecimalesFormatter;
+}
+
+TotalPositionne : WOString {
+	value = selectedDepenses.montantCreditsPositionnes;
+	formatter = application.app2DecimalesFormatter;
+}
+
+ResteAPositionner : WOString {
+	value = selectedDepenses.montantResteAPositionne;
+	formatter = application.app2DecimalesFormatter;
+}
+
+Annuler : CktlAjaxButton {
+	action = annulerAjoutCreditDep;
+	type = "cancel";
+	text = "Annuler";
+}
+
+Valider : CktlAjaxSubmitButton {
+	action = validerAjoutCreditDep;
+	type = "validate";
+	text = "Valider";
+	updateContainerID = "AjoutCreditDepContainer";
+}
+
+AjoutCreditRecModal : CktlAjaxWindow {
+    id = "AjoutCreditRecModal";
+    width = "600";
+    height = "350";
+    title = "Positionner un crédit";
+}
+
+AjoutCreditRecContainer : AjaxUpdateContainer {
+    id = "AjoutCreditRecContainer";
+    style = "padding:10px;";
+}
+
+FormCreditRec : WOForm {
+    
+}
+
+TotalAPositionnerRec : WOString {
+    value = selectedRecettes.montant;
+    formatter = application.app2DecimalesFormatter;
+}
+
+TotalPositionneRec : WOString {
+    value = selectedRecettes.montantCreditsPositionnes;
+    formatter = application.app2DecimalesFormatter;
+}
+
+ResteAPositionnerRec : WOString {
+    value = selectedRecettes.montantResteAPositionne;
+    formatter = application.app2DecimalesFormatter;
+}
+
+
+NatureRecPrev : WOString {
+    value = selectedRecettes.planco.pcoNumEtLibelle;
+}
+
+MontantRecPrev : WOString {
+    value = selectedRecettes.montant;
+    formatter = application.app2DecimalesFormatter;
+}
+
+CRsRecPrev : WOString {
+    value = organsForRecettes;
+    escapeHTML = false;
+}
+
+LigneBudgRec : ERXOptGroupPopupButton {
+    id = "LigneBudgRec";
+    list = organs;
+    item = currentOrgan;
+    selection = newTrancheBudgetRec.organ;
+    displayString = currentOrgan.longString;
+    noSelectionString = "Sélectionner une ligne budgétaire";
+    label = groupeOrganLabel;
+	group = groupeOrgan;
+}
+
+HasTypeCreditRec : WOConditional {
+    condition = typesCreditRecette.count;
+}
+
+HasNoTypeCreditRec : WOConditional {
+    condition = typesCreditRecette.count;
+    negate = true;
+}
+
+TypeCreditRec :  WOPopUpButton {
+    id = "TCPos";
+    list = typesCreditRecette;
+    item = currentTypeCredit;
+    selection = newTrancheBudgetRec.typeCredit;
+    displayString = currentTypeCredit.tcdCodeEtLibAbrege;
+    noSelectionString = "Sélectionner un type de crédit";
+}
+
+PctMontantRec : WOTextField {
+    value = newTrancheBudgetRecPct;
+    formatter = application.app2DecimalesFormatter;
+    class = "pctMontant";
+    size = 3;
+}
+
+MontantRec : WOTextField {
+    value = newTrancheBudgetRec.tbrMontant;
+    formatter = application.app2DecimalesFormatter;
+}
+
+AnnulerRec : CktlAjaxButton {
+    action = annulerAjoutCreditRec;
+    type = "cancel";
+    text = "Annuler";
+}
+
+ValiderRec : CktlAjaxSubmitButton {
+    action = validerAjoutCreditRec;
+    type = "validate";
+    text = "Valider";
+    updateContainerID = "AjoutCreditRecContainer";
+}
+
+TableViewCreditsRecettesRecap : CktlAjaxTableView {
+    id = "TableViewCreditsRecettesRecap"; 
+    dg = dgCreditsRecettesRecap;
+    disabled = true;
+    item = currentTrancheBudgetRec;
+    colonnes = dicoCreditsPositionnesRecRecap.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    width = "733px";
+}
+
+ValiderTranche : CktlAjaxButton {
+	action = validerTranche;
+	text = validerTrancheText;
+	updateContainerID = "ContainerAvenantBudget";
+	type = "validate";
+	enabled = peutValiderTranche;
+}
+
+Toolbar : CktlAjaxToolbar {
+	
+}
+
+ExoNonCree : ERXWOConditional {
+    condition = selectedTranche.exercice;
+    negate = true;
+}
+

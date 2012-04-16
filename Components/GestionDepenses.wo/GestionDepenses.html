@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml" xml:lang = "fr" lang = "fr">
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8" />
+    <title>Ajouter une d&eacute;pense</title>
+    <meta http-equiv = "X-UA-Compatible" content = "IE=7" />
+    <script type = "text/javascript">
+      if(window.history.forward(1) != null) {
+        window.history.forward(1);
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <webobject name = "FormGestionDepense">
+        <webobject name = "ContainerGestionDepensesContenu">
+          <table border = "0" width = "100%" style = "text-align:left;">
+            <tbody>
+              <tr>
+                <td colspan = "2" class = "alignToRight">
+                </td>
+                <td colspan = "2">
+                    <label style = "font-style: italic;">Les nomenclatures sont celles de l'exercice</label>
+                     <strong><webobject name = "Exo"></webobject></strong>
+                </td>
+              </tr>
+              <tr>
+                <td class = "alignToRight" colspan = "2" >
+                 <label for = "DatePrevDepense" class = "etiquette obligatoire">Libell&eacute;</label>
+                </td>
+                <td colspan = "2">
+                   <webobject name = "LibelleDepense" />
+                   <webobject name = "ObserverLibelleDepense" />
+                   <label for = "DatePrevDepense" class = "etiquette">Date pr&eacute;visionnelle</label>
+                   <webobject name = "DatePrevDepense" />
+                </td>
+              </tr>
+              <webobject name = "TrancheEnDepenses">
+               <tr>
+                <td class = "alignToRight" colspan = "2">
+                  <label for = "TC" class = "etiquette">Fournisseur</label>
+                </td>
+                <td colspan = "2">
+                    <webobject name = "Contributeurs"></webobject>
+                    <webobject name = "ObserverContributeurs" />
+                </td>
+              </tr>
+              </webobject>
+              <tr>
+                 <td class = "alignToRight" colspan = "2" >
+                 <label for = "MontantHTDepense" class = "etiquette obligatoire">HT</label>
+                 </td>
+                <td colspan = "2">
+                 <webobject name = "MontantHTDepense" />
+                  <webobject name = "ObserverMontantHTDepense" />
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for ="TVA" class = "etiquette obligatoire">
+                  TVA
+                  </label>
+                   <webobject name = "TVADepense" />
+                  <webobject name = "ObserverTVADepense" />
+                  <webobject name = "TDValeurTVADepense"><webobject name = "ValeurTVADepense" /></webobject>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  TTC
+                  <webobject name = "TDMontantTTCDepense"><webobject name = "MontantTTCDepense" /><webobject name = "ObserverMontantTTCDepense" /></webobject>                  
+                </td>
+              </tr>
+              <tr>
+                <td class = "alignToRight">
+                  <label for = "LigneBudg" class = "etiquette obligatoire">Ligne budgétaire</label>
+                </td>
+                <td colspan = "3">
+                    <webobject name = "LigneBudg"></webobject>
+                </td>
+              </tr>
+              <webobject name = "IsModeDestination">
+              <tr>
+                <td class = "alignToRight">
+                  <label for = "CodeLolfDepense" class = "etiquette obligatoire">Code Lolf</label>
+                </td>
+                <td colspan = "3">
+                    <webobject name = "CodesLolf"></webobject>
+                </td>
+              </tr>
+              </webobject>
+              <webobject name = "IsModeNature">
+              <tr>
+                <td class = "alignToRight">
+                  <label for = "CodeNatureDepense" class = "etiquette obligatoire">Code Nature</label>
+                </td>
+                <td colspan = "3"><webobject name = "CodesNature" /></td>
+              </tr>
+              </webobject>
+            </tbody>
+          </table>
+        </webobject>
+        <webobject name = "ContainerGestionDepensesMenu">
+          <div>
+            <table width = "100%">
+              <tbody>
+                <tr height = "100%">
+                  <td width = "30%" align = "left"><webobject name = "Annuler" /></td>
+                  <td width = "40%" align = "center"><webobject name = "TerminerEtAjouter" /></td>
+                  <td width = "30%" align = "right"><webobject name = "Terminer" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </webobject>
+      </webobject>
+    </center>
+    <webobject name = "ContainerMessage" />
+    <webobject name = "Busy" />
+    <webobject name = "WOLToolBar" />
+  </body>
+</html>

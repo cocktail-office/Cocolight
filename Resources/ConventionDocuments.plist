@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <key>colonnes</key>
+    <array>
+		<dict>
+			<key>libelle</key>
+			<string>Avenant</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unAvenantDocument.avenant.libelleCourt</string>
+			</dict>
+ 			<key>headerCssClass</key>
+			<string>alignToCenter useMinWidth</string>			
+ 			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>			
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Date</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unAvenantDocument.document.dCreation</string>
+				<key>dateformat</key>
+				<string>&quot;%d/%m/%Y&quot;</string>
+			</dict>
+ 			<key>headerCssClass</key>
+			<string>alignToCenter useMinWidth</string>			
+ 			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>			
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Objet</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unAvenantDocument.document.objet</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&nbsp;&quot;</string>
+			</dict>
+ 			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>			
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Document</string>
+			<key>component</key>
+			<string>CktlAjaxTVGedDocumentCell</string>
+			<key>associations</key>
+			<dict>
+				<key>gedDocument</key>
+				<string>documentAttache</string>
+				<key>famille</key>
+				<string>Acte.document</string>
+			</dict>
+ 			<key>rowCssClass</key>
+			<string>alignToCenter nowrap useMinWidth</string>			
+		</dict>
+
+    </array>
+</dict>
+
+</plist>

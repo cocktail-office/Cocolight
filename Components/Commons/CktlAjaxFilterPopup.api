@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CktlAjaxFilterPopup.java" wocomponentcontent="false">
+
+        <binding name="fieldName"/>
+    <binding name="size"/>
+    <binding name="filterText"/>
+    <binding name="style"/>
+    <binding name="onBlur"/>
+    <binding name="onFocus"/>
+    <binding name="onChange"/>
+    <binding name="disabled"/>
+    <binding name="isVertical"/>
+    </wo>
+</wodefinitions>

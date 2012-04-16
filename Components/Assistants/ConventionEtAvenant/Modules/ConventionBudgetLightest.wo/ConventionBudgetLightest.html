@@ -1,0 +1,146 @@
+<webobject name = "HasTranches">
+  <webobject name = "ContainerAvenantBudget">
+    <webobject name = "FormAvenantBudget">
+      <h4>Tranches annuelles</h4>
+      <webobject name = "TableViewTranchesAnnuelles">
+         <webobject name = "Toolbar">
+              <webobject name = "ValiderTranche"></webobject>
+        </webobject> 
+      </webobject>
+      <webobject name = "ContainerBudgetDetail">
+           <webobject name = "ExoNonCree">
+        <span style="color:red;">(Cet exercice n'est pas encore créé, aucun positionnement de crédit n'est possible)</span>
+      </webobject>
+        <webobject name = "TabsNatureDest">
+          <webobject name = "TabDepenses">
+            <div>
+              <h4>R&eacute;capitulatif des cr&eacute;dits positionn&eacute;s en d&eacute;pense</h4>
+              <webobject name = "TableViewCreditsDepensesRecap">
+                <webobject name = "ToolBar">
+                  <webobject name = "AjouterCreditSimpleDep" />
+                  <webobject name = "SupprimerCreditSimpleDep" />
+                </webobject>
+              </webobject>
+              <table>
+                <tr>
+                    <th><label>Total des crédits positionnés : </label></th>
+                    <td style="text-align:right;"><webobject name = "TotalPositionne"></webobject></td>
+                </tr>
+                <tr>
+                    <th><label>Reste à positionner sur la tranche: </label></th>
+                    <td style="text-align:right;"><webobject name = "ResteAPositionne"></webobject></td>
+                </tr>
+              </table>
+            </div>
+          </webobject>
+          <webobject name = "TabRecettes">
+             <div>
+              <h4>R&eacute;capitulatif des cr&eacute;dits positionn&eacute;s en recette</h4>
+              <webobject name = "TableViewCreditsRecettesRecap">
+                <webobject name = "ToolBar">
+                  <webobject name = "AjouterCreditSimpleRec" />
+                  <webobject name = "SupprimerCreditSimpleRec" />
+                </webobject>
+              </webobject>
+              <table>
+                <tr>
+                    <th><label>Total des crédits positionnés : </label></th>
+                    <td style="text-align:right;"><webobject name = "TotalPositionneRec"></webobject></td>
+                </tr>
+                <tr>
+                    <th><label>Reste à positionner sur la tranche: </label></th>
+                    <td style="text-align:right;"><webobject name = "ResteAPositionneRec"></webobject></td>
+                </tr>
+              </table>
+            </div>
+          </webobject>
+        </webobject>
+      </webobject>
+    </webobject>
+  </webobject>
+</webobject>
+<webobject name = "HasNoTranche"> Aucune tranche encore enregistr&eacute;e : veuillez renseigner un montant et enregistrer. </webobject>
+<webobject name = "AjoutCreditDepSimpleModal">
+  <webobject name = "AjoutCreditDepContainer">
+    <webobject name = "FormCreditDep">
+      <table>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire">Ligne budg&eacute;taire :</label>
+          </td>
+          <td colspan = "2"> <webobject name = "LigneBudg" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire"> Type cr&eacute;dit : </label>
+          </td>
+          <td colspan = "2"> <webobject name = "AllTypeCredit" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire"> Montant &agrave; positionner: </label>
+          </td>
+          <td width = "90px">
+            <webobject name = "PctContainer">
+              <webobject name = "PctObs"><webobject name = "PctMontant" />%</webobject>
+            </webobject>
+          </td>
+          <td>
+            <webobject name = "MontantContainer">
+              <webobject name = "MontantObs">montant : <webobject name = "Montant" /></webobject>
+            </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan = "2" style = "text-align:right;padding-top:10px;">
+            <webobject name = "Annuler" />
+            <webobject name = "Valider" />
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+</webobject>
+<webobject name = "AjoutCreditRecSimpleModal">
+  <webobject name = "AjoutCreditRecContainer">
+    <webobject name = "FormCreditRec">
+      <table>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire">Ligne budg&eacute;taire :</label>
+          </td>
+          <td colspan = "2"> <webobject name = "LigneBudgRec" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire"> Type cr&eacute;dit : </label>
+          </td>
+          <td colspan = "2"> <webobject name = "AllTypeCreditRec" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire"> Montant &agrave; positionner: </label>
+          </td>
+          <td width = "90px">
+            <webobject name = "PctContainer">
+              <webobject name = "PctObs"><webobject name = "PctMontantRec" />%</webobject>
+            </webobject>
+          </td>
+          <td>
+            <webobject name = "MontantContainer">
+              <webobject name = "MontantObs">montant : <webobject name = "MontantRec" /></webobject>
+            </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan = "2" style = "text-align:right;padding-top:10px;">
+            <webobject name = "AnnulerRec" />
+            <webobject name = "ValiderRec" />
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+</webobject>

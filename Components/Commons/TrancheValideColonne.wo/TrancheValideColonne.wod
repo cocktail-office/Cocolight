@@ -1,0 +1,20 @@
+IsTrancheValide : WOConditional {
+	condition = ^tranche.isValide;
+}
+
+IsTranchePasEncoreValide : WOConditional {
+	condition = ^tranche.isValide;
+    negate = true;
+}
+
+ImageTrancheValide : WOImage {
+	filename = "images/ico_carre_vert_16.png";
+	framework = "FwkCktlPersonneGuiAjax";
+    title = "Tranche valide";
+}
+
+ImageTranchePasEncoreValide : WOImage {
+	filename = "images/ico_carre_rouge_16.png";
+	framework = "FwkCktlPersonneGuiAjax";
+	title = "Tranche pas encore valide";
+}

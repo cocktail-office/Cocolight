@@ -1,0 +1,87 @@
+<webobject name = "ContainerAvenantGeneralites">
+<center>
+<webobject name = "FormAvenantGeneralites">
+
+<table width="100%" cellpadding = "0" cellspacing = "0">
+  <tbody>
+    <tr><td>
+			  <table border="0" width="100%">
+			    <tbody>
+			
+			      <tr>
+			        <td class="alignToRight nowrap"><label for="TypeAvenant" class="etiquette obligatoire">Type</label></td>
+			        <td ><webobject name = "TypeAvenant"/><webobject name = "TypeAvenantObserver"/></td>
+			        <td nowrap><webobject name = "CBAvenantLucratif"/><webobject name = "CBAvenantLucratifObserver"/><label for="CBAvenantLucratif" class="etiquette">Lucratif</label></td>
+			        <td class="alignToRight" nowrap><label for="AvenantReferenceExterne" class="etiquette">R&eacute;f&eacute;rence externe</label></td>
+			        <td ><webobject name = "AvenantReferenceExterne"/><webobject name = "AvenantReferenceExterneObserver"/></td>
+			      </tr>
+			
+			      <tr>
+			        <td valign = "top" class="alignToRight"><label for="Objet" class="etiquette obligatoire">Objet</label></td>
+			        <td colspan="4" ><webobject name = "ObjetAvenant"/><webobject name = "ObjetAvenantObserver"/></td>
+			      </tr>
+			  </tbody>
+			  </table>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%">
+              <tr>
+                <td colspan="4"><span><h4>Dur&eacute;e de l'avenant</h4></span></td>
+              </tr>
+              <tr>
+                <td width="20%" class="alignToRight" nowrap><label for="DateDebut" class="etiquette obligatoire">D&eacute;but</label></td>
+                <td><webobject name = "DateDebut"/></td>
+                <td nowrap class="alignToRight" ><label for="DateFin" class="etiquette obligatoire">Fin</label></td>
+                <td nowrap ><webobject name = "DateFin"/></td>
+              </tr>
+              <tr>
+                  <td class="alignToRight"><label for="DateSignature" class="etiquette">Date signature</label></td>
+                  <td><webobject name = "DateSignature"></webobject><webobject name = "DateSAUC"></webobject></td>
+                  <td colspan = "2"></td>
+              </tr>
+            </table>
+    </td>
+    </tr>
+      
+    <tr><td>  
+		    <table border="0" width="100%">
+		      <tbody>
+		
+		      <tr>
+		        <td colspan="6"><span><h4>Donn&eacute;es financi&egrave;res</h4></span></td>
+		      </tr>
+		
+		      <webobject name = "ContainerAvenantDonneesFinancieres">
+		        <td class="alignToRight" width = "150px"><label for="MontantHT" class="etiquette">Montant global HT</label></td>
+		        <td><webobject name = "MontantHT"/><webobject name = "MontantHTObserver"/></td>
+		        <td class="alignToRight"><label for="MontantTTC" class="etiquette">TTC </label></td>
+		        <td><webobject name = "MontantTTC"/></td>
+		        <td class="alignToRight"><label for="TVA" class="etiquette">TVA </label><webobject name = "TVA"/><webobject name = "TVAObserver"/></td>
+		        <td>&nbsp;</td>
+		      </webobject>
+	
+		      <tr>
+		        <td colspan="6"><span><h4>Autres informations</h4></span></td>
+		      </tr>
+		
+		      <tr>
+		        <td valign = "top" class="alignToRight"><label for="Observations" class="etiquette">Observations</label></td>
+		        <td colspan="5" style="padding-right: 10px;"><webobject name = "ObservationsAvenant"/><webobject name = "ObservationsAvenantObserver"/></td>
+		      </tr>
+			    </tbody>
+			  </table>
+    </td></tr>
+  </tbody>
+  </table>
+  
+</webobject>
+</center>
+</webobject>
+  <webobject name = "IsNotModeAssistant">
+<div style="text-align:right;margin-top:20px;">
+<webobject name = "Annuler" />
+<webobject name = "Valider" />
+</div>
+  </webobject>

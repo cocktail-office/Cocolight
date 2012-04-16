@@ -1,0 +1,135 @@
+Container : AjaxUpdateContainer {
+	id = containerId;
+}
+
+Reparts : WORepetition {
+	list = reparts;
+	item = currentRepart;
+	index = index;
+}
+
+Tr : WOGenericContainer {
+	elementName = "tr";
+	class = cssForRow;
+}
+
+Filter : CktlAjaxFilterPopup {
+    formName = formName;
+    selectName = repartPopUpId;
+    fieldName = repartId;
+    filterText = filterForCurrentRepart;
+    size = "15";
+    style = "border:1px solid #80C65A;";
+    disabled = aucunMontantRestantDispo;
+}
+
+FilterObs : AjaxObserveField {
+    observeFieldID = repartId;
+    fullSubmit = true;
+    action = refresh;
+    updateContainerID = containerId;
+    onSuccess = refreshContainerJs;
+}
+
+PopupObs : AjaxObserveField {
+    observeFieldID = repartPopUpId;
+    fullSubmit = true;
+    action = refresh;
+    updateContainerID = containerId;
+    onSuccess = refreshContainerJs;
+}
+
+HasGroup : WOConditional {
+	condition = nomenclatureHelper.mustGroup;
+}
+
+HasNoGroup : WOConditional {
+	condition = nomenclatureHelper.mustGroup;
+	negate = true;
+}
+
+Popup2 : ERXOptGroupPopupButton {
+	name = repartPopUpId;
+    id = repartPopUpId;
+    group = nomenclatureHelper.currentNomenclatureGroup;
+    label = nomenclatureHelper.currentNomenclatureGroupLabel;
+    itemClass = nomenclatureHelper.currentNomenclatureCss;
+    list = nomenclatureHelper.nomenclatures;
+    item = nomenclatureHelper.currentNomenclature;
+    displayString = nomenclatureHelper.currentNomenclatureLabel;
+    selection = selectedNomenclatureForNew;
+    noSelectionString = nomenclatureHelper.noSelectionString;
+    style = "width:200px;border:1px solid #80C65A;";
+    disabled = aucunMontantRestantDispo;
+}
+
+Popup : WOPopUpButton {
+	name = repartPopUpId;
+    id = repartPopUpId;
+    list = nomenclatureHelper.nomenclatures;
+    item = nomenclatureHelper.currentNomenclature;
+    displayString = nomenclatureHelper.currentNomenclatureLabel;
+    selection = selectedNomenclatureForNew;
+    noSelectionString = nomenclatureHelper.noSelectionString;
+    style = "width:200px;border:1px solid #80C65A;";
+    disabled = aucunMontantRestantDispo;
+}
+
+Nomenclature : WOString {
+    value = nomenclatureLabelForCurrentRepart;
+}
+
+MontantStr : WOString {
+	value = currentRepart.montantHt;
+}
+
+MontantPctStr : WOString {
+	value = pctForCurrentRepart;
+}
+
+Del : CktlAjaxButton {
+	action = supprimer;
+	type = "delete";
+	updateContainerID = containerId;
+}
+
+Add : CktlAjaxButton {
+	action = ajouter;
+	type = "new";
+	updateContainerID = containerId;
+	disabled = aucunMontantRestantDispo;
+}
+
+Montant : WOTextField {
+    value = montantHtForNew;
+    formatter = application.app2DecimalesFormatter;
+    style = "width:70px;text-align:right;";
+    id = repartMontantId;
+    onChange = "this.value=this.value.replace('.',',');";
+    disabled = aucunMontantRestantDispo;
+}
+
+MontantObs : AjaxObserveField {
+    observeFieldID = repartMontantId;
+    fullSubmit = true;
+    action = refresh;
+    updateContainerID = containerId;
+    onSuccess = refreshContainerJs;
+}
+
+MontantPctObs : AjaxObserveField {
+    observeFieldID = repartMontantPctId;
+    fullSubmit = true;
+    action = refresh;
+    updateContainerID = containerId;
+    onSuccess = refreshContainerJs;
+}
+
+MontantPct : WOTextField {
+    value = pctForNew;
+    formatter = application.app2DecimalesFormatter;
+    style = "text-align:right;width:40px";
+    disabled = true;
+    id = repartMontantPctId;
+    onChange = "this.value=this.value.replace('.',',');";
+}

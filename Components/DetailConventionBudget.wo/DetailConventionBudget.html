@@ -1,0 +1,133 @@
+<webobject name = "Container">
+<webobject name = "PrevisionEnAttente">
+<webobject name = "ModeDepenseHasDepensesLeft">
+    <webobject name = "LierDepenses"></webobject>
+</webobject>
+<webobject name = "ModeRecetteHasRecettesLeft">
+    <webobject name = "LierRecettes"></webobject>
+</webobject>
+</webobject>
+<div class="budget" style = "margin-top:20px;">
+<webobject name = "Obs">
+<table style = "width:100%;">
+    <thead>
+        <tr>
+        <th rowspan = "2" style="width:250px;">Destination et nature</th>
+        <webobject name = "TypesCredit">
+        <webobject name = "TH">
+            <webobject name = "TypeCredit"></webobject>
+        </webobject>
+        </webobject>
+        <webobject name = "THTotal">
+            Total
+        </webobject>            
+        </tr>
+        <tr>
+        <webobject name = "TypesCredit">
+        <th>
+            Prév.
+        </th>
+        <webobject name = "IsPrevisionValide">
+        <th>
+            <webobject name = "OuvertOuAOuvrir"></webobject>
+        </th>
+        </webobject>
+        </webobject>
+        <th class ="total" >Prév.</th>
+        <webobject name = "IsPrevisionValide">
+        <th class = "total">
+            <webobject name = "OuvertOuAOuvrir"></webobject>
+        </th>
+        </webobject>
+        </tr>
+           
+    </thead>
+    <tbody>
+        <webobject name = "Lolfs">
+            <tr class = "lolf">
+                <td class = "label">
+                    <webobject name = "Lolf"></webobject>
+                </td>
+                <webobject name = "TypesCredit">
+                <td class = "prev">
+                    <webobject name = "PrevGestionForTypeCredit"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <td class = "prev">
+                   <webobject name = "PrevGestionAOuvrirForTypeCredit"></webobject>
+                </td>
+                </webobject>
+                </webobject>
+                <td class = "total">
+                    <webobject name = "TotalForPrevGestion"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <td class = "total">
+                    <webobject name = "TotalAOuvrirForPrevGestion"></webobject>
+                </td>
+                </webobject>
+            </tr>
+            <webobject name = "Natures">
+               <tr class = "nature">
+                   <td class = "label"><webobject name = "Nature"></webobject></td>
+                <webobject name = "TypesCredit">
+                <td class = "prev">
+                    <webobject name = "PrevLolfNatureForTypeCredit"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <td class = "prev">
+                    <webobject name = "PrevAOuvrirLolfNatureForTypeCredit"></webobject>
+                </td>
+                </webobject>
+                </webobject>
+                <td class = "total prev">
+                    <webobject name = "TotalForPrevLolfNature"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <td class = "total prev">
+                    <webobject name = "TotalAOuvrirForPrevLolfNature"></webobject>
+                </td>
+                </webobject>
+               </tr>
+            </webobject>
+        </webobject>
+        <tr>
+                <tr class = "total">
+                   <td class = "label">Total</td>
+                <webobject name = "TypesCredit">
+                <td>
+                    <webobject name = "TotalForTypeCredit"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <webobject name = "TdTotalAOuvrirForTypeCredit">
+                    <webobject name = "TotalAOuvrirForTypeCredit"></webobject>
+                </webobject>
+                </webobject>
+                </webobject>
+                <td>
+                    <webobject name = "AllTotal"></webobject>
+                </td>
+                <webobject name = "IsPrevisionValide">
+                <webobject name = "TdAllTotalAOuvrir">
+                    <webobject name = "AllTotalAOuvrir"></webobject>
+                </webobject>
+                </webobject>
+               </tr>
+        </tr>
+    </tbody>
+</table>
+</webobject>
+</div>
+    
+</webobject>
+
+<webobject name = "DepensesWindow">
+    <webobject name = "DBudgetableSelect"></webobject>
+</webobject>
+
+<webobject name = "RecettesWindow">
+    <webobject name = "RBudgetableSelect"></webobject>
+</webobject>
+
+
+

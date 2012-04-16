@@ -1,0 +1,76 @@
+ContainerIndicateurs : AjaxUpdateContainer {
+	id = "ContainerIndicateurs";
+	class = classeCss;
+	style = styleCss;
+}
+FormIndicateurs : WOForm {
+  id = "FormIndicateurs";
+  name="FormIndicateursName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+  style = "padding:2px;padding-top:5px;";
+}
+
+ObserverFormIndicateurs : AjaxObserveField {
+	fullSubmit = true;
+	action = submit;	
+}
+
+JSDisabledAutocompleteTF : WOJavaScript {
+	scriptString = disabledTFScript;
+}
+
+LesIndicateurs : WORepetition {
+	list = ctrl.lesIndicateurs;
+	item = ctrl.unIndicateur;
+	index = indexListeIndicateurs;
+}
+
+CheckBoxIndicateur : WOCheckBox {
+  id = idCheckBoxIndicateur;	
+	checked = ctrl.isIndicateurChecked;
+}
+LabelLibelleIndicateur : WOGenericContainer {
+	elementName = "label";
+	for = idCheckBoxIndicateur;
+	class = "etiquette";
+}
+LibelleIndicateur : WOString {
+  value = ctrl.unIndicateur.icLibelle;
+}
+
+Contexte : WOText {
+	id = "Contexte";
+  	value = contrat.contexte;  	
+  	style = "width:100%;";
+}
+Remarques : WOText {
+	id = "Remarques";
+  	value = contrat.remarques;  	
+  	style = "width:100%;";
+}
+
+SansAvis : WORadioButton {
+	name = "avis";
+	id = "SansAvis";
+	selection = contrat.sansAvis;
+	value = "O";
+}
+AvisFavorable : WORadioButton {
+	name = "avis";
+	id = "AvisFavorable";
+	selection = contrat.avisFavorable;
+	value = "O";
+}
+AvisDefavorable : WORadioButton {
+	name = "avis";
+	id = "AvisDefavorable";
+	selection = contrat.avisFavorable;
+	value = "N";
+}
+Motif : WOText {
+	id = "Motif";
+  	value = contrat.motifsAvis;  	
+  	style = "width:100%;";
+}

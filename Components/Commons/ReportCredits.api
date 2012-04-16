@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ReportCredits.java" wocomponentcontent="false">
+
+        <binding name="trancheSource"/>
+        <validation message="'trancheSource' is a required binding.">
+            <unbound name="trancheSource"/>
+        </validation>
+    </wo>
+</wodefinitions>

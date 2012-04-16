@@ -1,0 +1,109 @@
+ContainerGestionAvenantEtapes : AjaxUpdateContainer {
+	id = "ContainerGestionAvenantEtapes";
+	class = "assistantEtapes";
+	style = "width:155px;min-height:455px;";
+}
+
+Etapes : WORepetition {
+	list = etapes;
+	item = uneEtape;
+}
+
+DivEtape : WOGenericContainer {
+  elementName = "div";
+  class = styleForEtape;
+}
+Etape : WOString {
+  value = uneEtape;
+  escapeHTML = false;
+}
+ContainerGestionAvenantContent : AjaxUpdateContainer {
+	id = "ContainerGestionAvenantContent";
+	class = "assistantContent";
+}
+FormModuleAssistantAvenant : WOForm {
+	id = "FormModuleAssistantAvenant";
+	multipleSubmit = true;
+	action = doNothing;
+	style = "text-align:left;height:305px;padding:0;margin:0;";
+}
+Module : WOSwitchComponent {
+	WOComponentName = moduleName;
+	module = module;
+	editingContext = editingContext;
+	contrat = avenant.contrat;
+	avenant = avenant;
+	utilisateurPersId = utilisateurPersId;
+	assistant = assistant;
+	updateContainerID = updateContainerID;
+	applicationUser = session.applicationUser;
+}
+ContainerModuleAssistantAvenant : AjaxUpdateContainer {
+	id = "ContainerModuleAssistantAvenant";
+	style = "height:305px;padding:5px;";
+	class = "assistantModule";
+}
+ContainerGestionAvenantMenu : AjaxUpdateContainer {
+	id = "ContainerGestionAvenantMenu";
+	style = "border-top:2px solid #4E80C0;height:28px;";
+	class = "assistantMenu";
+}
+
+Annuler : CktlAjaxButton {
+	onClickBefore = "confirm('Les données déjà saisies seront définitivement perdues ?')";
+	action = annuler;
+	onSuccess = "function(oS){parent.ContentContainerUpdate();}";
+	title = "Annuler la saisie d'un avenant";
+	text = "Annuler";
+	type = "cancel";
+}
+
+Precedent : CktlAjaxButton {
+	disabled = isPrecedentDisabled;
+	id = "Precedent";
+	action = precedent;
+	// updateContainerID = application.messageContainerID;
+	onFailure = application.onFailureMessage;
+	onSuccess = "function () {ContainerGestionAvenantContentUpdate();ContainerGestionAvenantMenuUpdate();ContainerGestionAvenantEtapesUpdate();}";
+	title = "Précédent";
+	text = "Précédent";
+	type = "previous";
+}
+Suivant : CktlAjaxButton {
+	id = "Suivant";
+	disabled = isSuivantDisabled;
+	action = suivant;
+	// updateContainerID = application.messageContainerID;
+	onFailure = application.onFailureMessage;
+	onSuccess = "function () {ContainerGestionAvenantContentUpdate();ContainerGestionAvenantMenuUpdate();ContainerGestionAvenantEtapesUpdate();}";
+	title = "Suivant";
+	text = "Suivant";
+	type = "next";
+	isImagePositionIsRight = true;
+}
+
+Terminer : CktlAjaxButton {
+	action = terminer;
+	// updateContainerID = application.messageContainerID;
+	onFailure = application.onFailureMessage;
+	text = "Valider";
+	enabled = isTerminerEnabled;
+	type = "validate";
+	title = "Valider et enregistrer";
+}
+
+
+IsEtapeActive : WOConditional {
+  condition = isEtapeActive;
+}
+IndicateurBusy : WOImage {
+	border = 0;
+	filename = "styles/images/indicator_arrows_blue.gif";
+	style = "display:none;";
+	id = "busy";
+	width = "16px";
+	height = "16px";
+}
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}

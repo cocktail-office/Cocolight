@@ -1,0 +1,87 @@
+ContainerConventionDocuments : AjaxUpdateContainer {
+	id = "ContainerConventionDocuments";
+	class = classeCss;
+	style = styleCss;
+}
+
+TableViewDocuments : CktlAjaxTableView {
+	id = "TableViewDocuments";	
+	dg = dgDocuments;
+	item = unAvenantDocument;	
+	colonnes = dicoDocuments.colonnes; // VALID
+	selectionEnabled = true;
+	updateContainerID = "ContainerDetailDocument";
+	afficherBarreDeNavigation = false;
+	height = "130px";
+}
+TableViewDocumentsToolBar : CktlAjaxToolbar {
+}
+AddDocument : CktlAjaxButton {
+	id = "AddDocument";
+	title = "Ajouter un document";
+	type = "new";
+	action = doNothing;
+	dialogIDForOpen = "AddDocumentModalBox";
+}
+
+HLSupprimerDocument : CktlAjaxButton {
+	id = "HLSupprimerDocument";
+	title = "Supprimer le document sélectionné";
+	type = "delete";
+	action = supprimerUnDocument;
+	disabled = isSupprimerUnDocumentDisabled;
+	updateContainerID = "ContainerConventionDocuments";
+}
+
+ContainerDetailDocument : AjaxUpdateContainer {
+	id = "ContainerDetailDocument";
+	style = "padding:5px;";
+}
+
+IsDocumentSelectionne : WOConditional {
+  condition = dgDocuments.selectedObject;
+}
+
+FormDetailDocument : WOForm {
+	id = "FormDetailDocument";
+}
+FormDocumentObserver : AjaxObserveField {
+	action = submit;
+}
+DetailDocument : CktlGedDocumentDetail {
+	editingContext = edc;
+	gedDocument = unAvenantDocumentSelectionne.document;
+	utilisateur = session.applicationUser;
+	filtreTypes = "gfc.acte";
+}
+
+
+AddDocumentModalBox: CktlAjaxWindow {
+	id = "AddDocumentModalBox";
+	showOpener = false; 
+	title = "Ajouter un nouveau document";
+	linkTitle = "Ajouter un nouveau document";
+	action = ajouterUnDocument;
+	width = 500;
+	height = 300;
+	afterHide = "function() { Cocolight_MessageContainerUpdate();TableViewDocumentsUpdate();ContainerDetailDocumentUpdate();}";
+}
+
+VisualiserDocumentModalBox: CktlAjaxWindow {
+	id = "VisualiserDocumentModalBox";
+	title = "Visualisation du document";
+	width = 800;
+	height = 500;
+}
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+    contrat = contrat;
+    accueil = accueil;
+    consulter = consulter;
+    enregistrer = enregistrer;
+    updateContainerID = application.messageContainerID;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="ConventionDepensesRecettes.java" wocomponentcontent="false">
+
+        <binding name="contrat"/>
+        <validation message="'contrat' is a required binding.">
+            <unbound name="contrat"/>
+        </validation>
+        <binding name="avenant"/>
+        <validation message="'avenant' is a required binding.">
+            <unbound name="avenant"/>
+        </validation>
+    <binding name="applicationUser"/>
+        <validation message="'applicationUser' is a required binding.">
+            <unbound name="applicationUser"/>
+        </validation>
+    <binding name="editingContext"/>
+        <validation message="'editingContext' is a required binding.">
+            <unbound name="editingContext"/>
+        </validation>
+    </wo>
+</wodefinitions>

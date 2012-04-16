@@ -1,0 +1,194 @@
+Wrapper : Wrapper {
+	
+}
+ContainerSchemaConvention : AjaxUpdateContainer {
+	id = "ContainerSchemaConvention";
+	class = "containerSchemaConvention";
+}
+ContratTreeView : CktlAjaxContratTreeView {
+	contrat = convention;
+	avenant = avenant;
+	document = leDocumentSelectionne;
+	updateContainerID = "ContainerDetail";
+  	// onSuccessSelect = "function () {ContainerSchemaConventionUpdate();ContainerDetailUpdate();}";
+  	onSuccessSelect = "function () {ContainerMenuSchemaUpdate();}";
+  	refreshTreeView = refreshContratTreeView;
+  	// WODebug=true;
+}
+ContainerMenuSchema : AjaxUpdateContainer {
+	id = "ContainerMenuSchema";
+	class = "menuSchemaConvention";
+}
+
+ContainerDetail : AjaxUpdateContainer {
+	id = "ContainerDetail";
+	class = "conventionDetail";
+}
+
+IsAfficherDetailConvention : WOConditional {
+  condition = isAfficherDetailConvention;
+}
+
+IsAfficherDetailAvenant : WOConditional {
+  condition = isAfficherDetailAvenant;
+}
+
+IsAfficherDetailDocument : WOConditional {
+  condition = isAfficherDetailDocument;
+}
+
+ConventionDetail : DetailConvention {
+	convention = convention;
+}
+
+AvenantDetail : DetailAvenant {
+	convention = convention;
+	avenant = avenant;
+}
+
+DocumentDetail : DetailDocument {
+	convention = convention;
+	avenant = avenant;
+	avenantDocument = leDocumentSelectionne;
+}
+
+AddAvenant : CktlAjaxButton {
+	id = "AddAvenant";
+	// text = "Avenant";
+	title = "Ajouter un avenant";
+	type = "new";
+	action = doNothing;
+	// onClick = "openCAMD_AddAvenantModalBox('Ajouter un avenant');return false;";
+	disabled = isAjouterAvenantDisabled;
+	dialogIDForOpen = "AddAvenantModalBox";	
+}
+
+SupprimerConv : CktlButton {
+	id = "SupprConv";
+	title = "Supprimer la convention";
+	type = "delete";
+	action = supprimerConvention;
+	disabled = nePeutSupprimerConventionEtAvenants;
+	onClick = "return confirm('Êtes-vous sûr de vouloir supprimer cette convention ?')";
+}
+
+ValiderConv : CktlButton {
+	id = "ValiderConv";
+	title = "Valider administrativement la convention";
+	type = "validate";
+	action = validerConvention;
+	disabled = nePeutValiderConvention;
+    onClick = messageValiderConvention;
+}
+
+ValiderAvenant : CktlButton {
+	id = "ValiderAvenant";
+	title = "Valider administrativement l'avenant";
+	type = "validate";
+	action = validerAvenant;
+	disabled = nePeutValiderAvenant;
+    onClick = "return confirm('Après validation de l'avenant, les généralités ne seront plus modifiables, êtes-vous sûr de vouloir continuer ?')";
+}
+
+HLSupprimerAvenant : CktlAjaxButton {
+	onClickBefore = "confirm('Etes-vous sûr de vouloir supprimer cet avenant ?')";
+	action = supprimerUnAvenant;
+	// onFailure = "function (){ErreurContainerUpdate();}";
+	onFailure = application.onFailureMessage;
+  	onSuccess = "function () {ContainerSchemaConventionUpdate();ContainerDetailUpdate();}";
+	disabled = nePeutSupprimerAvenants;
+	title = "Supprimer l'avenant sélectionné";
+	// text = "Avenant";
+	type = "delete";
+}
+
+
+
+AddAvenantModalBox: CktlAjaxWindow {
+	id = "AddAvenantModalBox";
+	closable = true;
+	showOpener = false; 
+	title = "Ajouter un nouvel avenant";
+	linkTitle = "Ajouter un nouvel avenant";
+	action = creerUnNouvelAvenant;
+	minWidth = 800;
+	minHeight = 400;
+	onClose = annulerCreationAvenant;
+	afterHide = "function() {Cocolight_MessageContainerUpdate();ContainerSchemaConventionUpdate();ContainerDetailUpdate();}";
+}
+
+IsContratSelectionne : WOConditional {
+  condition = isContratSelectionne;
+}
+IsAvenantSelectionne : WOConditional {
+  condition = isAvenantSelectionne;
+}
+
+ImpCon : AjaxUpdateLink {
+	action = imprimerGeneralitesContrat;
+	title = "les généralités";
+	text = "les généralités";
+	dialogIDForOpen = "PrintModalBox";
+	disabled = imprimerConventionDisabled;
+	onSuccess = "function() { openCAW_PrintModalBox('Les généralités'); }";
+	onComplete = "function() { menu.hideMenu(); }";
+}
+
+ImpSuiviExec : AjaxUpdateLink {
+	action = imprimerSuiviExecution;
+	title = "le suivi d'exécution détaillé";
+	text = "le suivi d'exécution détaillé";
+	disabled = imprimerConventionDisabled;
+	onSuccess = "function() { openCAW_PrintModalBox('le suivi d\\'exécution détaillé'); }";
+    onComplete = "function() { menu.hideMenu(); }";
+}
+
+ImpSuiviComptable : AjaxUpdateLink {
+	action = imprimerSuiviComptable;
+	title = "le suivi comptable";
+	text = "le suivi comptable";
+	disabled = imprimerConventionDisabled;
+	onSuccess = "function() { openCAW_PrintModalBox('le suivi comptable'); }";
+    onComplete = "function() { menu.hideMenu(); }";
+}
+
+ImpCreditsPosParConv : AjaxUpdateLink {
+	action = imprimerCreditsPositionnesParConvention;
+	title = "les crédits positionnés par convention";
+	text = "les crédits positionnés par convention";
+	disabled = imprimerConventionDisabled;
+	onSuccess = "function() { openCAW_PrintModalBox('les crédits positionnés par convention'); }";
+    onComplete = "function() { menu.hideMenu(); }";
+}
+
+ImpCreditsPosParLigneCredit : AjaxUpdateLink {
+	action = imprimerCreditsPositionnesParLigneCredit;
+	title = "les crédits positionnés par ligne de crédits";
+	text = "les crédits positionnés par ligne de crédits";
+	disabled = imprimerConventionDisabled;
+	onSuccess = "function() { openCAW_PrintModalBox('les crédits positionnés par ligne de crédits'); }";
+    onComplete = "function() { menu.hideMenu(); }";
+}
+
+PrintModalBox: CktlAjaxWindow {
+    id = "PrintModalBox";
+    closable = true;
+    showOpener = false; 
+    title = "Imprimer la convention";
+    linkTitle = "Imprimer la convention";
+    width = 391;
+    height = 71;
+}
+
+ReportingMonitor : CktlReportingExecMonitor {
+    id = "ReportingMonitor";
+    reporter = reporter;
+    reporterProgress = reporterProgress;
+    resultFileName = reportFilename;
+    resultMimeType = "application/pdf";
+    refreshTime = 1000;
+} 
+
+SimpleMenu : CktlAjaxSimpleMenu {
+	buttonText = "Imprimer";
+}

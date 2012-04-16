@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="CktlAjaxTVDocumentCell.java" wocomponentcontent="false">
+
+        <binding name="gedDocument"/>
+        <validation message="'gedDocument' is a required binding.">
+            <unbound name="gedDocument"/>
+        </validation>
+        <binding name="famille"/>
+        <validation message="'famille' is a required binding.">
+            <unbound name="famille"/>
+        </validation>
+    </wo>
+</wodefinitions>

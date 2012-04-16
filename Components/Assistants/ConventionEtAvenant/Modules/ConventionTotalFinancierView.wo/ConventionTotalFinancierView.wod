@@ -1,0 +1,135 @@
+
+HasAvenantsValides : ERXNonZeroConditional {
+    condition = contrat.avenantsValides.count;
+}
+
+HasNoAvenantValide : ERXNonZeroConditional {
+    condition = contrat.avenantsValides.count;
+    negate = true;
+}
+
+AvenantsRep : WORepetition {
+    list = contrat.avenantsValidesSansAvenantZero;
+    item = currentAvenant;
+}
+
+MontantAvenantHT : WOTextField {
+    value = currentAvenant.avtMontantHt;
+    disabled = true;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+}
+
+MontantAvenantTTC : WOTextField {
+    value = currentAvenant.avtMontantTtc;
+    disabled = true;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+}
+
+TVAAvenant : WOTextField {
+    value = currentAvenant.tva.tvaTaux;
+    disabled = true;
+    class = "montant";
+    size = "5";
+}
+
+TVARecuperableAvt : WOCheckBox {
+    checked = currentAvenant.avtRecupTvaBoolean;
+    disabled = true;
+}
+
+MontantTotalHT : WOTextField {
+    value = contrat.montantTotalHt;
+    disabled = true;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+}
+
+MontantTotalTTC : WOTextField {
+    value = contrat.montantTotalTtc;
+    disabled = true;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+}
+
+CBTVARecuperable : WOCheckBox {
+    id = tvaRecupId;
+    checked = contrat.avenantZero.avtRecupTvaBoolean;
+}
+
+LabelAvt : WOString {
+    value = currentAvenant.avtIndex;
+}
+
+CBTVARecuperableObserver : AjaxObserveField {
+    observeFieldID = tvaRecupId;
+    action = refresh;
+    updateContainerID = updateContainerID;
+}
+MontantHTObserver : AjaxObserveField {
+    observeFieldID = montantHtId;
+    action = refresh;
+    updateContainerID = updateContainerID;
+}
+MontantHTObserver2 : AjaxObserveField {
+    observeFieldID = montantHtId;
+    action = refresh;
+    updateContainerID = updateContainerID;
+    onSuccess = "function() { ContainerTotalUpdate(); }";
+}
+TVAObserver : AjaxObserveField {
+    observeFieldID = tvaId;
+    action = refresh;
+    updateContainerID = updateContainerID;
+}
+
+TVAObserver2 : AjaxObserveField {
+    observeFieldID = tvaId;
+    action = refresh;
+    updateContainerID = updateContainerID;
+    onSuccess = "function() { ContainerTotalUpdate(); }";
+}
+
+ContainerDonneesFinancieres : AjaxUpdateContainer {
+    id = "ContainerDonneesFinancieres";
+    elementName = "tr";
+}
+
+ContainerTotal : AjaxUpdateContainer {
+    id = "ContainerTotal";
+    elementName = "tr";
+    class = "total";
+}
+
+MontantHT : WOTextField {
+    id = montantHtId;
+    value = contrat.avenantZero.avtMontantHt;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+    disabled = ^disabled;
+}
+
+TVA : WOPopUpButton {
+    id = tvaId;
+    list = application.lesTauxDeTVA;
+    item = currentTva;
+    displayString = currentTva.tvaTaux;
+    selection = contrat.avenantZero.tvaRelationship;
+    class = "alignToRight";
+    disabled = ^disabled;
+}
+
+MontantTTC : WOTextField {
+    id = montantTtcId;
+    value = contrat.avenantZero.avtMontantTtc;
+    disabled = true;
+    formatter = application.app2DecimalesFormatter;
+    class = "montant useMaxWidth";
+    size = "10";
+}

@@ -1,0 +1,81 @@
+<webobject name = "IsTrancheValide">
+  <webobject name = "ReportCreditsContainer">
+    <webobject name = "HasTrancheSource">
+      <h4>Récapitulatif tranche source <webobject name = "TrancheSource" /></h4>
+      <table class = "budget">
+        <tr>
+          <th style = "width:300px;" class = "label">Montant tranche : 
+            <br />
+            <span class = "legend">(= Ms)</span>
+          </th>
+          <td style = "width:100px;"><webobject name = "MontantTranche" /></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class = "label">Montant consomm&eacute; : 
+            <br />
+            <span class = "legend">(= &Sigma;liquid&eacute; + &Sigma;reste_eng = C)</span>
+          </th>
+          <td><webobject name = "MontantConsomme" /> </td>
+          <td>
+            <webobject name = "InclureEngageObs"> <webobject name = "InclureEngage" /> inclure engag&eacute; </webobject>
+          </td>
+        </tr>
+        <tr>
+          <th class = "label">Montant à reporter : 
+            <br />
+            <span class = "legend">(= Ms - C)</span>
+          </th>
+          <td><strong><webobject name = "MontantReportable" /></strong></td>
+          <td></td>
+        </tr>
+      </table>
+      <br />
+      <webobject name = "HasMontantReportable">
+      <webobject name = "HasTrancheDestination">
+      <h4>Reports de <webobject name = "TrancheSource" /> à <webobject name = "TrancheDestination" /> de <webobject name = "MontantReportable"></webobject>€</h4>
+        <webobject name = "Obs">
+         <div class="cktlajaxtableview" style="border:none;">
+         <div class="cktlAjaxTableView_DivHeaderAndBody">
+          <table cellspacing = "0" cellpadding = "0" border = "0">
+            <thead>
+              <tr>
+                <th>Contributeur</th>
+                <th>Montant <webobject name = "TrancheSource"></webobject></th>
+                <th>Montant <webobject name = "TrancheDestinationStr" /></th>
+              </tr>
+            </thead>
+            <tbody>
+              <webobject name = "Contributeurs">
+                <tr>
+                  <td style="text-align:left;font-weight:bold;"><webobject name = "Contributeur" /></td>
+                  <td style="text-align:right;"><webobject name = "MontantContributeurTrancheSource" /></td>
+                  <td style="text-align:right;"><webobject name = "MontantContributeurTrancheDest" /></td>
+                </tr>
+              </webobject>
+              <tr>
+                <td style="text-align:left;font-weight:bold;">Montant à soustraire / ajouter</td>
+                <td><webobject name = "RetraitSourceCont"><webobject name = "MontantTotalRetraitSource"></webobject></webobject></td>
+                <td><webobject name = "AjoutDestCont"><webobject name = "MontantTotalAjoutDest"></webobject></webobject></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class = "cktlAjaxToolbar"> <webobject name = "Reporter" /> </div>
+          </div>
+        </webobject>
+      </webobject>
+      <webobject name = "Else"> Aucune tranche destination correspondant &agrave; un exercice ouvert ou en pr&eacute;paration n'a &eacute;t&eacute; trouv&eacute;e. </webobject>
+      </webobject>
+      <webobject name = "ElseReport">
+        Il n'y a pas de montant à reporter sur cette tranche.
+      </webobject>
+    </webobject>
+  </webobject>
+  <webobject name = "ElseSource">
+    La tranche 
+    <webobject name = "TrancheSource" />
+    ne correspondant pas &agrave; un exercice restreint ou ouvert. 
+  </webobject>
+</webobject>
+<webobject name = "ElseValide"> La tranche doit &ecirc;tre valid&eacute;e avant de pouvoir effectuer un report de cr&eacute;dits. </webobject>

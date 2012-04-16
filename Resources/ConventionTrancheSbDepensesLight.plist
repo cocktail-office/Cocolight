@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+	       <dict>
+            <key>libelle</key>
+            <string>Nature</string>
+            <key>component</key>
+            <string>CktlAjaxTVStringCell</string>
+            <key>associations</key>
+            <dict>
+                <key>value</key>
+                <string>currentDepense.planco.pcoNum</string>
+                <key>length</key>
+                <string>20</string>
+                <key>valueWhenEmpty</key>
+                <string>&quot;&quot;</string>
+            </dict>
+            <key>headerCssStyle</key>
+            <string>width:25%</string>
+            <key>headerCssClass</key>
+            <string>alignToLeft nowrap</string>
+            <key>rowCssClass</key>
+            <string>alignToLeft nowrap</string>
+            <key>orderKeyPath</key>
+            <string>planco.libelleLong</string>
+        </dict>
+		<dict>
+			<key>libelle</key>
+			<string>Montant</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>currentDepense.montant</string>
+				<key>formatter</key>
+				<string>application.app2DecimalesFormatter</string>
+				<key>classCss</key>
+				<string>&quot;alignToRight nowrap&quot;</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;0,00&quot;</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToCenter nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToRight nowrap</string>
+			<key>orderKeyPath</key>
+			<string>montant</string>
+		</dict>
+	</array>
+</dict>
+</plist>

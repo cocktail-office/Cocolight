@@ -1,0 +1,139 @@
+ReportCreditsContainer : AjaxUpdateContainer {
+	id = "ReportCreditsContainer";
+}
+
+IsTrancheValide : ERXWOConditional {
+	condition = trancheSource.isValide;
+}
+
+ElseValide : ERXElse {
+	
+}
+
+HasTrancheSource : ERXWOConditional {
+	condition = trancheSource.isTrancheSourceReportCredit;
+}
+
+MontantTranche : WOString {
+	value = trancheSource.traMontant;
+	formatter = application.app2DecimalesFormatter;
+}
+
+MontantConsomme : WOString {
+	value = montantConsomme;
+	formatter = application.app2DecimalesFormatter;
+}
+
+InclureEngage : WOCheckBox {
+	checked = inclureEngage;
+}
+
+InclureEngageObs : AjaxObserveField {
+	updateContainerID = "ReportCreditsContainer";
+	elementName = "span";
+}
+
+MontantReportable : WOString {
+	value = montantReportable;
+    formatter = application.app2DecimalesFormatter;
+}
+
+TrancheDestination : WOPopUpButton {
+    list = tranchesDestination;
+	selection = selectedTrancheDest;
+    item = currentTrancheDest;
+    displayString = currentTrancheDest.libelleTranche;
+}
+
+TrancheDestinationStr : WOString {
+    value = selectedTrancheDest.libelleTranche;
+}
+
+MontantActuel : WOString {
+	value = selectedTrancheDest.traMontant;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = "0,00";
+}
+
+Reporter : CktlAjaxButton {
+	action = reporter;
+	text = "Reporter";
+	title = "Reporter";
+	type = "right_arrow";
+	enabled = canReport;
+	updateContainerID = "ReportCreditsContainer";
+}
+
+HasTrancheDestination : ERXWOConditional {
+	condition = tranchesDestination.count;
+}
+
+Else : ERXElse {
+	
+}
+
+ElseSource : ERXElse {
+	
+}
+
+TrancheSource : WOString {
+	value = trancheSource.libelleTranche;
+}
+
+Contributeurs : WORepetition {
+	list = reportInfos;
+	item = currentReportInfo;
+}
+
+Contributeur : WOString {
+	value = currentReportInfo.libelleContributeur;
+}
+
+MontantContributeurTrancheSource : WOTextField {
+	value = currentReportInfo.montantRepartSource;
+	formatter = application.app2DecimalesFormatter;
+    onFocus = "cocolight.focusedEltMemento.retainEltWithFocus(this);";
+}
+
+MontantContributeurTrancheDest : WOTextField {
+	value = currentReportInfo.montantRepartDestination;
+    formatter = application.app2DecimalesFormatter;
+    onFocus = "cocolight.focusedEltMemento.retainEltWithFocus(this);";
+}
+
+Obs : AjaxObserveField {
+	updateContainerID = "ReportCreditsContainer";
+    onComplete = "function() { cocolight.focusedEltMemento.focusRetainedElt(); }";
+}
+
+MontantTotalRetraitSource : WOString {
+	value = montantTotalRetraitSource;
+    formatter = application.app2DecimalesFormatter;
+}
+
+MontantTotalAjoutDest : WOString {
+	value = montantTotalAjoutDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+RetraitSourceCont : WOGenericContainer {
+	elementName = "span";
+	class = cssForRetraitSource;
+}
+
+AjoutDestCont : WOGenericContainer {
+	elementName = "span";
+	class = cssForAjoutDest;
+}
+
+HasMontantReportable : ERXWOConditional {
+	condition = montantReportable;
+}
+
+ElseReport : ERXElse {
+	
+}
+
+
+
+

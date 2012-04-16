@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+
+    <webobject name = "DefaultStyles" />
+    
+	  <script type = "text/javascript">
+		function openTimeoutWin() {
+			Dialog.info($('timeout').innerHTML, {windowParameters: {className:"bluelighting", title:"Délai d'attente expiré", width:450}});            
+		}
+	  </script>
+
+    <title>Gestion de conventions, contrats, projets, actions</title>
+
+  </head>
+  
+  <body onload="openTimeoutWin();">
+  <div id = "timeout" style = "display:none">
+    <div style = "clear:both"></div>
+      <center>
+<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+<tr><td class="titleInverse"> &nbsp;D&eacute;lai d'inactivit&eacute; d&eacute;pass&eacute; (Session Time-Out)</td></tr>
+<tr><td class="boxBorder">      
+  <table cellpadding="10" cellspacing="0" border="0" width="100%" class="boxContents">
+  <tr><td width="20%" align="center" valign="middle">
+    <WEBOBJECT NAME=imgOffLine></WEBOBJECT>
+  </td><td align="left" valign="middle"> Le d&eacute;lai d'inactivit&eacute; avec cette application a &eacute;t&eacute; d&eacute;pass&eacute;. Si vous souhaitez continuer travailler, il vous faudra vous connecter &agrave; la page d'accueil de l'application et commencer une nouvelle session de travail.
+  </td></tr>
+  <tr>
+    <td colspan="2">&nbsp;</td></tr>
+      
+  <tr>
+    <td>&nbsp;</td>
+    <td align="left" valign="top">
+    <table width=100% border=0 cellpadding=3 cellspacing=0>
+    <tr valign=middle>
+      <td width=1% align=right><WEBOBJECT NAME=imgItem></WEBOBJECT></td>
+      <td width=99% align=left><WEBOBJECT NAME=linkAppURL>Aller &agrave; la page d'accueil de l'application.</WEBOBJECT></td>
+    </tr>
+    <WEBOBJECT NAME=siHasSiteUrlYES>
+    <tr valign=middle>
+      <td width=1% align=right><WEBOBJECT NAME=imgItem></WEBOBJECT></td>
+      <td width=99% align=left><WEBOBJECT NAME=linkSiteURL>Allez &agrave; la page d'accueil du site Web.</WEBOBJECT></td>
+    </tr>
+    </WEBOBJECT>
+    </table>
+
+  </td></tr>     
+  </table>
+</td></tr>
+</table>
+</center>
+   </div>
+  </body>
+
+</html>

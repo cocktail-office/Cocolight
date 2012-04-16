@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="AssistantCreationConvention" wocomponentcontent="false">    <binding name="contrat"/>
+        <validation message="'contrat' is a required binding.">
+            <unbound name="contrat"/>
+        </validation>
+        <binding defaults="Number Format Strings" name="indexModuleActif"/>
+        <validation message="'indexModuleActif' is a required binding.">
+            <unbound name="indexModuleActif"/>
+        </validation>
+    <binding name="modules"/>
+        <validation message="'modules' is a required binding.">
+            <unbound name="modules"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,14 @@
+Enregistrer : CktlAjaxButton {
+    action = creerPrevisionsBudgetNatLolf;
+    type = "validate";
+    text = "Valider";
+}
+
+BudgetableTBV : CktlAjaxTableView {
+    id = "BudgetableTbv";
+    colonnes = colonnes;
+    dg = budgetablesDg;
+    item = currentBudgetable;
+    selectionMultipleEnabled = true;
+    height = "200px";
+}

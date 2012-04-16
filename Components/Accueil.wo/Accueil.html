@@ -1,0 +1,58 @@
+<webobject name = "Wrapper">
+  <table cellpadding = "0" cellspacing = "0" width = "100%" style = "background-color:white;">
+    <tbody>
+      <tr>
+        <td>
+          <br/><br/>
+          <div class = "cktl_accueil_wrapper_horizontal">
+          <webobject name = "HasDroitConsultation">
+          <h4>Accès rapide par numéro</h4>
+          <webobject name = "FormRechercher">
+          		<webobject name = "TypeContrat" />&nbsp;<webobject name = "ExerciceConvention" />-<webobject name = "NumeroConvention" />
+                <webobject name = "Rechercher" />
+          </webobject>
+          <br/>
+          <h4>Liste des conventions consultables </h4> 
+	      <webobject name = "TableViewContrats">
+	        <webobject name = "Header">
+	            <webobject name = "NumeroCol"></webobject>
+	            <webobject name = "ObjetCol"></webobject>
+	            <webobject name = "CentreGestCol"></webobject>
+	        </webobject>
+	        <webobject name = "Body">
+	            <td class="alignToLeft"><webobject name = "NumCell"></webobject></td>
+	            <td class="alignToLeft"><webobject name = "ObjetCell"></webobject></td>
+	            <td><webobject name = "CentreGestCell"></webobject></td>
+	        </webobject>
+	        <webobject name = "TableViewContratsToolBar">
+	           <webobject name = "CreerConvSimple"></webobject>
+	           <webobject name = "CreerConvRA"></webobject>
+	           <div style="float:right;">
+	           <webobject name = "RechercheAvancee"></webobject>
+	           </div>
+	        </webobject>
+	    </webobject>
+	    </webobject>
+        </div>
+        <webobject name = "HasNoDroitConsultation">
+            <div class = "ui-state-error"> Vous n'avez pas les droits des consulter de contrats </div>
+        </webobject>  
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <webobject name = "ExceptionModalDialog">
+          <webobject name = "ExceptionInfos"></webobject>
+                <p style="text-align:justify;font-size-adjust:.5;margin-left:10px;margin-right:10px;">
+                    Afin de la prendre en compte dans les plus brefs d&eacute;lais, 
+                    un mail contenant le message d'erreur sera envoy&eacute; au(x) 
+                    responsable(s) de l'application.
+                    <br/>
+          Veuillez nous excuser pour ce d&eacute;sagr&eacute;ment.     
+        </p>
+        <div style = "margin-left:200px;">
+          <webobject name = "RetourAccueil"></webobject>
+        </div>
+  </webobject>
+</webobject>

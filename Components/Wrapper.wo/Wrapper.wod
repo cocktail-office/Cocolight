@@ -1,0 +1,75 @@
+Titre : WOString {
+	value = titre;
+}
+Body : WOBody {
+	onload = onloadJS;
+	style = "direction :ltr;";
+}
+ContainerPrincipal : AjaxUpdateContainer {
+	id = "ContainerPrincipal";
+	class = "cktl_container_principal";	
+}
+BtnAccueil : WOImage {	
+	border = 0;
+	framework = "FwkCktlThemes";
+	filename = "images/24x24/001_20_24x24.png";
+}
+LinkAccueil : WOHyperlink {
+	action = accueil;
+	onClick = "if (confirm('Voulez-vous vraiment revenir sur la page d\u0027accueil ?')) {return true;} else {return false;}";
+	title = "Revenir sur l'accueil";
+}
+AjaxIndicator : AjaxBusyIndicator {
+	divID = "busy";
+}
+IndicateurBusy : WOImage {
+	border = 0;
+	filename = "images/ajax-loader_blanc.gif";
+	framework = "FwkCktlThemes";
+	style = "display:none;";
+	id = "busy";
+	width = "16px";
+	height = "16px";
+}
+BtnQuitter : WOImage {	
+	border = 0;
+	filename = "images/24x24/logout_24x24.png";
+	framework = "FwkCktlThemes";
+}
+LinkQuitter : WOHyperlink {
+	action = quitter;
+	onClick = "if (confirm('Voulez-vous vraiment quitter cette application ?')) {return true;} else {return false;}";
+}
+Contenu : WOComponentContent {
+	
+}
+Copyright : WOString {
+	value = copyright;
+	escapeHTML = false;
+}
+Version : WOString {
+	value = version;
+	escapeHTML = false;
+}
+ServerId : WOString {
+	value = serverId;
+	escapeHTML = false;
+}
+
+ContainerMessage : CktlAjaxUiMessageContainer {
+	id = application.messageContainerID;
+}
+
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}
+BusyImage : WOImage {
+  framework = "Ajax";
+  filename = "wait30.gif";
+}
+WOLToolBar: WOLToolBar {
+}
+
+TestNavigateur : WOConditional {
+	condition = session.browser.iE;
+}

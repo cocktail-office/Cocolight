@@ -1,0 +1,148 @@
+.cadre {
+	border: 1px solid #4E80C0;
+}
+
+.box {
+	border: 1px solid #4E80C0;
+}
+
+.boxTitre {
+	background-color: #E4F1FF;
+}
+
+.subBox {
+	background-color: #FFFFFF;
+	border: 1px #E4F1FF solid;
+}
+
+.subBoxTitre {
+	background-color: #E4F1FF;
+}
+
+
+
+.blocInfo {
+	background-color: #fbffc0;
+}
+
+.blocWarning {
+	background-color: #ebe18d;
+}
+
+
+
+.blocInstruction {
+	background-color: #ffd7bf;
+}
+
+
+.blocErreur {
+	background-color: #FF0000;
+}
+
+div#ContainerPartenaireGestionContent {
+	font-size: 11px;
+	text-align: left;
+}
+div#ContainerPartenaireGestionContent table {
+	font-size: 12px;
+	text-align: left;
+}
+.cktlAjaxToolbar {
+  background: #E4F1FF; 
+	border: 1px solid #4E80C0;
+}
+
+.btRechercher {
+	width: 32px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid #555555;
+	background-color: #EEEEEE;
+	padding: 4px;
+}
+
+ul.tree {
+	margin: 0px;
+	padding: 0px;
+}
+ul.tree ul {
+	margin: 0px;
+	padding: 0px 0px 0px 19px;
+}
+ul.tree li {
+	list-style: none;
+}
+ul.tree li a {
+	text-decoration: none;
+	font-family: "Verdana";
+}
+ul.tree img.nodeControl {
+	border: none;
+	vertical-align: middle;
+}
+
+.tree {
+  	background-color: #E4F1FF;
+	border: 1px solid #4E80C0;
+    overflow: hidden;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.listeStructOuInd {
+	border: 1px solid #4E80C0;
+}
+.listeStructOuInd>div:first-child {
+  border: 1px solid #4E80C0;
+}
+
+.listeStructOuInd table {
+  border: 1px solid #4E80C0;
+}
+.listeStructOuInd table thead tr th {
+  border-bottom: 1px solid #555555;
+  border-left: 1px solid #DBDBDB;
+  border-right:1px solid #A3A3A3;
+  background-color: #E4F1FF;
+  text-align: center;
+}
+
+.listeStructOuInd table tbody tr:hover {
+	color: rgb(188, 37, 45);
+	/*text-shadow: rgb(203, 212, 75) 0em 0em 0em;*/
+	background-color: #E4F1FF;
+}
+
+.listeStructOuInd table tbody tr.selected {
+  background-color: #add7ff;
+}
+
+.listeStructOuInd table tbody tr td {
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #D9D9D9;
+}
+
+.listeStructOuInd table tfoot tr th {
+  border-top: 1px solid #555555;
+  border-left: 1px solid #DBDBDB;
+  border-right:1px solid #A3A3A3;
+  background-color: #EFEFEF;
+}
+
+.listeStructOuInd table.navigation  {
+  border: none;
+  font-size: 8pt;
+  width:100%;
+}
+.listeStructOuInd table.navigation td {
+  background-color: #C6CACF;
+  font-size: 8pt;
+}
+.listeStructOuInd table.navigation tfoot td {
+  border-top: 1px solid #555555;
+}
+.listeStructOuInd table.navigation thead td {
+  border-bottom: 1px solid #555555;
+}
+

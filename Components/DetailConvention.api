@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="DetailConvention" wocomponentcontent="false">    <binding name="convention"/>
+        <validation message="'convention' is a required binding.">
+            <unbound name="convention"/>
+        </validation>
+    
+        
+    
+    </wo>
+</wodefinitions>

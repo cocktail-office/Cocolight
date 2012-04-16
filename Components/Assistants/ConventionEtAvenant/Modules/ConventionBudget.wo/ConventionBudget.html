@@ -1,0 +1,85 @@
+<webobject name = "HasTranches">
+<webobject name = "ContainerAvenantBudget">
+  <webobject name = "FormAvenantBudget">
+      <h4>Tranches annuelles</h4>
+    <webobject name = "TableViewTranchesAnnuelles"></webobject>
+    <webobject name = "NoExerciceOuvertOuEnPreparation">
+        L'exercice <webobject name = "Exercice"></webobject> n'est pas encore ouvert ou en préparation
+    </webobject>
+    <webobject name = "ExerciceOuvertOuEnPreparation">
+    <webobject name = "HasNoRecDep">Aucune recettes ou dépenses, veuillez renseigner des dépenses et recettes</webobject>
+    <webobject name = "HasRecDep">    
+    <h4>Prévisions pour l'exercice <webobject name = "Exercice"></webobject></h4>
+    <webobject name = "TableViewPrevisions">
+        <webobject name = "Toolbar">
+            <webobject name = "OpenAjouterPrev"></webobject>
+            <webobject name = "SupprimerPrev"></webobject>
+        </webobject>
+    </webobject>
+    <webobject name = "HasPrevisionSelected">
+  <webobject name = "ContainerBudgetDetail">
+  <webobject name = "TabsNatureDest">
+    <webobject name = "TabDepenses">
+        <div class="depenses">
+        <webobject name = "BudgetDepenses"></webobject>
+        </div>
+    </webobject>
+    <webobject name = "TabRecettes">
+        <div class="recettes">
+        <webobject name = "BudgetRecettes"></webobject>
+        </div>
+    </webobject>
+  </webobject>
+  </webobject>
+  
+
+    <webobject name = "HasProposition">
+        Etat de proposition : <webobject name = "EtatProposition"></webobject>
+    </webobject>
+  
+        <webobject name = "PrevisionRejetee">
+            Cette prévision a été rejetée avec le commentaire : <webobject name = "PrevCommentaire"></webobject>
+        </webobject>
+    <webobject name = "PrevisionEnAttente">
+        <webobject name = "ProposerPrevision"></webobject>
+    </webobject>
+    <webobject name = "PrevisionAValider">
+        <webobject name = "HasDroitValidationPrevision">
+           <br/>
+           Commentaires : <br/>
+            <webobject name = "CommentairePrevision"></webobject><br/>
+            <webobject name = "RejeterPrevision"></webobject>
+            <webobject name = "ValiderPrevision"></webobject>
+        </webobject>
+    </webobject>
+    <webobject name = "PrevisionValide">
+       <webobject name = "HasDroitProposition">
+           <webobject name = "NoPropositionAVAlider">
+               <webobject name = "MessageRA">
+                La demande de prise en charge doit être validée avant de pouvoir soumettre une proposition
+                budgétaire
+               </webobject>
+               <webobject name = "CreerProposition"></webobject>
+           </webobject>
+       </webobject>
+    </webobject>
+    <webobject name = "HasPropositionValide">
+    <div class = "positions">
+        <webobject name = "GestionBudgetPositions"></webobject>
+    </div>
+    </webobject>
+  
+  </webobject>
+  </webobject>
+  </webobject>
+  
+  </webobject>
+  <webobject name = "AjoutPrevModal">
+    <webobject name = "AjoutPrevision"></webobject>
+  </webobject>
+  
+</webobject>
+</webobject>
+<webobject name = "HasNoTranche">
+    Aucune tranche encore enregistrée : veuillez renseigner un montant et enregistrer.
+</webobject>

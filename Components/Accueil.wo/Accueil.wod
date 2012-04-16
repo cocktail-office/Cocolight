@@ -1,0 +1,197 @@
+Wrapper : Wrapper {
+	onloadJS = onloadJS;
+}
+IndicateurBusy : WOImage {
+	border = 0;
+	framework = "FwkCktlThemes";
+	filename = "images/ajax-loader_bleu.gif";
+	style = "display:none;vertical-align:top;";
+	id = "busyLocal";
+}
+IndicateurBusy1 : WOImage {
+	border = 0;
+	framework = "FwkCktlThemes";
+	filename = "images/ajax-loader_bleu.gif";
+	style = "display:none;vertical-align:top;";
+	id = "busyLocal1";
+}
+
+CreerUneConvention : WOHyperlink {
+	action = creerUneConvention;
+	onclick = "$('busyLocal').show();";
+	disabled = isCreerUneConventionDisabled;
+}
+
+CreerUneConventionRessourceAffectee : WOHyperlink {
+	action = creerUneConventionRA;
+	onclick = "$('busyLocal').show();";
+	disabled = isCreerUneConventionDisabled;
+}
+
+RechercherUneConvention : WOHyperlink {
+	action = rechercherUneConvention;
+}
+FormRechercher : WOForm {
+	id = "FormRechercher";
+	action = rechercherUneConvention;
+	// onsubmit = "$('busyLocal1').show();";
+}
+
+DefaultSubmitButton : AjaxDefaultSubmitButton {
+	action = rechercherUneConvention;
+	onClick = "$('busyLocal1').show()";	
+	asynchronous = false;
+}
+FormRechercherObserver : AjaxObserveField {
+	action = submit;
+	
+}
+TypeContrat : WOPopUpButton {
+	list = lesTypesClassification;
+	item = unTypeClassification;
+	selection = leTypeClassification;
+	displayString = unTypeClassification.tccLibelle;
+}
+ExerciceConvention : WOTextField {
+  value = exerciceConvention;
+  size = "4";
+  numberformat = "0000";
+  style = "text-align:center;";
+}
+
+NumeroConvention : WOTextField {
+  value = numeroConvention;
+  size = "4";
+  numberformat = "#0";
+  style = "text-align:center;";
+}
+
+Rechercher : CktlSubmitButton {
+	action = rechercherUneConvention;
+	type = "find";
+	title = "Rechercher une convention par son numéro";
+	// disabled = isRechercherDisabled;
+}
+
+ExceptionModalDialog: CktlAjaxWindow {
+	id = "ExceptionModalDialog";
+	title = "Une erreur inattendue est survenue";
+	minWidth = 500;
+	// height = 200;
+	resizable = true;
+	minimizable = false;
+	closable = false;
+	maximizable = false;
+	draggable = true;
+	centerVertically = true;
+	open = isOpenFenetreException;
+	showOpener = false;
+}
+
+HasDroitCreation : WOConditional {
+	condition = session.applicationUser.hasDroitCreationContratsEtAvenants;
+}
+
+HasNoDroitCreation : WOConditional {
+	condition = session.applicationUser.hasDroitCreationContratsEtAvenants;
+	negate = true;
+}
+
+HasDroitRecherche : WOConditional {
+	condition = session.applicationUser.hasDroitRechercheDetailleeContratsEtAvenants;
+}
+
+HasDroitConsultation : WOConditional {
+	condition = session.applicationUser.hasDroitConsultationContratsEtAvenants;
+}
+
+HasNoDroitConsultation : WOConditional {
+	condition = session.applicationUser.hasDroitConsultationContratsEtAvenants;
+	negate = true;
+}
+
+RetourAccueil : CktlButton {
+    action = retourAccueil;
+    text = "Fermer";
+    type = "cancel";
+    target = "_top";
+}
+
+ExceptionInfos : WOText {
+    value = session.generalErrorMessage; 
+    style = "width:494px;";
+    rows = "8";
+}
+
+TableViewContrats : CktlAjaxSimpleTableView {
+    id = "TableViewContrats";
+    displayGroup = dgContrats;
+    item = currentContrat;
+    height = "300px";
+    cssClassForTr = cssClassForCurrentContrat;
+    showToolbar = true;
+    onSelect = consulterContrat;
+    triMultiColonneEnabled = true;
+}
+
+NumeroCol : CktlAjaxSimpleTableViewColumn {
+    label = "Numéro";
+    sortKeypath = "CONORDRE";
+    width = "30%";
+}
+
+ObjetCol : CktlAjaxSimpleTableViewColumn {
+    label = "Objet";
+    sortKeypath = "OBJET";
+    width = "40%";
+}
+
+CentreGestCol : CktlAjaxSimpleTableViewColumn {
+    label = "Centre gestionnaire";
+    sortKeypath = "CONCR";
+    width = "30%";
+}
+
+Header : CktlAjaxSimpleTableViewHeader {
+    
+}
+
+Body : CktlAjaxSimpleTableViewBody {
+    
+}
+
+NumCell : WOString {
+    value = currentContrat.NUMERO; // VALID
+}
+
+ObjetCell : WOString {
+    value = currentContrat.OBJET; // VALID
+}
+
+CentreGestCell : WOString {
+    value = currentContrat.CONCR; // VALID   
+}
+
+TableViewContratsToolBar : CktlAjaxSimpleTableViewToolbar {
+}
+
+CreerConvSimple : CktlButton {
+    action = creerUneConvention;
+    disabled = isCreerUneConventionDisabled;
+    text = "Créer une convention simple";
+    type = "add";
+}
+
+CreerConvRA : CktlButton {
+    action = creerUneConventionRA;
+    disabled = isCreerUneConventionDisabled;
+    text = "Créer une convention RA";
+    type = "add";
+}
+
+RechercheAvancee : CktlButton {
+    action = afficherRechercheAvancee;
+    enabled = session.applicationUser.hasDroitRechercheDetailleeContratsEtAvenants;
+    text = "Recherche avancée";
+    type = "find";
+}

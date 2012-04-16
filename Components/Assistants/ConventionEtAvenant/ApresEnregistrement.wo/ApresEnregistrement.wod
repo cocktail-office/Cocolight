@@ -1,0 +1,16 @@
+CssCocolight : ERXStyleSheet {
+	filename = "styles/cocolight.css";
+	framework = "app";
+}
+Numero : WOString {
+	value = contrat.numeroContrat;
+}
+Consulter : WOHyperlink {
+	action = consulter;
+	target = "_top";
+}
+Accueil : WOHyperlink {
+	action = accueil;
+	// onclick = "parent.Windows.closeAll();";
+	target = "_top";
+}

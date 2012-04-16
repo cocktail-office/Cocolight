@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ToolTip.java" wocomponentcontent="false">
+
+        <binding name="htmlText"/>
+        <validation message="'htmlText' is a required binding.">
+            <unbound name="htmlText"/>
+        </validation>
+    </wo>
+</wodefinitions>

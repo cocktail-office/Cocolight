@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CktlAjaxRepartCanal.java" wocomponentcontent="false">
+
+        <binding name="formName"/>
+    <binding name="newRepart"/>
+        <validation message="'newRepart' is a required binding.">
+            <unbound name="newRepart"/>
+        </validation>
+    <binding name="depenseOuRecette"/>
+    <validation message="'depenseOuRecette' is a required binding.">
+            <unbound name="depenseOuRecette"/>
+        </validation>
+    </wo>
+</wodefinitions>

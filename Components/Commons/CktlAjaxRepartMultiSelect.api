@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CktlAjaxLolfMultiSelect.java" wocomponentcontent="false">
+
+        
+        
+    <binding name="formName"/>
+    
+    
+        
+    
+    <binding name="montantTotal"/>
+        <validation message="'montantTotal' is a required binding.">
+            <unbound name="montantTotal"/>
+        </validation>
+    
+    
+    <binding name="newRepart"/>
+        <validation message="'newRepart' is a required binding.">
+            <unbound name="newRepart"/>
+        </validation>
+    <binding name="eoPere"/>
+        <validation message="'eoPere' is a required binding.">
+            <unbound name="eoPere"/>
+        </validation>
+    
+    <binding name="toRepartKey"/>
+        <validation message="'toRepartKey' is a required binding.">
+            <unbound name="toRepartKey"/>
+        </validation>
+    
+    
+    
+    <binding name="nomenclatureHelper"/>
+        <validation message="'nomenclatureAssistant' is a required binding.">
+            <unbound name="nomenclatureHelper"/>
+        </validation>
+    </wo>
+</wodefinitions>

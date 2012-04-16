@@ -1,0 +1,68 @@
+ContainerContratTreeView : AjaxUpdateContainer {
+	id = componentId;	
+}
+ContainerAjaxTree : AjaxUpdateContainer {
+	id = containerAjaxTreeID;	
+}
+AjaxTree : CktlAjaxTree {	
+	id = unAjaxTreeID;
+	class = "tree";
+	root = ctrl.rootNode;
+	item = ctrl.node;
+	delegate = ctrl.delegate;
+	allExpanded = false;
+	showRoot = true;
+	rootExpanded = true;
+	treeModel = ctrl.myTreeModel;
+	cache = false;
+}
+
+IsContrat : WOConditional {
+  condition = ctrl.node.isContrat; 
+}
+ContratLink : CktlAjaxUpdateLink {
+	string = ctrl.node.libelle;
+	action = ctrl.onSelection;
+	onSuccess = onSuccessSelect;
+	updateContainerID = ^updateContainerID;
+	class = classContratLink;
+	onClick = onClickLinkSelection;
+}
+IsAvenant : WOConditional {
+  condition = ctrl.node.isAvenant; 
+}
+AvenantLink :  CktlAjaxUpdateLink {
+	string = ctrl.node.libelle;
+	action = ctrl.onSelection;
+	onSuccess = onSuccessSelect;
+	updateContainerID = ^updateContainerID;
+	onClick = onClickLinkSelection;
+	class = classAvenantLink;
+}
+
+IsDocument : WOConditional {
+  condition = ctrl.node.isDocument; 
+}
+DocumentLink : CktlAjaxUpdateLink {
+	string = ctrl.node.libelle;
+	action = ctrl.onSelection;
+	onSuccess = onSuccessSelect;
+	updateContainerID = ^updateContainerID;
+	class = classDocumentLink;
+	onClick = onClickLinkSelection;
+}
+
+IsRepertoire : WOConditional {
+  condition = ctrl.node.isRepertoire; 
+}
+LabelRepertoire : WOString {
+	value = ctrl.node.libelle;
+}
+
+IsVide : WOConditional {
+  condition = ctrl.node.isVide; 
+}
+Label : WOString {
+	value = ctrl.node.libelle;
+}
+

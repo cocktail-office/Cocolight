@@ -1,0 +1,108 @@
+<webobject name = "ContainerGeneralites">
+<center>
+<webobject name = "FormGeneralites">
+
+<table width="100%" cellpadding = "0" cellspacing = "0">
+  <tbody>
+    <tr><td>
+			  <table border="0" width="100%">
+			    <tbody>
+		      <tr>
+		        <td colspan="4"><span><h4>Gestionnaires</h4></span></td>
+		      </tr>
+			  <webobject name = "TRGestionnaire">
+		        <td width="50%" nowrap><label for="CentreGestionnaire" class="etiquette obligatoire">Service</label><webobject name = "CentreGestionnaire"/> <webobject name = "CentreGestionnairePersonneSelect"/><webobject name = "ObserverCentreGestionnaire"/></td>
+		        <td width="50%" nowrap><label for="EtablissementGestionnaire" class="etiquette obligatoire">Etablissement</label><webobject name = "EtablissementGestionnaire"/><webobject name = "EtablissementGestionnairePersonneSelect"/><webobject name = "ObserverEtablissementGestionnaire"/></td>
+			  </webobject>
+			  </tbody>
+			  </table>
+			  <table border="0" width="100%">
+			    <tbody>
+		      <tr>
+		        <td colspan="5"><span><h4>Informations administratives</h4></span></td>
+		      </tr>
+			      <webobject name = "TRModeDeGestion">
+			        <td width="20%" class="alignToRight nowrap"><label for="ModeDeGestion" class="etiquette obligatoire">Mode de gestion</label></td>
+			        <td ><webobject name = "ModeDeGestion"/><webobject name = "ModeDeGestionObserver"/></td>
+			        <td width="15%" nowrap><webobject name = "CBConventionLucrative"/><label for="CBConventionLucrative" class="etiquette">Lucrative</label><webobject name = "CBConventionLucrativeObserver"/></td>
+			        <td width="20%" nowrap><webobject name = "CBCreditsLimitatifs"/><label for="CBCreditsLimitatifs" class="etiquette">A cr&eacute;dits limitatifs</label><webobject name = "CBCreditsLimitatifsObserver"/></td>
+			        <td width="15%" ><webobject name = "CBReconductible"/><label for="CBReconductible" class="etiquette">Reconductible</label><webobject name = "CBReconductibleObserver"/></td>
+			      </webobject>
+			
+			      <tr>
+			        <td class="alignToRight"><label for="Nature" class="etiquette obligatoire">Nature</label></td>
+			        <td colspan="4" valign = "middle"><webobject name = "Nature"/></td>
+			      </tr>
+			
+			      <tr>
+			        <td valign = "top" class="alignToRight"><label for="Objet" class="etiquette obligatoire">Objet</label></td>
+			        <td colspan="4" style = "padding-right: 10px;"><webobject name = "ObjetConvention"/><webobject name = "ObjetConventionObserver"/></td>
+			      </tr>
+
+			      <tr>
+			        <td width="20%" class="alignToRight nowrap"><label for="ReferenceExterne" class="etiquette">R&eacute;f. documentaire</label></td>
+			        <td ><webobject name = "ReferenceExterne"/><webobject name = "ReferenceExterneObserver"/></td>
+			        <td class="alignToRight nowrap"><label for="TypeOptionnel" class="etiquette">Type</label></td>
+			        <td><webobject name = "TypeOptionnel"/><webobject name = "TypeOptionnelObserver"/></td>
+			      </tr>
+			
+			      <tr>
+			        <td width="20%" class="alignToRight nowrap"><label for="DomaineScientifique" class="etiquette">Domaine Scientifique</label></td>
+			        <td><webobject name = "DomaineScientifique"/><webobject name = "DomaineScientifiqueObserver"/></td>
+			        <td class="alignToRight useMinWidth"><label for="Discipline" class="etiquette">Discipline</label></td>
+			        <td colspan="2"><webobject name = "Discipline"/><webobject name = "DisciplineObserver"/></td>
+			      </tr>
+
+			      <tr>
+			        <td class="alignToRight"><label for="CodeNaf_field" class="etiquette">Activit&eacute; concern&eacute;e</label></td>
+			        <td colspan="4"><webobject name = "CodeNaf"/></td>
+			      </tr>
+			
+			  </tbody>
+			  </table>
+      </td>
+    </tr>
+    <tr><td>  
+		    <table border="0" width="100%" class = "finances">
+		      <tbody>
+		      <tr>
+		        <td colspan="6"><span><h4>Dur&eacute;e de l&#x00027;acte partenarial</h4></span></td>
+		      </tr>
+		      <webobject name = "TRDatesActePartenarial">
+		        <td width="20%" class="alignToRight" nowrap><label for="DateDebut" class="etiquette obligatoire">D&eacute;but</label></td>
+		        <td><webobject name = "DateDebut"/></td>
+		        <td nowrap class="alignToRight" ><label for="DateFin" class="etiquette obligatoire">Fin</label></td>
+		        <td nowrap ><webobject name = "DateFin"/></td>
+		        <td nowrap class="alignToRight" ><label for="Duree" class="etiquette obligatoire">Dur&eacute;e</label></td>
+		        <webobject name = "TDDureeActePartenarial"><webobject name = "Duree"></webobject> jours<webobject name = "DureeObserver"></webobject></webobject>
+		      </webobject>
+		      <tr>
+		          <td class="alignToRight"><label for="DateSignature" class="etiquette">Date signature</label></td>
+		          <td><webobject name = "DateSignature"></webobject><webobject name = "DateSAUC"></webobject></td>
+		          <td colspan = "3"></td>
+		      </tr>
+		      <tr>
+		        <td colspan="6"><span><h4>Donn&eacute;es financi&egrave;res</h4></span></td>
+		      </tr>
+		      <webobject name = "TrTotalFinancier"></webobject>
+		      <tr>
+		        <td colspan="6"><span><h4>Autres informations</h4></span></td>
+		      </tr>
+		
+		      <tr>
+		        <td valign = "top" class="alignToRight"><label for="Observations" class="etiquette">Observations</label></td>
+		        <td colspan="5" style = "padding-right: 10px;"><webobject name = "ObservationsConvention"/><webobject name = "ObservationsConventionObserver"/></td>
+		      </tr>
+			    </tbody>
+			  </table>
+    </td></tr>
+  </tbody>
+  </table>
+  
+  <webobject name = "IsNotModeAssistant">
+     <webobject name = "Enregistrement"></webobject>
+  </webobject>
+  
+</webobject>
+</center>
+</webobject>

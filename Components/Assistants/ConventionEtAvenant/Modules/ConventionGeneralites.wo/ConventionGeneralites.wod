@@ -1,0 +1,294 @@
+ContainerGeneralites : AjaxUpdateContainer {
+	id = "ContainerGeneralites";
+	class = classeCss;
+	style = styleCss;
+}
+FormGeneralites : ERXWOForm {
+	
+  id = "FormGeneralites";
+  name="FormGeneralitesName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+TRGestionnaire : AjaxUpdateContainer {
+	id = "TRGestionnaire";
+	elementName = "tr";
+}
+EtablissementGestionnaire : WOPopUpButton {
+	disabled = disabled;
+	id = "EtablissementGestionnaire";
+	list = ctrl.lesEtablissements;
+	item = ctrl.unEtablissement;
+	selection = ctrl.etablissementGestionnaire;
+	// selection = contrat.etablissement;
+	displayString = ctrl.unEtablissement.llStructure;
+	style = "width:215px;";
+}
+EtablissementGestionnairePersonneSelect : CktlAjaxPersonneSelect {
+	id = "EtablissementGestionnairePersonneSelect";
+	showField = false;
+	editingContext = editingContext;
+	listViewHeight = 500;
+	listViewWidth = 640;
+	listViewTitle = "Recherchez et selectionnez un établissement gestionnaire";
+	selection = ctrl.etablissementGestionnaire;
+	utilisateurPersId = utilisateurPersId;
+	showIndividus = false;
+	showStructures = true;	
+	updateContainerID = "TRGestionnaire";
+	disabled = disabled;
+}
+ObserverEtablissementGestionnaire : AjaxObserveField {
+	fullSubmit = false;
+	observeFieldID = "EtablissementGestionnaire";
+	action = submit;
+	onFailure = application.onFailureMessage;
+	onComplete = "function() {TRGestionnaireUpdate();}";
+	// onComplete = "function() {ContainerPartenairesEtContactsUpdate();ContainerGestionnaireUpdate();ContainerDetailPartenaireUpdate();ContainerAssistantMenuUpdate();}";
+}
+
+CentreGestionnaire : WOPopUpButton {
+	disabled = disabled;
+	id = "CentreGestionnaire";
+	list = ctrl.lesCentres;
+	item = ctrl.unCentre;
+	//selection = contrat.centreResponsabilite;
+	selection = ctrl.leCentreGestionnaire;
+	displayString = ctrl.unCentre.libelleForGroupe;
+	style = "width:280px;";
+}
+CentreGestionnairePersonneSelect : CktlAjaxPersonneSelect {
+	id = "CentreGestionnairePersonneSelect";
+	showField = false;
+	editingContext = editingContext;
+	listViewHeight = 500;
+	listViewWidth = 640;
+	listViewTitle = "Recherchez et selectionnez un service gestionnaire";
+	selection = ctrl.leCentreGestionnaire;
+	utilisateurPersId = applicationUser.persId;
+	showIndividus = false;
+	showStructures = true;		
+	updateContainerID = "TRGestionnaire";
+	disabled = disabled;
+}
+
+ObserverCentreGestionnaire : AjaxObserveField {
+	fullSubmit = false;
+	observeFieldID = "CentreGestionnaire";
+	action = submit;
+	onFailure = application.onFailureMessage;
+	onComplete = "function() {TRGestionnaireUpdate();}";
+	// onComplete = "function() {TableViewPartenairesUpdate();ContainerAssistantMenuUpdate();}";
+}
+TRModeDeGestion : AjaxUpdateContainer {
+	id = "TRModeDeGestion";
+	elementName = "tr";
+}
+ModeDeGestion : WOPopUpButton {
+	id = "ModeDeGestion";
+	list = ctrl.lesModesDeGestion;
+	item = ctrl.unModeDeGestion;
+	selection = contrat.avenantZero.modeGestionRelationship;
+	displayString = ctrl.unModeDeGestion.mgLibelle;
+	class = "useMaxWidth";
+	disabled = disabled;
+}
+ModeDeGestionObserver : AjaxObserveField {
+	observeFieldID = "ModeDeGestion";
+	action = submit;
+	updateContainerID = "TRModeDeGestion";
+}
+CBConventionLucrative : WOCheckBox {
+	id = "CBConventionLucrative";
+	checked = contrat.avenantZero.avtLucrativiteBoolean;
+	disabled = isCBLucrativeDisabled;
+}
+CBConventionLucrativeObserver : AjaxObserveField {
+	observeFieldID = "CBConventionLucrative";
+	action = submit;
+}
+CBCreditsLimitatifs : WOCheckBox {
+	id = "CBCreditsLimitatifs";
+	checked = contrat.avenantZero.avtLimitatifBoolean;
+	disabled = isCBCreditsLimitatifsDisabled;
+}
+CBCreditsLimitatifsObserver : AjaxObserveField {
+	observeFieldID = "CBCreditsLimitatifs";
+	action = submit;
+}
+CBReconductible : WOCheckBox {
+	id = "CBReconductible";
+	checked = contrat.reconductible;
+	disabled = disabled;
+}
+TypeOptionnel : WOPopUpButton {
+	id = "TypeOptionnel";
+	list = ctrl.lesTypesOptionnels;
+	item = ctrl.unTypeOptionnel;
+	selection = contrat.avenantZero.typeOptionnel;
+	displayString = ctrl.unTypeOptionnelLibelle;
+	class = "useMaxWidth";
+	noSelectionString = "Aucun";
+	disabled = isTypeOptionnelDisabled;
+}
+TypeOptionnelObserver : AjaxObserveField {
+	observeFieldID = "TypeOptionnel";
+	action = submit;
+}
+
+Nature : CktlAjaxNatureContratSelect {
+	id = "Nature";
+	value = contrat.typeContrat.tyconLibelle;
+	selection = contrat.typeContrat;
+	textFieldSize = 68;
+	treeViewTitle = "Sélectionner une nature";
+	treeViewWidth = 400;
+	treeViewHeight = 300;	
+	disabled = disabled;
+}
+CodeNaf : CktlAjaxAutoComplete {
+	id = "CodeNaf";
+	name="FNaf";
+	autoSelect = true;
+	list = ctrl.filteredNaf;
+	value = ctrl.filtNaf;
+	displayString = ctrl.unNaf.cNafEtLib;
+	item = ctrl.unNaf;
+	class = "autocompletefield";
+	selection = ctrl.codeNafSelectionne;
+	afterUpdateElement = "cocolight.getSelectionId";	
+	minChars = 3;
+	disabled = disabled;
+}
+
+ReferenceExterne : WOTextField {
+  id = "ReferenceExterne";
+  value = contrat.conReferenceExterne;
+  class = "useMaxWidth";
+  disabled = disabled;
+}
+ReferenceExterneObserver : AjaxObserveField {
+	observeFieldID = "ReferenceExterne";
+	action = submit;
+}
+DomaineScientifique : WOPopUpButton {
+	id = "DomaineScientifique";
+	list = ctrl.domainesScientifiques;
+	item = ctrl.currentDomaineScientifique;
+	selection = contrat.avenantZero.domaineScientifique;
+	displayString = ctrl.currentDomaineScientifique.dsCodePlusLibelle;
+	class = "useMaxWidth";
+	noSelectionString = "- Aucun -";
+	disabled = disabled;
+}
+DomaineScientifiqueObserver : AjaxObserveField {
+	observeFieldID = "DomaineScientifique";
+	action = submit;
+}
+Discipline : WOPopUpButton {
+	id = "Discipline";
+	list = ctrl.lesDisciplines;
+	item = ctrl.uneDiscipline;
+	selection = contrat.avenantZero.discipline;
+	displayString = ctrl.uneDiscipline.discLibelleLong;
+	noSelectionString = "- Aucune -";
+	disabled = disabled;
+}
+DisciplineObserver : AjaxObserveField {
+	observeFieldID = "Discipline";
+	action = submit;
+}
+
+ObjetConvention : WOText {
+	id = "ObjetConvention";
+  	value = contrat.conObjet;
+  	rows = "2";  	
+  	style = "width:100%;";
+  	disabled = disabled;
+}
+ObjetConventionObserver : AjaxObserveField {
+	observeFieldID = "ObjetConvention";
+	action = submit;
+}
+
+
+TRDatesActePartenarial : AjaxUpdateContainer {
+	id = "TRDatesActePartenarial";
+	elementName = "tr";
+}
+DateDebut : CktlAjaxDatePicker {
+	id = "DateDebut";
+	dateValue = contratDateDebut;
+	disabled = disabled;
+	updateContainerID = "TDDureeActePartenarial";
+}
+DateFin : CktlAjaxDatePicker {
+	id = "DateFin";
+	dateValue = contratDateFin;
+	disabled = disabled;
+	updateContainerID = "TDDureeActePartenarial";
+}
+DateSignature : CktlAjaxDatePicker {
+	id = "DateSignature";
+	dateValue = contrat.avenantZero.avtDateSignature;
+	disabled = disabled;
+	updateContainerID = "DateSignatureAUC";
+}
+
+DateSAUC : AjaxUpdateContainer {
+	id = "DateSignatureAUC";
+}
+
+TDDureeActePartenarial : AjaxUpdateContainer {
+	id = "TDDureeActePartenarial";
+	elementName = "td";
+}
+
+Duree : WOTextField {
+	id = "Duree";
+	numberformat = "#";
+	value = contrat.conDuree;
+	size = "4";
+	class = "alignToRight";
+	disabled = disabled;
+}
+DureeObserver : AjaxObserveField {
+	updateContainerID = "TRDatesActePartenarial";
+	observeFieldID ="Duree";
+	action = contrat.updateDateFin;
+}
+
+ObservationsConvention : WOText {
+	id = "ObservationsConvention";
+  	value = contrat.conObservations;
+  	rows = "2";  	
+  	style = "width:100%;";
+  	disabled = disabled;
+}
+ObservationsConventionObserver : AjaxObserveField {
+	observeFieldID = "ObservationsConvention";
+	action = submit;
+}
+
+CBReconductibleObserver : AjaxObserveField {
+	observeFieldID = "CBReconductible";
+	action = submit;
+}
+
+TrTotalFinancier : ConventionTotalFinancierView {
+	contrat = contrat;
+	disabled = disabled;
+}
+
+IsNotModeAssistant : WOConditional {
+	condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+	contrat = contrat;
+	accueil = accueil;
+	consulter = consulter;
+	enregistrer = enregistrer;
+	updateContainerID = application.messageContainerID;
+}

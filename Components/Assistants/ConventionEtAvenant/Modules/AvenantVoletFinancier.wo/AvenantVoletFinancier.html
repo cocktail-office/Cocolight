@@ -1,0 +1,137 @@
+<webobject name = "ContainerAvenantVoletFinancier">
+  <webobject name = "FormAvenantVoletFinancier">
+    <webobject name = "ContainerTranches">
+    <table width = "100%" cellpadding = "0" cellspacing = "0">
+      <tbody>
+        <tr>
+          <td>
+            <table border = "0" width = "100%">
+              <tbody>
+                <tr>
+                  <td colspan = "6">
+                    <span>
+                      <h4>Donn&eacute;es financi&egrave;res</h4>
+                    </span>
+                  </td>
+                </tr>
+                <webobject name = "TRModeDeGestion">
+                  <td width = "16%" class = "alignToRight nowrap">
+                    <label for = "ModeDeGestion" class = "etiquette">Mode de gestion</label>
+                  </td>
+                  <td colspan = "2"><webobject name = "ModeDeGestion" /></td>
+                  <td width = "19%">
+                    <webobject name = "CBConventionLucrative" />
+                    <label for = "CBConventionLucrative" class = "etiquette">Lucrative</label>
+                    <webobject name = "CBConventionLucrativeObserver" />
+                  </td>
+                  <td width = "20%">
+                    <webobject name = "CBCreditsLimitatifs" />
+                    <label for = "CBCreditsLimitatifs" class = "etiquette">A cr&eacute;dits limitatifs</label>
+                    <webobject name = "CBCreditsLimitatifsObserver" />
+                  </td>
+                  <td width = "20%">
+                    <webobject name = "CBReconductible" />
+                    <label for = "CBReconductible" class = "etiquette">Reconductible</label>
+                  </td>
+                </webobject>
+                <webobject name = "TrResumeFinancier" />
+                <tr>
+                  <td colspan = "6">
+                    <webobject name = "TableViewTranchesAnnuelles">
+                    <webobject name = "IsGestionTrancheManuelle">
+                        <webobject name = "Toolbar">
+                            <webobject name = "AddTranche"></webobject>
+                            <webobject name = "DelTranche"></webobject>
+                        </webobject>
+                        </webobject>
+                    </webobject>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </webobject>
+    <webobject name = "ContainerDetailTranche">
+    <table class = "budget" width = "600px" style = "margin:auto;">
+      <thead>
+        <tr>
+          <th width = "150px" />
+          <th width = "150px" class = "nature">Nature</th>
+          <th width = "150px" class = "lolf">Destination</th>
+          <th width = "150px">(Nature - Destination)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class = "recettes">
+          <th class = "label">Recettes</th>
+          <td class = "nature"><webobject name = "SommeRecNature" /></td>
+          <td class = "lolf"><webobject name = "SommeRecDest" /></td>
+          <td class = "total"><webobject name = "BalanceRecNatureDest" /></td>
+        </tr>
+        <tr class = "depenses">
+          <th class = "label">D&eacute;penses</th>
+          <td class = "nature"><webobject name = "SommeDepNature" /></td>
+          <td class = "lolf"><webobject name = "SommeDepDest" /></td>
+          <td class = "total"><webobject name = "BalanceDepNatureDest" /></td>
+        </tr>
+        <tr>
+          <th class = "label total">(Recettes - D&eacute;penses)</th>
+          <td class = "total"><webobject name = "BalanceRecDepNature" /></td>
+          <td class = "total"><webobject name = "BalanceRecDepDest" /></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+      <webobject name = "IsTrancheSelected">
+        <webobject name = "TabbedPanelDetailTranche">
+          <webobject name = "TabContributeurs"><webobject name = "TableViewContributeurs" /> </webobject>
+          <webobject name = "TabDepenses">
+            <webobject name = "TableViewDepenses">
+              <webobject name = "TableViewDepensesToolBar">
+                <webobject name = "AjouterDepense" />
+                <webobject name = "ModifierDepense" />
+                <webobject name = "SupprimerDepense" />
+              </webobject>
+            </webobject>
+          </webobject>
+          <webobject name = "TabRecettes">
+            <webobject name = "TableViewRecettes">
+              <webobject name = "TableViewRecettesToolBar">
+                <webobject name = "AjouterRecette" />
+                <webobject name = "ModifierRecette" />
+                <webobject name = "SupprimerRecette" />
+              </webobject>
+            </webobject>
+          </webobject>
+        </webobject>
+    </webobject>
+    </webobject>
+  </webobject>
+  <webobject name = "AddRecetteModalBox" />
+  <webobject name = "EditRecetteModalBox" />
+  <webobject name = "AddDepenseModalBox" />
+  <webobject name = "EditDepenseModalBox" />
+</webobject>
+<webobject name = "IsNotModeAssistant">
+    <webobject name = "Enregistrement"></webobject>
+</webobject>
+<webobject name = "AjoutTrancheDialog">
+    <webobject name = "Form">
+    <table>
+        <tr>
+            <th>Exercice : </th>
+            <td><webobject name = "Exercice"></webobject></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <webobject name = "Annuler"></webobject>
+                <webobject name = "CreerTranche"></webobject>
+            </td>
+        </tr>
+    </table>
+    </webobject>
+</webobject>

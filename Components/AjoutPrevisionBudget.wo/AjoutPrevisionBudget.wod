@@ -1,0 +1,72 @@
+Container : AjaxUpdateContainer {
+	id = "AjoutPrevBudgetId";
+}
+
+OrganTree : CktlAjaxOrganTreeView {
+    id = "OrganTreeForPrev";
+    editingContext = editingContextForAjoutPrev;
+    exercice = tranche.exerciceCocktail.exeExercice;
+    niveauMax = niveauBibasse;
+    selection = selectedOrgan;
+    utilisateur = session.applicationUser.utilisateur.utlOrdre;
+    type = "BUDGET";
+    updateContainerID = "AjoutPrevBudgetId";
+    
+}
+
+Form : WOForm {
+	embedded = true;
+}
+
+NiveauBibasse : WOString {
+	value = labelForNiveauBibasse;
+}
+
+IsNotModeRA : WOConditional {
+    condition = tranche.contrat.isModeRA;
+    negate = true;
+}
+
+IsModeRA : WOConditional {
+    condition = tranche.contrat.isModeRA;
+}
+
+Ligne : WOString {
+	value = tranche.contrat.organComposante.longString;
+}
+
+Help : ToolTip {
+    htmlText = "<p>La convention RA nécessite une ligne budgétaire réservée, sélectionner la ligne budgétaire sous laquelle celle-ci sera créée. </p>";
+    
+}
+
+AjoutPrevRA : CktlAjaxButton {
+    type = "new";
+    title = "Créer la prévision";
+    text = "Créer la prévision";
+    action = creerPrevisionRA;
+    updateContainerID = "AjoutPrevBudgetId";
+}
+
+HasLigneBudgetaire : WOConditional {
+	condition = tranche.contrat.organComposante;
+}
+
+HasNoLigneBudgetaire : WOConditional {
+	condition = tranche.contrat.organComposante;
+	negate = true;
+}
+
+
+OrganTreeRA : CktlAjaxOrganTreeView {
+    id = "OrganTreeForRA";
+    editingContext = editingContextForAjoutPrev;
+    exercice = tranche.exerciceCocktail.exeExercice;
+    niveauMax = 3;
+    selection = selectedOrganForRA;
+    utilisateur = session.applicationUser.utilisateur.utlOrdre;
+    type = "BUDGET";
+    updateContainerID = "AjoutPrevBudgetId";
+}
+
+

@@ -1,0 +1,47 @@
+ContainerGediDocumentGestion : AjaxUpdateContainer {
+	id = "ContainerGediDocumentGestion";
+}
+
+GedDocumentGestion : CktlGedDocumentGestion {
+    editingContext = editingContext;
+    ajouter = ajouterUnDocument;
+    annuler = annuler;
+    document = document;
+    utilisateur = session.applicationUser;
+    famille = "Acte.document";
+    //motsCles = motsCles;
+    filtreTypes = "gfc.acte";
+}
+
+FormChoixAvenant : ERXWOForm {
+	id = "FormChoixAvenant";
+	class = "alignToLeft";
+	embedded = true;
+}
+PopUpAvenantObserver : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "PopUpAvenants";
+	updateContainerID = "ContainerGediDocumentGestion";
+}
+PopUpAvenants : WOPopUpButton {
+	id = "PopUpAvenants";
+	list = lesAvenants;
+	item = unAvenant;
+	selection = avenantSelectionne;
+	displayString = unAvenant.libelleCourt;
+	// noSelectionString = "Choisir un avenant";
+}
+
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}
+
+IsChoixAvenantPossible : WOConditional {
+  condition = isChoixAvenantPossible;
+}
+WOLToolBar: WOLToolBar{
+}
+
+WrapperModal : WrapperModal {
+	
+}

@@ -1,0 +1,8 @@
+CodeLolfRecette : CktlAjaxRepartMultiSelect {
+    formName = "FormGestionRecette";
+    montantTotal = recette.srMontantHt;
+    newRepart = ^newRepart;
+    eoPere = recette;
+    toRepartKey = "repartSbRecetteLolfs";
+    nomenclatureHelper = lolfHelper;
+}

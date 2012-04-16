@@ -1,0 +1,338 @@
+ContainerAvenantVoletFinancier : AjaxUpdateContainer {
+    id = "ContainerAvenantVoletFinancier";
+    class = classeCss;
+    style = styleCss;
+}
+
+FormAvenantVoletFinancier : ERXWOForm {
+  id = "FormAvenantVoletFinancier";
+  name="FormAvenantVoletFinancierName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+
+ContainerTranches : AjaxUpdateContainer {
+    id = "ContainerTranches";
+}
+
+Exercice : WOString {
+	value = ctrl.selectedTranche.exerciceCocktail.exeExercice;
+}
+
+TrResumeFinancier : ConventionTotalFinancierView {
+    contrat = contrat;
+    updateContainerID = "ContainerAvenantVoletFinancier";
+    disabled = ctrl.montantDisabled;
+}
+
+TableViewTranchesAnnuelles : CktlAjaxEditableTableView {
+    disabled = disabled;
+    id = "TableViewTranchesAnnuelles";
+    dg = ctrl.dgTranchesAnnuelles;
+    item = ctrl.uneTrancheAnnuelle;
+    colonnes = ctrl.dicoTranchesAnnuelles.colonnes; // VALID
+    selectionEnabled = true;
+    editionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    callbackOnSelectionner = ctrl.selectionnerUneTrancheAnnuelle;
+    updateContainerID = "ContainerDetailTranche";
+    // updateContainerIDs = updateContainerIDsForTVTranchesAnnuelles;
+    // updateContainerIDs = "ContainerMontantDisponible,ContainerDetailTranche";
+}
+
+SommeRecNature : WOString {
+    value = ctrl.selectedTranche.sommeRecettesNature;
+    formatter = application.app2DecimalesFormatter;
+}
+
+SommeRecDest : WOString {
+    value = ctrl.selectedTranche.sommeRecettesDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+BalanceRecNatureDest : WOString {
+    value = ctrl.selectedTranche.balanceRecettesNatureDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+SommeDepNature : WOString {
+    value = ctrl.selectedTranche.sommeDepensesNature;
+    formatter = application.app2DecimalesFormatter;
+}
+
+SommeDepDest : WOString {
+    value = ctrl.selectedTranche.sommeDepensesDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+BalanceDepNatureDest : WOString {
+    value = ctrl.selectedTranche.balanceDepensesNatureDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+BalanceRecDepNature : WOString {
+    value = ctrl.selectedTranche.balanceRecettesDepensesNature;
+    formatter = application.app2DecimalesFormatter;
+}
+
+BalanceRecDepDest : WOString {
+    value = ctrl.selectedTranche.balanceRecettesDepensesDestination;
+    formatter = application.app2DecimalesFormatter;
+}
+
+ContainerDetailTranche : AjaxUpdateContainer {
+    id = "ContainerDetailTranche";
+}
+
+IsTrancheSelected : WOConditional {
+    condition = trancheBudgetSelected;
+}
+TabbedPanelDetailTranche : AjaxTabbedPanel {
+    id = "TabbedPanelDetailTranche";
+}
+
+TabDepenses : AjaxTabbedPanelTab {
+    name = "D&eacute;penses";
+    isVisible = isTabDepensesVisibled;
+    isSelected = isTabDepensesSelected;
+    refreshOnSelect = true;
+}
+
+IsModeNature : WOConditional {
+	condition = modeNature;
+}
+
+TableViewDepensesNature : CktlAjaxTableView {
+    updateContainerID = "ContainerDetailDepense";
+    disabled = disabled;
+    id = "TableViewDepensesNature";
+    dg = ctrl.dgDepenses;
+    item = ctrl.uneDepense;
+    colonnes = ctrl.dicoDepensesNature.colonnes; // VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "155px";
+    width = "98%";
+}
+
+IsModeDestination : WOConditional {
+	condition = modeDestination;
+}
+
+TableViewDepensesDestination : CktlAjaxTableView {
+    updateContainerID = "ContainerDetailDepense";
+    disabled = disabled;
+    id = "TableViewDepensesDestination";
+    dg = ctrl.dgDepenses;
+    item = ctrl.uneDepense;
+    colonnes = ctrl.dicoDepensesDestination.colonnes; // VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "155px";
+    width = "98%";
+}
+
+
+
+TableViewDepensesToolBar : CktlAjaxToolbar {
+}
+
+AjouterDepenseDestination : CktlAjaxButton {
+    id = "AjouterDepense";
+    title = titleForNewDepense;
+    type = "new";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    dialogIDForOpen = "AddDepenseModalBox";
+    disabled = ctrl.nePeutPasAjouterDepensesDestination;
+}
+
+AjouterDepenseNature : CktlAjaxButton {
+    id = "AjouterDepense";
+    title = titleForNewDepense;
+    type = "new";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    dialogIDForOpen = "AddDepenseModalBox";
+    disabled = ctrl.nePeutPasAjouterDepensesNature;
+}
+
+ModifierDepense : CktlAjaxButton {
+    id = "ModifierDepense";
+    title = "Modifier la dépense";
+    type = "edit";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    disabled = isModifierUneDepenseDisabled;
+    dialogIDForOpen = "EditDepenseModalBox";
+}
+SupprimerDepense : CktlAjaxButton {
+    id = "SupprimerDepense";
+    title = "Supprimer la dépense";
+    type = "delete";
+    onClickBefore = "confirm('Etes-vous sûr de vouloir supprimer cette dépense ?')";
+    action = ctrl.supprimerUneDepense;
+    onFailure = application.onFailureMessage;
+    disabled = isSupprimerUneDepenseDisabled;
+    updateContainerID = "ContainerAvenantVoletFinancier";
+    onSuccess = "function (){ContainerAvenantVoletFinancierUpdate();}";
+}
+
+TabRecettes : AjaxTabbedPanelTab {
+    name = "Recettes";
+    isVisible = isTabRecettesVisibled;
+    isSelected = isTabRecettesSelected;
+    refreshOnSelect = true;
+}
+
+TableViewRecettesNature : CktlAjaxTableView {
+    updateContainerID = "ContainerDetailRecette";
+    //disabled = disabled;
+    id = "TableViewRecettesNature";
+    dg = ctrl.dgRecettes;
+    item = ctrl.uneRecette;
+    colonnes = ctrl.dicoRecettesNature.colonnes; // VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "155px";
+    width = "98%";
+    cssStyle = "float:left;";
+}
+
+TableViewRecettesDestination : CktlAjaxTableView {
+    updateContainerID = "ContainerDetailRecette";
+    //disabled = disabled;
+    id = "TableViewRecettesDestination";
+    dg = ctrl.dgRecettes;
+    item = ctrl.uneRecette;
+    colonnes = ctrl.dicoRecettesDestination.colonnes; // VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "155px";
+    width = "98%";
+    cssStyle = "float:left;";
+}
+
+TableViewRecettesToolBar : CktlAjaxToolbar {
+}
+AjouterRecetteNature : CktlAjaxButton {
+    id = "AjouterRecette";
+    title = titleForNewRecette;
+    type = "new";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    dialogIDForOpen = "AddRecetteModalBox";
+    disabled = ctrl.nePeutPasAjouterRecetteNature;
+}
+
+AjouterRecetteDestination : CktlAjaxButton {
+    id = "AjouterRecette";
+    title = titleForNewRecette;
+    type = "new";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    dialogIDForOpen = "AddRecetteModalBox";
+    disabled = ctrl.nePeutPasAjouterRecetteDestination;
+}
+ModifierRecette : CktlAjaxButton {
+    id = "ModifierRecette";
+    title = "Modifier la recette";
+    type = "edit";
+    action = doNothing;
+    onFailure = application.onFailureMessage;
+    disabled = isModifierUneRecetteDisabled;
+    dialogIDForOpen = "EditRecetteModalBox";
+}
+SupprimerRecette : CktlAjaxButton {
+    id = "SupprimerRecette";
+    title = "Supprimer la recette";
+    type = "delete";
+    onClickBefore = "confirm('Etes-vous sûr de vouloir supprimer cette recette ?')";
+    action = ctrl.supprimerUneRecette;
+    disabled = isSupprimerUneRecetteDisabled;
+    onFailure = application.onFailureMessage;
+    onSuccess = "function (){ContainerAvenantVoletFinancierUpdate();}";
+    updateContainerID = "ContainerAvenantVoletFinancier";
+}
+
+AddRecetteModalBox: CktlAjaxWindow {
+    id = "AddRecetteModalBox";
+    showOpener = false; 
+    title = "Ajouter une nouvelle recette pouet";
+    linkTitle = titleForNewRecette;
+    action = openAjouterUneRecette;
+    minWidth = 670;
+    minHeight = 350;
+    overlayOpacity = "1";
+    afterHide = "function() { ContainerAvenantVoletFinancierUpdate();}";
+}
+EditRecetteModalBox: CktlAjaxWindow {
+    id = "EditRecetteModalBox";
+    showOpener = false; 
+    title = "Modifier une recette";
+    linkTitle = "Modifier une recette";
+    action = openModifierUneRecette;
+    minWidth = 670;
+    minHeight = 350;
+    afterHide = "function() { ContainerAvenantVoletFinancierUpdate();}";
+}
+AddDepenseModalBox: CktlAjaxWindow {
+    id = "AddDepenseModalBox";
+    showOpener = false; 
+    title = "Ajouter une nouvelle dépense";
+    linkTitle = "Ajouter une nouvelle dépense";
+    action = openAjouterUneDepense;
+    minWidth = 670;
+    minHeight = 350;
+    afterHide = "function() { ContainerAvenantVoletFinancierUpdate();}";
+}
+EditDepenseModalBox: CktlAjaxWindow {
+    id = "EditDepenseModalBox";
+    showOpener = false; 
+    title = "Modifier une dépense";
+    linkTitle = "Modifier une dépense";
+    action = openModifierUneDepense;
+    minWidth = 670;
+    minHeight = 350;
+    afterHide = "function() { ContainerAvenantVoletFinancierUpdate();}";
+}
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+    contrat = contrat;
+    accueil = accueil;
+    consulter = consulter;
+    enregistrer = enregistrer;
+    updateContainerID = application.messageContainerID;
+}
+
+ModeNature : WORadioButton {
+	checked = modeNature;
+}
+
+ModeDestination : WORadioButton {
+	checked = modeDestination;
+}
+
+ModeObs : AjaxObserveField {
+	updateContainerID = "ContainerDetailTranche";
+}
+
+ExoNonCree : ERXWOConditional {
+	condition = ctrl.selectedTranche.exerciceCocktail.exercice;
+	negate = true;
+}
+
+Else : ERXElse {
+	
+}

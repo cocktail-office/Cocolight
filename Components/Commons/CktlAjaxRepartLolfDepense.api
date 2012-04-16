@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CktlAjaxRepartLolfDepense.java" wocomponentcontent="false">
+
+        <binding name="depense"/>
+        <validation message="'depense' is a required binding.">
+            <unbound name="depense"/>
+        </validation>
+    <binding name="formName"/>
+    <binding name="newRepart"/>
+    </wo>
+</wodefinitions>

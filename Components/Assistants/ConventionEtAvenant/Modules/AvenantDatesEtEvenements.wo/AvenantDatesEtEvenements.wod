@@ -1,0 +1,37 @@
+ContainerAvenantDatesEtEvenements : AjaxUpdateContainer {
+	id = "ContainerAvenantDatesEtEvenements";
+	class = classeCss;
+	style = styleCss;
+}
+FormAvenantDatesEtEvenements : WOForm {
+  id = "FormAvenantDatesEtEvenements";
+  name="FormAvenantDatesEtEvenementsName";
+  action = submit;
+  multipleSubmit = true;
+  //onsubmit = "return false;";
+}
+
+Events : EvenementsUI {
+    displayGroup = dg;
+    utilisateur = session.applicationUser.personne;
+    editingContext = avenant.editingContext;
+    delegate = delegate;
+    wrapper = "WrapperModal";
+    personnesTbvHelper = personnesContactTbvHelper;
+}
+
+JSDisabledAutocompleteTF : WOJavaScript {
+	scriptString = disabledTFScript;
+}
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+    contrat = contrat;
+    accueil = accueil;
+    consulter = consulter;
+    enregistrer = enregistrer;
+    updateContainerID = application.messageContainerID;
+}

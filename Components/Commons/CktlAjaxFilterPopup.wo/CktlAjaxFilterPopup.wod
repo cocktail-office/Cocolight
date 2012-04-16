@@ -1,0 +1,26 @@
+FiltreJS : WOString {
+    value = filtre;
+}
+ComponentContent1: WOComponentContent {
+}
+
+TextField1: WOTextField {
+    id = ^fieldName;
+    name = ^fieldName;
+    onKeyUp = onKeyUp;
+    size = ^size;
+    value = ^filterText;
+    style= ^style;
+    onBlur=^onBlur;
+    onFocus=^onFocus;
+    onChange=^onChange;
+    disabled=^disabled;
+    autocomplete = "off";
+}
+IsVertical : WOConditional {
+    condition = ^isVertical;
+}
+IsHorizontal : WOConditional {
+    condition = ^isVertical;
+    negate = true;
+}

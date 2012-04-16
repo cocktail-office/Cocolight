@@ -1,0 +1,8 @@
+CodeAnalytiqueDepense : CktlAjaxRepartMultiSelect {
+    formName = ^formName;
+    montantTotal = montantHt;
+    newRepart = ^newRepart;
+    eoPere = depenseOuRecette;
+    toRepartKey = repartKey;
+    nomenclatureHelper = codeAnalytiqueHelper;
+}

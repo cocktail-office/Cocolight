@@ -1,0 +1,126 @@
+<webobject name = "ContainerAvenantVoletFinancier">
+  <webobject name = "FormAvenantVoletFinancier">
+    <webobject name = "ContainerTranches">
+    <table width = "100%" cellpadding = "0" cellspacing = "0">
+      <tbody>
+        <tr>
+          <td>
+            <table border = "0" width = "100%">
+              <tbody>
+                <tr>
+                  <td colspan = "6">
+                      <h4>Donn&eacute;es financi&egrave;res</h4>
+                  </td>
+                </tr>
+                <webobject name = "TrResumeFinancier" />
+                <tr>
+                  <td colspan = "6">
+                    <webobject name = "TableViewTranchesAnnuelles">
+                    </webobject>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </webobject>
+    <webobject name = "ContainerDetailTranche">
+    <h4>Dépenses et recettes pour <webobject name = "Exercice"></webobject>
+     <webobject name = "ExoNonCree">
+        <span style="font-size:smaller;color:red;">(Cet exercice n'est pas encore créé, aucune dépense/recette n'est possible)</span>
+    </webobject>
+    </h4>
+    <table class = "budget" width = "600px" style = "margin:auto;">
+      <thead>
+        <tr>
+          <th width = "150px" />
+          <th width = "150px" class = "nature">Nature</th>
+          <th width = "150px" class = "lolf">Destination</th>
+          <th width = "150px">(Nature - Destination)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class = "recettes">
+          <th class = "label">Recettes</th>
+          <td class = "nature"><webobject name = "SommeRecNature" /></td>
+          <td class = "lolf"><webobject name = "SommeRecDest" /></td>
+          <td class = "total"><webobject name = "BalanceRecNatureDest" /></td>
+        </tr>
+        <tr class = "depenses">
+          <th class = "label">D&eacute;penses</th>
+          <td class = "nature"><webobject name = "SommeDepNature" /></td>
+          <td class = "lolf"><webobject name = "SommeDepDest" /></td>
+          <td class = "total"><webobject name = "BalanceDepNatureDest" /></td>
+        </tr>
+        <tr>
+          <th class = "label total">(Recettes - D&eacute;penses)</th>
+          <td class = "total"><webobject name = "BalanceRecDepNature" /></td>
+          <td class = "total"><webobject name = "BalanceRecDepDest" /></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+      <webobject name = "IsTrancheSelected">
+        <webobject name = "TabbedPanelDetailTranche">
+          <webobject name = "TabDepenses">
+            <webobject name = "ModeObs">
+	            <webobject name = "ModeNature"></webobject> Nature
+	            <webobject name = "ModeDestination"></webobject> Destination
+            </webobject>
+            <webobject name = "IsModeNature">
+	            <webobject name = "TableViewDepensesNature">
+	              <webobject name = "TableViewDepensesToolBar">
+	                <webobject name = "AjouterDepenseNature" />
+	                <webobject name = "ModifierDepense" />
+	                <webobject name = "SupprimerDepense" />
+	              </webobject>
+	            </webobject>
+            </webobject>
+            <webobject name = "IsModeDestination">
+                <webobject name = "TableViewDepensesDestination">
+                  <webobject name = "TableViewDepensesToolBar">
+                    <webobject name = "AjouterDepenseDestination" />
+                    <webobject name = "ModifierDepense" />
+                    <webobject name = "SupprimerDepense" />
+                  </webobject>
+                </webobject>
+            </webobject>
+          </webobject>
+          <webobject name = "TabRecettes">
+             <webobject name = "ModeObs">
+                <webobject name = "ModeNature"></webobject> Nature
+                <webobject name = "ModeDestination"></webobject> Destination
+            </webobject>
+            <webobject name = "IsModeNature">
+	            <webobject name = "TableViewRecettesNature">
+	              <webobject name = "TableViewRecettesToolBar">
+	                <webobject name = "AjouterRecetteNature" />
+	                <webobject name = "ModifierRecette" />
+	                <webobject name = "SupprimerRecette" />
+	              </webobject>
+	            </webobject>
+            </webobject>
+            <webobject name = "IsModeDestination">
+                <webobject name = "TableViewRecettesDestination">
+                  <webobject name = "TableViewRecettesToolBar">
+                    <webobject name = "AjouterRecetteDestination" />
+                    <webobject name = "ModifierRecette" />
+                    <webobject name = "SupprimerRecette" />
+                  </webobject>
+                </webobject>
+            </webobject>
+          </webobject>
+        </webobject>
+    </webobject>
+    </webobject>
+  </webobject>
+  <webobject name = "AddRecetteModalBox" />
+  <webobject name = "EditRecetteModalBox" />
+  <webobject name = "AddDepenseModalBox" />
+  <webobject name = "EditDepenseModalBox" />
+</webobject>
+<webobject name = "IsNotModeAssistant">
+    <webobject name = "Enregistrement"></webobject>
+</webobject>

@@ -1,0 +1,184 @@
+ContainerGestionDepensesContenu : AjaxUpdateContainer {
+	id = "ContainerGestionDepensesContenu";
+	style = "min-height:320px;margin-left:0px;";
+	class = "assistantContent";
+}
+FormGestionDepense : WOForm {
+	id = "FormGestionDepense";
+	name = "FormGestionDepense";
+}
+
+Exo : WOString {
+	value = exercice.exeExercice;
+}
+
+DatePrevDepense : CktlAjaxDatePicker {
+	id = "DatePrevDepense";
+	dateValue = laDepense.sdDatePrev;
+}
+LibelleDepense : ERXWOTextField {
+	id = "LibelleDepense";
+	// value = laDepense.sdLibelle;
+	value = libelleDepense;
+	style = "width:200px;";
+}
+ObserverLibelleDepense : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "LibelleDepense";
+}
+
+TrancheEnDepenses : WOConditional {
+	condition = tranche.isNatureDepense;
+}
+
+Contributeurs : WOPopUpButton {
+    id = "DepenseContributeurs";
+    list = contributeurs.allKeys;
+    item = currentContributeurPersId;
+    displayString = contributeurLabel;
+    selection = laDepense.fournisPersId;
+    noSelectionString = "Aucun";
+}
+
+ObserverContributeurs : AjaxObserveField {
+    observeFieldID = "DepenseContributeurs";
+    updateContainerID = "ContainerGestionDepensesContenu";
+}
+
+MontantHTDepense : WOTextField {
+	id = "MontantHTDepense";
+	value = laDepense.sdMontantHt; 
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+    size = "10";
+}
+ObserverMontantHTDepense : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "MontantHTDepense";
+	updateContainerID = "ContainerGestionDepensesContenu";
+	//onComplete = "function () {TDValeurTVADepenseUpdate();TDMontantTTCDepenseUpdate();}";
+}
+TVADepense : WOPopUpButton {
+	id = "TVADepense";
+	list = application.lesTauxDeTVA;
+	item = unTauxDeTVADepense;
+	selection = laDepense.tva; 
+	displayString = unTauxDeTVADepense.tvaTaux;
+	class = "alignToRight";
+}
+ObserverTVADepense : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "TVADepense";
+	onComplete = "function () {TDValeurTVADepenseUpdate();TDMontantTTCDepenseUpdate();}";
+}
+TDValeurTVADepense : AjaxUpdateContainer {
+	id = "TDValeurTVADepense";
+	elementName = "span";
+}
+ValeurTVADepense : WOTextField {
+	id = "ValeurTVADepense";
+	value = valeurTVADepense;
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+	disabled = true;
+	size = "10";
+}
+TDMontantTTCDepense : AjaxUpdateContainer {
+	id = "TDMontantTTCDepense";
+	elementName = "span";
+}
+MontantTTCDepense : WOTextField {
+	id = "MontantTTCDepense";
+	// disabled = true;
+	value = montantTTCDepense;
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+	size = "10";
+}
+ObserverMontantTTCDepense : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "MontantTTCDepense";
+	updateContainerID = "ContainerGestionDepensesContenu";
+	//onComplete = "function () {TDValeurTVADepenseUpdate();TDMontantTTCDepenseUpdate();}";
+}
+
+IsModeNature : WOConditional {
+	condition = modeNature;
+}
+
+IsModeDestination : WOConditional {
+	condition = modeDestination;
+}
+
+
+LigneBudg : ERXOptGroupPopupButton {
+	label = groupeOrganLabel;
+	group = groupeOrgan;
+	id = "LigneBudg";
+	list = organs;
+	item = currentOrgan;
+	selection = laDepense.organ;
+	displayString = currentOrgan.longString;
+	noSelectionString = "Sélectionner une ligne budgétaire";
+}
+
+CodesLolf :  WOPopUpButton {
+    id = "CodeLolfDepense";
+    list = lolfs;
+    item = currentLolf;
+    selection = laDepense.lolf;
+    displayString = currentLolf.lolfLibelleLong;
+    noSelectionString = "Sélectionner un code lolf";
+    style = "width:300px;";
+}
+
+CodesNature :  WOPopUpButton {
+    id = "CodeNatureDepense";
+    list = plancos;
+    item = currentPlanco;
+    selection = laDepense.planco;
+    displayString = currentPlanco.pcoNumEtLibelle;
+    noSelectionString = "Sélectionner un code nature";
+    style = "width:300px;";
+}
+
+ContainerGestionDepensesMenu : AjaxUpdateContainer {
+	id = "ContainerGestionDepensesMenu";
+	style = "border-top:2px solid #4E80C0;height:28px;";
+	class = "assistantMenu";
+}
+Annuler : CktlAjaxButton {
+	action = annuler;
+	onSuccess = "function(oS){parent.ContentContainerUpdate();}";
+	title = "Annuler la saisie d'une dépense";
+	text = "Annuler";
+	type = "cancel";
+}
+TerminerEtAjouter : CktlAjaxSubmitButton {
+	action = terminerEtAjouter;
+	//onFailure = application.onFailureMessage;
+	text = "Valider et saisir une nouvelle dépense";
+	type = "validate";
+	title = "Valider et saisir une nouvelle dépense";
+	// updateContainerID = "ContainerGestionDepensesContenu";
+	updateContainerID = application.messageContainerID;
+	onSuccess = "function(oC){parent.TableViewDepensesUpdate();parent.ContainerDetailDepenseUpdate();parent.TableViewTranchesAnnuellesUpdate();parent.ContainerMontantDisponibleUpdate();ContainerGestionDepensesContenuUpdate();}";
+}
+
+Terminer : CktlAjaxSubmitButton {
+	action = terminer;
+	//onFailure = application.onFailureMessage;
+	text = "Valider";
+	type = "validate";
+	title = "Valider et enregistrer";
+	updateContainerID = application.messageContainerID;
+}
+
+ContainerMessage : CktlAjaxUiMessageContainer {
+	id = application.messageContainerID;
+}
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}
+WOLToolBar: WOLToolBar{
+}

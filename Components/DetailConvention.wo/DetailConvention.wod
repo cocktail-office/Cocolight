@@ -1,0 +1,111 @@
+ContainerDetailConvention : AjaxUpdateContainer {
+	id = "ContainerDetailConvention";
+	class = "assistantModule";
+}
+
+Generalites : ConventionGeneralites {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = generalitesTab.editingContext;
+}
+
+PartenairesEtContacts : ConventionPartenaires {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  editingContext = partenairesTab.editingContext;
+  applicationUser = session.applicationUser;
+}
+
+Evenements : AvenantDatesEtEvenements {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = evenementsTab.editingContext;
+}
+
+DepensesRecettes : ConventionDepensesRecettes {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = depensesRecettesTab.editingContext;
+}
+
+FinancementAvance : AvenantVoletFinancier {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = financementTab.editingContext;
+}
+
+FinancementSimple : AvenantVoletFinancierLight {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = financementTab.editingContext;
+}
+
+IsModeSimple : WOConditional {
+	condition = convention.isModeBudgetSimple;
+}
+
+IsModeAvance : WOConditional {
+	condition = convention.isModeBudgetAvance;
+}
+
+Documents : ConventionDocuments {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = documentsTab.editingContext;
+}
+
+BudgetLight : ConventionBudgetLight {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = budgetTab.editingContext;
+}
+
+BudgetLightest : ConventionBudgetLightest {
+  contrat = convention;
+  avenant = convention.avenantZero;
+  applicationUser = session.applicationUser;
+  editingContext = budgetTab.editingContext;
+}
+
+TabbedPanel : CCTabPanel {
+    id = "ConventionTabs";
+    selectedTab = conventionTabs.selectedTab;
+    tabs = conventionTabs.tabs;
+    tabNameKey = "libelle";
+}
+
+IsTabGeneralites : WOConditional {
+	condition = generalitesTab.isSelected;
+}
+
+IsTabPartenaires : WOConditional {
+	condition = partenairesTab.isSelected;
+}
+
+IsTabFinancement : WOConditional {
+	condition = financementTab.isSelected;
+}
+
+IsTabDepensesRecettes : WOConditional {
+	condition = depensesRecettesTab.isSelected;
+}
+
+IsTabBudget : WOConditional {
+	condition = budgetTab.isSelected;
+}
+
+IsTabEvenements : WOConditional {
+	condition = evenementsTab.isSelected;
+}
+
+IsTabDocuments : WOConditional {
+	condition = documentsTab.isSelected;
+}
+

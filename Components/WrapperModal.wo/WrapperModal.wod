@@ -1,0 +1,11 @@
+Content : WOComponentContent {
+	
+}
+
+Titre : WOString {
+	value = ^titre;
+}
+
+ContainerMessage : CktlAjaxUiMessageContainer {
+    id = application.messageContainerID;
+}

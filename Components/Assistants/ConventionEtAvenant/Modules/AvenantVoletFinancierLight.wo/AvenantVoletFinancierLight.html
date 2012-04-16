@@ -1,0 +1,95 @@
+<webobject name = "ContainerAvenantVoletFinancier">
+  <webobject name = "FormAvenantVoletFinancier">
+    <webobject name = "ContainerTranches">
+    <table width = "100%" cellpadding = "0" cellspacing = "0">
+      <tbody>
+        <tr>
+          <td>
+            <table border = "0" width = "100%">
+              <tbody>
+                <tr>
+                  <td colspan = "6">
+                    <span>
+                      <h4>Donn&eacute;es financi&egrave;res</h4>
+                    </span>
+                  </td>
+                </tr>
+                <webobject name = "TRModeDeGestion">
+                  <td width = "16%" class = "alignToRight nowrap">
+                    <label for = "ModeDeGestion" class = "etiquette">Mode de gestion</label>
+                  </td>
+                  <td colspan = "2"><webobject name = "ModeDeGestion" /></td>
+                  <td width = "19%">
+                    <webobject name = "CBConventionLucrative" />
+                    <label for = "CBConventionLucrative" class = "etiquette">Lucrative</label>
+                    <webobject name = "CBConventionLucrativeObserver" />
+                  </td>
+                  <td width = "20%">
+                    <webobject name = "CBCreditsLimitatifs" />
+                    <label for = "CBCreditsLimitatifs" class = "etiquette">A cr&eacute;dits limitatifs</label>
+                    <webobject name = "CBCreditsLimitatifsObserver" />
+                  </td>
+                  <td width = "20%">
+                    <webobject name = "CBReconductible" />
+                    <label for = "CBReconductible" class = "etiquette">Reconductible</label>
+                  </td>
+                </webobject>
+                <webobject name = "TrResumeFinancier" />
+                <tr>
+                  <td colspan = "6">
+                    <webobject name = "TableViewTranchesAnnuelles">
+                        <webobject name = "IsGestionTrancheManuelle">
+                        <webobject name = "Toolbar">
+                            <webobject name = "AddTranche"></webobject>
+                            <webobject name = "DelTranche"></webobject>
+                        </webobject>
+                        </webobject>
+                    </webobject>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </webobject>
+    <webobject name = "ContainerDetailTranche">
+      <h4>Contributeurs pour la tranche <webobject name = "Tranche"></webobject></h4>
+      <webobject name = "IsTrancheSelected">
+        <webobject name = "TableViewContributeurs">
+            <webobject name = "TBVContribHeader">
+                <webobject name = "PartenaireCol"/>
+                <webobject name = "MontantCol"/>
+                <webobject name = "FraisGestionCol"/>
+            </webobject>
+            <webobject name = "TBVContribBody">
+                <td class="alignToLeft"> <webobject name = "Partenaire"></webobject></td>
+                <td> <webobject name = "Montant"></webobject></td>
+                <td class="alignToLeft"> <webobject name = "FraisGestion"></webobject><webobject name = "FraisGestionPct"></webobject>%</td>
+            </webobject>
+        </webobject>
+      </webobject>
+  </webobject>
+</webobject>
+</webobject>
+<webobject name = "IsNotModeAssistant">
+    <webobject name = "Enregistrement"></webobject>
+</webobject>
+<webobject name = "AjoutTrancheDialog">
+    <webobject name = "Form">
+    <table>
+        <tr>
+            <th>Exercice : </th>
+            <td><webobject name = "Exercice"></webobject></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <webobject name = "Annuler"></webobject>
+                <webobject name = "CreerTranche"></webobject>
+            </td>
+        </tr>
+    </table>
+    </webobject>
+</webobject>

@@ -1,0 +1,886 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+input,select,textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+dl {
+	margin: 0px;
+}
+
+ul.tree ul {
+	padding: 0px 0px 0px 10px;
+}
+
+.selected {
+	color: red;
+}
+
+tr.even {
+    background-color: #F1F5FA;	
+}
+
+th, td {
+    font-size:11px;
+}
+
+/* ------------------------- Input particuliers---------------------------------- */
+.numMedium {
+    width: 100px;	
+}
+
+.total {
+    color:#333333;
+}
+
+.balanceNeg {
+	color: red;
+}
+
+.balancePos {
+	color: green;
+}
+
+/* ------------------------- Page d'accueil---------------------------------- */
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 970px;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.logo h1 {
+    font: bold 42px "Lucida Grande";
+    position: relative;
+    color: #4E80C0;
+    margin: 0;
+    padding: 0;
+}
+
+.logo h1 .gloss {
+    background: url(images/gradient-glossy.png) repeat-x;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 31px;
+}
+
+.logo h1 .orange {
+    color: orange;
+}
+
+.signature {
+    font-size: 12px;
+    color: #4E80C0;
+}
+
+
+.col1 {
+    float: left;
+    width: 390px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.col2 {
+    float: left;
+    width: 390px;
+    margin-top: 20px;
+}
+
+.menu {
+    padding-left: 20px;	
+}
+
+.menu li {
+    list-style-type: none;
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #6699CC;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+}
+
+.menu a {
+    color: white;
+    display: block;
+}
+
+.menu .disabled {
+    background-color: #e1e1e1;
+}
+
+.menu li.menuIndividu {
+    background-color: orange;
+}
+
+li.recherche {
+    background-color: transparent;
+    color: #4E80C0;
+    border: 1px dotted #4E80C0; 
+    width: auto;
+}
+
+/* --------------------------------------------------------------------------- */
+	/* Classes du wrapper horizontal */
+.cktl_container_principal {
+	width: 970px;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	background-color: #EFF3FF;
+	text-align: center;
+	border: 1px solid #999999;
+	float: inherit;
+	-moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cktl_entete_wrapper_horizontal {
+	width: 970px;
+	height: 30px;
+	background-color: #CCCCCC;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 16pt;
+	display: block;
+	color: #000000;
+	font-weight: bold;
+	padding: 0;
+}
+
+.cktl_copyright_wrapper_horizontal {
+	width: 970px;
+	height: 15px;
+	background-color: #CCCCCC;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	display: block;
+	color: #000000;
+	font-weight: bold;
+}
+
+.cktl_copyright_wrapper_horizontal a {
+	text-decoration: none;
+}
+
+.cktl_accueil_wrapper_horizontal {
+    width: 800px;
+    height: 550px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------- */
+	/* Wrapper horizontal bleu */
+.cktl_container_principal {
+	border: 1px solid #4E80C0;
+}
+
+.cktl_entete_wrapper_horizontal {
+	color: #FFFFFF;
+	background-color: #6699CC;
+}
+
+.cktl_copyright_wrapper_horizontal {
+	color: #FFFFFF;
+	background-color: #6699CC;
+    font-size: 10px;
+}
+
+/* --------------------------------------------------------------------------- */
+	/* Wrapper horizontal vert */ /*
+.cktl_container_principal {
+  border: 2px solid #4AA329;
+}
+
+.cktl_entete_wrapper_horizontal {
+  background-color: #B1BF82;
+}
+
+.cktl_copyright_wrapper_horizontal {
+  background-color: #B1BF82;
+}
+*/
+.cktl_accueil_wrapper_horizontal h3 {
+    color: #4E80C0;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    margin: 0px;
+    margin-top: 1px;
+    font-size: large;
+    border-bottom: 1px solid #4E80C0;
+}
+
+.assistantEtapes,.containerSchemaConvention {
+	width: 190px;
+	float: left;
+	background-color: #EFF3FF;
+}
+
+#ContainerContactAvenant, #ContainerGestionPartenaire, #ContainerGestionContact {
+    background-color: #EFF3FF;	
+}
+
+.schemaConvention {
+}
+
+.menuSchemaConvention {
+	text-align: left;
+	top: inherit;
+	height: 28px;
+	background-color: white;
+	position: relative;
+}
+
+.assistantEtapes {
+    float: left;
+}
+
+.assistantEtapes table {
+    text-align: center;
+    width: 100%;
+}
+
+.assistantEtapes table tbody tr td {
+    margin: 0px 10px;
+}
+
+.assistantMenu {
+    top: inherit;
+    height: 38px;
+    background-color: white;
+    position: relative;
+}
+
+.assistantEtapes .etapes {
+	vertical-align: top;
+	height: 30px;
+}
+
+.assistantEtapes .etape {
+    height: auto; /*height: 30px;*/
+    line-height: 30px;
+    vertical-align: middle;
+    /* font-weight: bold; */
+    text-align: left;
+    padding-left: 20px;
+    width: 130px;
+    border-bottom: 1px solid #ccc;
+}
+
+.assistantEtapes .selected {
+    background:url("images/gradient-glossy.png") repeat-x scroll 0 0 transparent;
+    color: white;
+    background-color: #6699CC;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(20, 20, 20, 0.95);
+}
+
+.assistantEtapes .passed {
+    font-weight: bold;
+    color: #aaa;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+
+.assistantContent,.conventionDetail {
+	padding: 0px;
+	margin-left: 195px;
+	background-color: #E4F1FF;
+	position: relative;
+}
+
+.assistantAlerte {
+	height: 15px;
+	background-color: #E4F1FF;
+	position: relative;
+	color: #FF0000;
+	padding: 2px;
+	font-size: 13px;
+}
+
+.assistantModule {
+	min-height: 520px;
+}
+
+.assistantModule h4, .assistantEtapes h4, .schemaConvention h4, .cktl_accueil_wrapper_horizontal h4, .boxTitre  {
+	color: #4E80C0;
+	text-align: left;
+	padding-left: 5px;
+	border-bottom: 1px solid #4E80C0;
+	padding-bottom: 2px;
+	margin: 0px;
+	margin-top: 1px;
+	font-size: medium;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+h4.tbvTitle {
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: small;
+}
+
+.assistantMenu {
+	top: inherit;
+	height: 28px;
+	border-top: 1px solid #6699CC;
+	background-color: white;
+	position: relative;
+}
+
+.cktlAjaxToolbar {
+	background: white;
+	border: 1px solid #4E80C0;
+	text-align: left;
+	height: 22px;
+}
+
+.montant {
+	text-align: right;
+}
+
+.box {
+    background-color: #E4F1FF;
+}
+
+/* --------------------------------- Tabs ------------------------------------*/
+.ajaxTabbedPanel {
+	width: auto;
+	/*padding: 10px 0 0 20px;*/
+	margin: 0;
+}
+
+.ajaxTabbedPanelTab-selected {
+	display: inline;
+	padding: 3px 7px 1px 7px;
+	background: #E4F1FF;
+	border: 1px solid #006699;
+	border-bottom: 1px solid #E4F1FF;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+}
+
+.ajaxTabbedPanelTab-unselected {
+	display: inline;
+	padding: 2px 7px 0 7px;
+	/*background: #f0f0f0;*/
+	background: #ffffff;
+	border: 1px solid #006699;
+	border-bottom: 0;
+	color: #c0c0c0;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+}
+
+.ajaxTabbedPanelTab-selected a {
+	font-weight: bold;
+	font-size: 12px;
+	padding: 6px;
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.ajaxTabbedPanelTab-unselected a {
+	padding: 6px;
+	font-size: 12px;
+	/*color: #a0a0a0;*/
+	color: #6699cc;
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.ajaxTabbedPanelPanes {
+	padding-left: 0px;
+	margin: 0;
+	min-height: 555px;
+    border: 0;
+	border-top: 1px solid #006699;
+	background-color:#E4F1FF;
+}
+
+.ajaxTabbedPanelPane-selected {
+	list-style-type: none;
+	display: block;
+	padding: 10px;
+}
+
+.ajaxTabbedPanelPane-selected .ajaxTabbedPanelPane-selected {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.ajaxTabbedPanelPane-unselected {
+	list-style-type: none;
+	display: none;
+}
+
+.ajaxTabbedPanelPanes#TabbedPanelDetailPartenaire_panecontrol {
+	min-height: 260px;
+	border-left:0px;
+}
+
+.ajaxTabbedPanelPanes#TabbedPanelDetailTranche_panecontrol {
+	min-height: 260px;
+	border-left:0px;
+	border-right:0px;
+	border-bottom: 0px;
+}
+
+.ajaxTabbedPanelPanes#TabbedPanelDetailAvenant_panecontrol {
+	min-height: 530px;
+}
+
+/* --------------------------------- Tabs non ajax ------------------------------------*/
+.Tabs {
+    width: auto;
+    /*padding: 10px 0 0 20px;*/
+    margin: 0;
+}
+
+.Tab {
+    display: inline;
+    padding: 2px 7px 0 7px;
+    /*background: #f0f0f0;*/
+    background: #ffffff;
+    border: 1px solid #006699;
+    border-bottom: 0;
+    color: #c0c0c0;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+}
+
+.TPTab_Selected {
+    display: inline;
+    padding: 3px 7px 1px 7px;
+    background: #E4F1FF;
+    border: 1px solid #006699;
+    border-bottom: 1px solid #E4F1FF;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+}
+
+.TPTab_Selected span {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px;
+    color: #4E80C0;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.Tab a {
+    padding: 6px;
+    font-size: 12px;
+    /*color: #a0a0a0;*/
+    color: #6699cc;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.TabItemsList {
+    margin-bottom:0;
+}
+
+.TabPanelContent {
+    padding-left: 0px;
+    margin: 0;
+    min-height: 555px;
+    border-top: 1px solid #006699;
+    border-left: 1px solid #006699;
+    background-color:#E4F1FF;
+    padding: 10px 5px 10px 5px;
+}
+/* --------------------------------- ? ------------------------------------*/
+
+#SchemaConvention dt {
+	text-align: left;
+	cursor: pointer;
+	color: #4E80C0;
+}
+
+#SchemaConvention dt.selected {
+	background-position: right;
+	background-image: url(images/ico_node_collapsed_rouge_16.png);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	color: red;
+}
+
+#SchemaConvention dd {
+	text-align: left;
+	cursor: pointer;
+	margin-left: 5px;
+	color: #4E80C0;
+}
+
+#SchemaConvention dd.selected {
+	font-weight: bold;
+	color: red;
+}
+
+table.progressBarContainer {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+table.progressBarContainer td {
+	font-family: Helvetica;
+	font-size: 8pt;
+	padding: 2px;
+	color: rgb(100, 100, 100);
+}
+
+table.progressBarContainer td.progressValue {
+	white-space: nowrap;
+}
+
+.progressBar {
+	border: 1px solid black;
+}
+
+.progressBar td.percentageFinished {
+	background-image: url(images/progress-bar.gif);
+	background-repeat: repeat-x;
+}
+
+table.progressBar td.percentageFinished.done {
+	background-image: url(images/progress-bar.gif);
+	background-repeat: repeat-x;
+}
+
+table.progressBar td.percentageUnfinished {
+	background-image: url(images/progress-remainder.gif);
+	background-repeat: repeat-x;
+}
+
+table.progressBarContainer td.progressMaximum {
+	white-space: nowrap;
+}
+
+.etiquette {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.obligatoire {
+	color: #FF0000;
+}
+
+#CocolightContainerRecherche {
+	text-align: left;
+	height: 555px;
+	float: left;
+	border-right: 2px solid #4E80C0;
+	left: 420px;
+}
+
+#CocolightQBERecherche {
+	padding: 5px;
+	height: 505px;
+	width: 420px;
+}
+
+#CocolightContainerRechercheMenu {
+	border-top: 2px solid #4E80C0;
+	width: auto;
+	height: 40px;
+}
+
+#CocolightContainerRechercheResultats {
+	margin-left: 420px;
+	width: 480px;
+	height: 555px;
+}
+
+.finances {
+	border-collapse: collapse;
+}
+
+.total td {
+	border-top: 1px dotted #4E80C0;
+}
+
+.reparts {
+    background-color: white;
+    border: 1px dotted #4E80C0;	
+}
+
+.pub {
+    color: green;
+    font-weight: bold;   
+}
+
+.priv {
+    font-weight: normal;    	
+}
+
+.obligatoire {
+    color: inherit;
+    font-weight: bold;   
+}
+.obligatoire:after {
+    color: red;
+    content: '*';
+}
+
+/* --------------------------------- Restyling des TBV ------------------------------------*/
+.cktlajaxtableview > div.cktlAjaxTableView_DivHeaderAndBody table thead tr th {
+    background:url("images/gradient.png") repeat-x scroll 0 0 transparent;
+    height: 23px;
+    color: #333;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.cktlajaxtableview > div.cktlAjaxTableView_DivHeaderAndBody table thead tr th a {
+    color: #333;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.cktlajaxtableview .triable {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cktlajaxtableview .valid {
+    background-color: #d0eba5;
+}
+
+.cktlajaxtableview tr {
+    cursor: pointer;
+}
+
+.cktlajaxtableview {
+    border: none;
+    padding: none;
+}
+
+/* ---------------------------------- Restyling des reports --------------------------------*/
+.FwkCktlReportingGuiAjax_ProgressAmount {
+    background-color: #6699CC !important;	
+}
+
+.FwkCktlReportingGuiAjax_RapExecMonitor{
+    background-color: transparent !important;	
+}
+/* ---------------------------------- Styles de la grille du budget --------------------------------*/
+
+.budget {
+}
+
+.budget thead {
+    color: #333333;
+     text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.budget th {
+    text-align: center;  
+}
+
+.budget td {
+    text-align: right;	
+}
+	
+.budget td.label {
+	text-align: left;
+	background-color: transparent;
+	border-left: none;
+}
+
+.budget th.label {
+	text-align: right;
+	background-color: transparent;
+    border-left: none;
+}
+
+.budget .total {
+	background-color: #add7ff;
+	font-weight: bold;
+	color: black;
+}
+
+.budget .prev {
+    width: 60px;	
+}
+
+.budget .ouvrir {
+    width: 60px;	
+}
+
+.depenses .nature {
+    background-color: #daddff;	
+}
+
+.depenses .lolf {
+    background-color: #daddff;
+    color: black;
+}
+
+.recettes .nature {
+    background-color: #f0c1cf;
+}
+
+.recettes .lolf {
+    background-color: #f0c1cf;
+    color: black;
+}
+
+.nature td.label {
+    padding-left:10px;    	
+}
+
+.budget .total_dep {
+    background-color: #eba7a9;	
+}
+
+.budget .total_eq {
+    background-color: #baeb93;	
+}
+
+.budget .legend {
+    font-weight: normal;
+}
+
+#ContainerBudgetDetail .ajaxTabbedPanelPanes {
+    min-height: 300px;
+    border-left:0;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+.brouillardsRa th {
+    font-size: 11px;     	
+}
+
+.tip {
+    width: 250px;	
+}
+
+.tip p {
+    text-align: justify;	
+}
+
+.tipImg {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;	
+}
+
+.recapPropose {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: none;
+}
+
+.recapPropose .cktlajaxtableview {
+    border:0;
+}
+
+.recapPropose .cktlajaxtableview > div.cktlAjaxTableView_DivHeaderAndBody {
+    overflow: inherit;
+}
+
+.recapPropose .etiquette {
+    font-weight: bold;
+}
+
+.recapPropose th {
+    font-weight: normal;
+}
+
+
+.pctMontant {
+    width: 40px;
+}
+/* ---------------------------------- Styles de la grille de report --------------------------------*/
+.report .cktlajaxtableview > div.cktlAjaxTableView_DivHeaderAndBody table tbody tr:hover {
+    color: white; 
+    background:none;
+}
+
+
+/** Restyling de la modal window */
+.bluelighting_s, .bluelighting_n, .bluelighting_e, .bluelighting_w, .bluelighting_ne, .bluelighting_sizer, 
+.bluelighting_nw, .bluelighting_sw {
+    background-image: none;
+    background-color: none;
+}
+
+.bluelighting_s, .bluelighting_n, .bluelighting_e, .bluelighting_w, .bluelighting_ne, .bluelighting_sizer, 
+.bluelighting_nw, .bluelighting_sw {
+    background-image: none;
+    background-color: none;
+}
+
+.bluelighting_se, .bluelighting_sizer {
+    background: none;
+}
+
+.bluelighting_w, .bluelighting_e {
+    width:9px;
+}
+
+.bluelighting_content {
+    background-color: #E4F1FF;
+    border:1px solid #ccc;
+
+}
+
+.bluelighting_title  {
+    color: black;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+}
+
+.table_window {
+    background: none;
+}
+
+.top {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #eff3ff;
+    background: -moz-linear-gradient(white, #eff3ff 50%, #eff3ff) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(white, #eff3ff 50%, #eff3ff) repeat scroll 0 0 transparent;
+}
+
+.mid {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #eff3ff;
+}
+
+.bot {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: #eff3ff;
+}
+
+.dialog {
+    -moz-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------------- Styles de la page convention --------------------------------*/
+.menuConv .cktl_simplemenu {
+    margin-left:40px;
+    width:200px;
+}
+
+.menuConv .menuitem {
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}

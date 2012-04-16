@@ -1,0 +1,72 @@
+Form : WOForm {
+	
+}
+
+Montant : WOTextField {
+	value = montant;
+	formatter = application.app2DecimalesFormatter;
+}
+
+Container : AjaxUpdateContainer {
+	id = "ConventionComptaRA";
+}
+
+HasOrgan : WOConditional {
+	condition = contrat.organComposante;
+}
+
+Organ : WOString {
+	value = contrat.organComposante.longString;
+}
+
+HasNoOrgan : WOConditional {
+	condition = contrat.organComposante;
+	negate = true;
+}
+
+Organs : CktlAjaxOrganSelect {
+    id = "LigneBudgetSelect";
+    editingContext = editingContext;
+    utilisateur = applicationUser.utilisateur.utlOrdre;
+    exercice = exercice.exeExercice.intValue;
+    selection = selectedOrgan;
+    updateContainerID = "ConventionComptaRA";
+    value = selectedOrgan.longString;
+    type = "DEPENSE";
+    displayDeleteButton = false;
+    btSrchIconSize = "small";
+    niveauMax = 3;
+    showField = true;
+}
+
+CreerBT : CktlAjaxSubmitButton {
+    action = creerBrouillard;
+    title = "Demander la prise en charge";
+    text = "Créer une demande de prise en charge";
+    type = "new";
+    updateContainerID = "ConventionComptaRA";
+    showBusyImage = true;
+    disabled = hasBrouillardsEnAttente;
+}
+
+Help : ToolTip {
+	htmlText = "<p>La convention RA nécessite une ligne budgétaire réservée, sélectionner la ligne budgétaire sous laquelle celle-ci sera créée. </p><p>Après création de la première demande de prise en charge, la ligne budgétaire sera disponible pour renseigner des dépenses et recettes, prévisions budgétaires et effectuer d'autres demandes de prise en charge...</p>";
+}
+
+BrouillardsUI : BrouillardsUI {
+    dgBrouillardDetailList = dgBrouillardsDetail;
+    dgBrouillardList = dgBrouillards;
+}
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+    contrat = contrat;
+    accueil = accueil;
+    consulter = consulter;
+    enregistrer = enregistrer;
+    updateContainerID = application.messageContainerID;
+}
+

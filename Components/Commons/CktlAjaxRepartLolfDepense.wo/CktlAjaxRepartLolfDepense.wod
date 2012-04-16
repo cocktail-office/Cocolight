@@ -1,0 +1,8 @@
+CodeLolfDepense : CktlAjaxRepartMultiSelect {
+    formName = ^formName;
+    montantTotal = depense.sdMontantHt;
+    newRepart = ^newRepart;
+    eoPere = depense;
+    toRepartKey = "repartSbDepenseLolfs";
+    nomenclatureHelper = lolfHelper;
+}

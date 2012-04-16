@@ -1,0 +1,21 @@
+ContainerContactAvenant : AjaxUpdateContainer {
+    id = "ContainerContactAvenant";
+    style = "border: 1px solid #4E80C0;padding:10px;min-height:375px;";    
+    class = "assistantModule";
+}
+
+AvenantGeneralites : AvenantGeneralites {
+    contrat = avenant.contrat;
+    avenant = avenant;
+    utilisateurPersId = session.applicationUser.getPersId;
+    editingContext = editingContext;
+    applicationUser = session.applicationUser;
+    onAnnuler = fermer;
+    onEnregistrer = fermer;
+}
+
+ContainerMessage : CktlAjaxUiMessageContainer {
+    id = application.messageContainerID;
+}
+WOLToolBar: WOLToolBar{
+}

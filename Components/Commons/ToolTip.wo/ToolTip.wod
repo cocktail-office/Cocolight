@@ -1,0 +1,10 @@
+ImgHelp : WOImage {
+    filename = "img/alert-question.gif";
+    framework = "FwkCktlWebApp";
+    class = "tipImg";
+}
+
+Help : CktlToolTip {
+    htmlText = htmlText;
+    useHelpCursor = true;
+}

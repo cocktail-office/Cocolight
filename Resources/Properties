@@ -1,0 +1,127 @@
+# (c) Cocktail
+# Fichier de config de l'application Cocolight 
+# Les parametres definis ici remplacent ceux
+# definis dans la table GRHUM.GRHUM_PARAMETRES 
+
+APP_USE_MAIL=YES
+GHRUM_HOST_MAIL=mailhost.cocktail.org
+ADMIN_MAIL=cocolight@cocktail.org
+DOMAIN_NAME=cocktail.org
+
+APP_ID=COCOLIGHT
+APP_ALIAS=Cocolight
+APP_TITLE=COCOLIGHT
+APP_ULR=http://www.cocktail.org
+MAIN_WEB_SITE_URL=http://www.cocktail.org
+
+# C_STRUCTURE du Groupe racine(PARTENARIAT pour cette appli) associee a l'appli 
+#Permet de savoir ou enregistrer les partenaires mais aussi
+#sert de racine au referencement des documents dans Gedi
+GROUPE_PARTENAIRE=38543
+
+# Permet de simplifier la saisie du budget pour les conventions simples
+BUDGET_LIGHT_CONV_SIMPLE=true
+
+# Permet de créer/supprimer les tranches d'une convention indépendemment des dates de début et fin
+GESTION_TRANCHE_AUTO=true
+
+# Identification CAS
+#utilisation de l'identification CAS
+#APP_USE_CAS=(YES|NO)
+APP_USE_CAS=NO
+
+MODE_DEBUG=true
+
+# 
+#
+# Paramètres spécifiques WebObjects et Wonder
+#
+#
+
+WOFrameworksBaseURL=/WebObjects/Cocolight.woa/Contents/Frameworks
+
+er.extensions.ERXLocalizer.defaultLanguage=French
+er.extensions.ERXLocalizer.fileNamesToWatch=("Messages.strings", "ValidationTemplate.strings", "Localizable.strings")
+#er.extensions.ERXDatabaseContextDelegate.autoBatchFetchSize=50
+er.extensions.ERXSharedEOLoader.PatchSharedEOLoading=true
+#er.extensions.ERXEnterpriseObject.updateInverseRelationships=true
+er.extensions.ERXResponseRewriter.javascriptTypeAttribute=true
+er.extensions.ERXJDBCAdaptor.className=er.extensions.jdbc.ERXJDBCAdaptor
+er.extensions.ERXEC.safeLocking=true
+er.extensions.maxPageReplacementCacheSize=60
+
+# Utilisation de ERXDatabaseContext
+er.extensions.ERXDatabaseContext.className = er.extensions.eof.ERXDatabaseContext
+er.extensions.ERXDatabaseContext.activate = true
+
+# Log4j Configuration
+log4j.loggerFactory=er.extensions.logging.ERXLogger$Factory
+log4j.rootCategory=INFO,A1
+log4j.appender.A1=er.extensions.logging.ERXConsoleAppender
+log4j.appender.A1.layout=er.extensions.logging.ERXPatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d{MMM dd HH:mm:ss} %$[%#] %-5p %c %x - %m%n
+
+# Log4j Categories
+# Here are a few log4j sub-categories that are interesting.
+# Don't forget that in developement mode this file will get reloaded
+# everytime it changes, so if you say want to turn adaptor debugging
+# on in the middle of the app simply set the below category to debug.
+# Very handy.
+# Base Category
+log4j.logger.er=INFO
+
+# Logger Cocolight
+log4j.logger.org.cocktail.cocolight.serveur=INFO
+log4j.logger.org.cocktail.cocolight.serveur.components.DetailConvention=DEBUG
+log4j.logger.org.cocktail.cocolight.serveur.util.Editions=INFO
+
+# ERExtensions
+# Transaction - Switching this to debug will start the sql ouputting.
+log4j.logger.er.transaction.adaptor.EOAdaptorDebugEnabled=DEBUG
+
+# Fixes - Turning this on will show all the models that are loaded
+log4j.logger.er.extensions.fixes.ERSharedEOLoader=DEBUG
+
+#er.extensions.ERXNSLogLog4jBridge=DEBUG
+#log4j.logger.er.eo.ERXGenericRecord=DEBUG
+#log4j.logger.er.validation.ERXEntityClassDescription=DEBUG
+#log4j.logger.er.default.ERXEntityClassDescription=DEBUG
+#log4j.logger.er.extensions.ERXDatabaseContextDelegate=WARN
+#log4j.logger.er.extensions.ERXConfigurationManager=INFO
+#log4j.logger.er.extensions.ERXApplication.RequestHandling=DEBUG
+
+#er.extensions.ERXModelGroup.patchModelsOnLoad=true
+
+er.extensions.ERXModelGroup.ERAttachment.externalName=CKTL_GED.ERAttachment
+er.extensions.ERXModelGroup.ERDatabaseAttachment.externalName=CKTL_GED.ERAttachment
+er.extensions.ERXModelGroup.ERFileAttachment.externalName=CKTL_GED.ERAttachment
+er.extensions.ERXModelGroup.ERS3Attachment.externalName=CKTL_GED.ERAttachment
+er.extensions.ERXModelGroup.ERAttachmentData.externalName=CKTL_GED.ERAttachmentData
+
+er.extensions.ERXModelGroup.ERAttachment.size.columnName=attachmentSize
+er.extensions.ERXModelGroup.ERDatabaseAttachment.size.columnName=attachmentSize
+er.extensions.ERXModelGroup.ERDatabaseAttachment.attachmentDataID.columnName=attDataID
+er.extensions.ERXModelGroup.ERFileAttachment.size.columnName=attachmentSize
+er.extensions.ERXModelGroup.ERS3Attachment.size.columnName=attachmentSize
+
+# Quartz
+log4j.logger.org.quartz=DEBUG
+
+# Gestion des documents rattaches a un acte de partenariat
+er.attachment.Acte.document.storageType = file
+er.attachment.Acte.document.file.overwrite = false
+er.attachment.Acte.document.file.filesystemPath = /Library/WebServer/Documents/ged/actes
+
+ATTACHMENT_REQ_HANDLER_DELEGATE = org.cocktail.cocolight.serveur.util.ConventionRequestHandlerDelegate
+
+
+# Paramètres de connexion à la base, à changer selon configuration
+dbConnectURLGLOBAL = jdbc:oracle:thin:@base.domaine.fr:1521:gest
+dbConnectUserGLOBAL = grhum
+dbConnectPasswordGLOBAL = mot_de_passe_secret
+
+
+er.extensions.loadOnDemandDuringReplace=true
+
+#AUTRES_ORGANS_BUDGET= ORD_ID1, ORD_ID2 ...
+AUTRES_ORGANS_BUDGET=

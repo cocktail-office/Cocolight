@@ -1,0 +1,29 @@
+<webobject name = "Container">
+  <webobject name = "Form">
+    <h4>Demandes de prise en charge</h4>
+    <table width = "80%" style = "margin-top:20px;">
+      <webobject name = "HasOrgan">
+        <tr>
+          <td class = "alignToRight">Ligne budg&eacute;taire : </td>
+          <td class = "alignToLeft"><webobject name = "Organ" /></td>
+        </tr>
+      </webobject>
+      <webobject name = "HasNoOrgan">
+        <tr>
+          <td class = "alignToRight">Ligne budg&eacute;taire parent : <webobject name = "Help" /> </td>
+          <td class = "alignToLeft"><webobject name = "Organs" /></td>
+        </tr>
+      </webobject>
+      <tr>
+        <td class = "alignToRight">Montant : </td>
+        <td class = "alignToLeft"><webobject name = "Montant" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class = "alignToLeft"><webobject name = "CreerBT" /></td>
+      </tr>
+    </table>
+  </webobject>
+  <div class = "brouillardsRa"> <webobject name = "BrouillardsUI" /> </div>
+</webobject>
+<webobject name = "IsNotModeAssistant"> <webobject name = "Enregistrement" /> </webobject>

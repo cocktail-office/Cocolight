@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+		<dict>
+			<key>libelle</key>
+			<string>Qualité</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartContact.qualite</string>
+				<key>valueWhenEmpty</key>
+				<string>&quot;&nbsp;&quot;</string>
+				<key>escapeHTML</key>
+				<string>true</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>qualite</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Identité</string>
+            <key>component</key>
+            <string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>unContratPartContact.personne.getNomCompletAffichage</string>
+			</dict>
+			<key>orderKeyPath</key>
+			<string>personne.getNomCompletAffichage</string>
+			<key>headerCssClass</key>
+			<string>useMaxWidth</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+		</dict>
+	</array>
+</dict>
+</plist>

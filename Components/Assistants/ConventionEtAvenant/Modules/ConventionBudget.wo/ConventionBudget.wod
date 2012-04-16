@@ -1,0 +1,233 @@
+HasTranches : WOConditional {
+	condition = dgTranchesAnnuelles.allObjects.count;
+}
+
+HasNoTranche : WOConditional {
+	condition = dgTranchesAnnuelles.allObjects.count;
+	negate = true;
+}
+
+ContainerAvenantBudget : AjaxUpdateContainer {
+    id = "ContainerAvenantBudget";
+}
+
+ContainerBudgetDetail : AjaxUpdateContainer {
+    id = "ContainerBudgetDetail";
+}
+
+FormAvenantBudget : ERXWOForm {
+  id = "FormAvenantBudget";
+  name="FormAvenantBudgetName";
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+
+TableViewTranchesAnnuelles : CktlAjaxTableView {
+    id = "TableViewTranchesAnnuelles";
+    dg = dgTranchesAnnuelles;
+    disabled = true;
+    item = currentTrancheAnnuelle;
+    colonnes = dicoTranchesAnnuelles.colonnes; //VALID
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    //callbackOnSelectionner = ctrl.selectionnerUneTrancheAnnuelle;
+    updateContainerID = "ContainerAvenantBudget";
+}
+
+TabsNatureDest : AjaxTabbedPanel {
+    id = "TabbedPanelNatureDest";
+    busyDiv = "MyBusyDivID";
+}
+
+TabDepenses : AjaxTabbedPanelTab {
+    name = "Budget dépenses";
+    isSelected = isTabDepensesSelected;
+    refreshOnSelect = true;
+    id = "TabBudgetDepenses";
+}
+
+TabRecettes : AjaxTabbedPanelTab {
+    name = "Budget recettes";
+    isSelected = isTabRecettesSelected;
+    refreshOnSelect = true;
+    id = "TabBudgetRecettes";
+}
+
+BudgetDepenses : DetailConventionBudget {
+    tranche = selectedTranche;
+    prevision = selectedPrevision;
+    modeDepense = true;
+}
+
+BudgetRecettes : DetailConventionBudget {
+    tranche = selectedTranche;
+    prevision = selectedPrevision;
+    modeDepense = false;
+}
+
+
+TableViewPrevisions : CktlAjaxTableView {
+    id = "TableViewPrevisions";
+    dg = dgPrevisions;
+    item = currentPrevision;
+    colonnes = colonnesPrev;
+    selectionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    //callbackOnSelectionner = ctrl.selectionnerUneTrancheAnnuelle;
+    updateContainerID = "ContainerAvenantBudget";
+}
+
+HasPrevisionSelected : WOConditional {
+    condition = selectedPrevision;
+}
+
+
+NoExerciceOuvertOuEnPreparation : WOConditional {
+    condition = exerceOuvertOuPreparation;
+    negate = true;
+}
+
+ExerciceOuvertOuEnPreparation : WOConditional {
+    condition = exerceOuvertOuPreparation;
+}
+
+Exercice : WOString {
+    value = exercice.exeExercice;
+}
+
+HasNoRecDep : WOConditional {
+    condition = hasRecettesOuDepenses;
+    negate = true;
+}
+
+HasRecDep : WOConditional {
+    condition = hasRecettesOuDepenses;
+}
+
+HasProposition : WOConditional {
+    condition = selectedPrevision.lastPropositionBudget;
+}
+
+EtatProposition : WOString {
+    value = selectedPrevision.lastPropositionBudget.typeEtat.tyetLibelle;
+}
+
+
+HasPropositionValide : WOConditional {
+    condition = selectedPrevision.lastPropositionBudgetValide;
+}
+
+GestionBudgetPositions : GestionBudgetPositionnements {
+    proposition = selectedPrevision.lastPropositionBudgetValide;
+    utilisateur = userJefyAdmin;
+}
+
+ProposerPrevision : CktlAjaxButton {
+    action = proposerPrevision;
+    type = "new";
+    text = "Proposer cette prévision";
+    updateContainerID = "ContainerAvenantBudget";
+}
+
+CommentairePrevision : WOText {
+    value = selectedPrevision.pvbuCommentaire;
+    style = "width:50%;";
+}
+
+RejeterPrevision : CktlAjaxSubmitButton {
+    action = rejeterPrevision;
+    type = "cancel";
+    text = "Rejeter cette prévision";
+    updateContainerID = "ContainerAvenantBudget";
+}
+
+ValiderPrevision : CktlAjaxButton {
+    action = validerPrevision;
+    type = "new";
+    text = "Valider cette prévision";
+    updateContainerID = "ContainerAvenantBudget";
+}
+
+CreerProposition : CktlAjaxButton {
+    action = creerProposition;
+    type = "new";
+    text = "Soumettre une proposition budgétaire";
+    title = "Soumettre une proposition budgétaire";
+    updateContainerID = "ContainerAvenantBudget";
+    disabled = hasNoPriseEnChargeRA;
+}
+
+MessageRA : WOConditional {
+	condition = hasNoPriseEnChargeRA;
+}
+
+PrevisionAValider : WOConditional {
+    condition = selectedPrevision.isAValider;
+}
+
+PrevisionValide : WOConditional {
+    condition = selectedPrevision.isValide;
+}
+
+HasDroitValidationPrevision : WOConditional {
+    condition = applicationUser.hasDroitValidationPrevisionBudget;
+}
+
+HasDroitProposition : WOConditional {
+    condition = applicationUser.hasDroitPropositionBudget;
+}
+
+NoPropositionAVAlider : WOConditional {
+    condition = selectedPrevision.lastPropositionBudgetAValider;
+    negate = true;
+}
+
+AjoutPrevModal : CktlAjaxWindow {
+    id = "AjoutPrevModal";
+    width = "400";
+    height = "300";
+    zIndex = 1000;
+    closeUpdateContainerID = "ContainerAvenantBudget";
+}
+
+AjoutPrevision : AjoutPrevisionBudget {
+    tranche = selectedTranche;
+    depenses = selectedTranche.depensesSansPrevision;
+    userJefy = userJefyAdmin;
+    onCreatedPrevision = rafraichir;
+}
+
+PrevisionEnAttente : WOConditional {
+    condition = selectedPrevision.enAttente;
+}
+
+PrevisionRejetee : WOConditional {
+    condition = selectedPrevision.rejetee;
+}
+
+PrevCommentaire : WOString {
+    value = selectedPrevision.pvbuCommentaire;
+}
+
+Toolbar : CktlAjaxToolbar {
+	
+}
+
+OpenAjouterPrev : CktlAjaxButton {
+    action = openAjouterPrev;
+	type = "new";
+	title = "Ajouter une prévision";
+	dialogIDForOpen = "AjoutPrevModal";
+}
+
+SupprimerPrev : CktlAjaxButton {
+    action = supprimerPrevision;
+    disabled = selectedPrevisionNotEnAttente;
+    type = "delete";
+	title = "Supprimer une prévision";
+	updateContainerID = "ContainerAvenantBudget";
+}

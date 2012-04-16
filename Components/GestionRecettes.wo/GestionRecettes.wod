@@ -1,0 +1,192 @@
+ContainerGestionRecettesContenu : AjaxUpdateContainer {
+	id = "ContainerGestionRecettesContenu";
+	style = "min-height:320px;margin-left:0px;";
+	class = "assistantContent";
+}
+FormGestionRecette : WOForm {
+	id = "FormGestionRecette";
+	style = "height:170px;";
+	name = "FormGestionRecette";
+}
+
+Exo : WOString {
+    value = exercice.exeExercice;
+}
+
+DatePrevRecette : CktlAjaxDatePicker {
+	id = "DatePrevRecette";
+	dateValue = laRecette.srDatePrev;
+}
+LibelleRecette : ERXWOTextField {
+	id = "LibelleRecette";
+	// value = laRecette.sdLibelle;
+	value = libelleRecette;
+	class = "alignToLeft";
+    style = "width:200px;";
+}
+ObserverLibelleRecette : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "LibelleRecette";
+}
+MontantHTRecette : WOTextField {
+	id = "MontantHTRecette";
+	value = laRecette.srMontantHt; 
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+	size = "10";
+}
+ObserverMontantHTRecette : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "MontantHTRecette";
+	updateContainerID = "ContainerGestionRecettesContenu";
+	//onComplete = "function () {TDValeurTVARecetteUpdate();TDMontantTTCRecetteUpdate();}";
+}
+TVARecette : WOPopUpButton {
+	id = "TVARecette";
+	list = application.lesTauxDeTVA;
+	item = unTauxDeTVARecette;
+	selection = laRecette.tva; 
+	displayString = unTauxDeTVARecette.tvaTaux;
+	class = "alignToRight";
+}
+ObserverTVARecette : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "TVARecette";
+	onComplete = "function () {TDValeurTVARecetteUpdate();TDMontantTTCRecetteUpdate();}";
+}
+TDValeurTVARecette : AjaxUpdateContainer {
+    elementName = "span";
+	id = "TDValeurTVARecette";
+}
+ValeurTVARecette : WOTextField {
+	id = "ValeurTVARecette";
+	value = valeurTVARecette;
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+	disabled = true;
+    size = "10";
+}
+TDMontantTTCRecette : AjaxUpdateContainer {
+	id = "TDMontantTTCRecette";
+    elementName = "span";
+}
+MontantTTCRecette : WOTextField {
+	id = "MontantTTCRecette";
+	// disabled = true;
+	value = montantTTCRecette;
+	formatter = application.app2DecimalesFormatter;
+	class = "alignToRight";
+	size = "10";
+}
+ObserverMontantTTCRecette : AjaxObserveField {
+	action = doNothing;
+	observeFieldID = "MontantTTCRecette";
+	updateContainerID = "ContainerGestionRecettesContenu";
+	//onComplete = "function () {TDValeurTVARecetteUpdate();TDMontantTTCRecetteUpdate();}";
+}
+
+IsNotModeRA : WOConditional {
+    condition = laRecette.tranche.contrat.isModeRA;
+    negate = true;
+}
+
+IsModeRA : WOConditional {
+    condition = laRecette.tranche.contrat.isModeRA;
+}
+
+HasLigneBudgRA : WOConditional {
+    condition = laRecette.organ;
+}
+
+HasNoLigneBudgRA : WOConditional {
+    condition = laRecette.organ;
+    negate = true;
+}
+
+Help : ToolTip {
+    htmlText = "<p>La convention RA nécessite une ligne budgétaire réservée, elle sera crée lors de la prise en charge comptable ou lors de la prévision budgétaire.</p>";
+}
+
+LigneBudgStr : WOString {
+    value = laRecette.organ.longString;
+}
+
+LigneBudg : ERXOptGroupPopupButton {
+	label = groupeOrganLabel;
+	group = groupeOrgan;
+    id = "LigneBudg";
+    list = organs;
+    item = currentOrgan;
+    selection = laRecette.organ;
+    displayString = currentOrgan.longString;
+    noSelectionString = "Sélectionner une ligne budgétaire";
+    disabled = hasNoOrgan;
+}
+
+CodesLolf :  WOPopUpButton {
+    id = "CodeLolfRecette";
+    list = lolfs;
+    item = currentLolf;
+    selection = laRecette.lolf;
+    displayString = currentLolf.lolfLibelleLong;
+    noSelectionString = "Sélectionner un code lolf";
+    style = "width:300px;";
+}
+
+CodesNature :  WOPopUpButton {
+    id = "CodeNatureRecette";
+    list = plancos;
+    item = currentPlanco;
+    selection = laRecette.planco;
+    displayString = currentPlanco.pcoNumEtLibelle;
+    noSelectionString = "Sélectionner un code nature";
+    style = "width:300px;";
+}
+
+ContainerGestionRecettesMenu : AjaxUpdateContainer {
+	id = "ContainerGestionRecettesMenu";
+	style = "border-top:2px solid #4E80C0;height:28px;";
+	class = "assistantMenu";
+}
+Annuler : CktlAjaxButton {
+	action = annuler;
+	onSuccess = "function(oS){parent.ContentContainerUpdate();}";
+	title = "Annuler la saisie d'une dépense";
+	text = "Annuler";
+	type = "cancel";
+}
+Terminer : CktlAjaxSubmitButton {
+	action = terminer;
+	// onFailure = application.onFailureMessage;
+	text = "Valider";
+	type = "validate";
+	title = "Valider et enregistrer";
+	updateContainerID = application.messageContainerID;
+}
+TerminerEtAjouter : CktlAjaxSubmitButton {
+	action = terminerEtAjouter;
+	//onFailure = application.onFailureMessage;
+	text = "Valider et saisir une nouvelle recette";
+	type = "validate";
+	title = "Valider et saisir une nouvelle recette";
+	// updateContainerID = "ContainerGestionDepensesContenu";
+	updateContainerID = application.messageContainerID;
+	onSuccess = "function(oC){parent.TableViewRecettesUpdate();parent.ContainerDetailRecetteUpdate();parent.TableViewTranchesAnnuellesUpdate();parent.ContainerMontantDisponibleUpdate();ContainerGestionRecettesContenuUpdate();}";
+}
+
+ContainerMessage : CktlAjaxUiMessageContainer {
+	id = application.messageContainerID;
+}
+Busy: AjaxBusyIndicator {
+	divID = "busy";
+}
+WOLToolBar: WOLToolBar{
+}
+
+IsModeNature : WOConditional {
+    condition = modeNature;
+}
+
+IsModeDestination : WOConditional {
+    condition = modeDestination;
+}

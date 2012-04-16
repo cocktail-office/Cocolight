@@ -1,0 +1,71 @@
+ContainerNatureContratSelectionnee : AjaxUpdateContainer {
+	id = "ContainerNatureContratSelectionnee";
+	style = "text-align:left;";
+}
+NatureContratSelectionnee : WOTextField {
+  value = ^value;
+  disabled = true;
+  // style = "float:left;text-align:left;vertical-align:middle;";
+  style = "text-align:left;";
+  size = textFieldSize;
+}
+
+BtRechercher : CktlAjaxButton {
+	id = idBtRechercher;
+	type = "find";
+	title = "Choisir une nature de contrat ";
+	action = doNothing;	
+	// onClick = "openCAW_NatureContratTreeViewID('Sélectionner une nature');return false;";
+	dialogIDForOpen = "NatureContratTreeViewID";
+	disabled = disabled;
+}
+DisplayDeleteButton : WOConditional {
+	condition = displayDeleteButton;
+}
+BtSupprimer : CktlAjaxButton {
+	disabled = disabled;
+	action = supprimerSelection;
+	type = "cancel";
+	title = "Supprimer la sélection";
+	updateContainerID = "ContainerNatureContratSelectionnee";
+}
+
+NatureContratTreeView : CktlAjaxWindow {
+	id = "NatureContratTreeViewID";
+	showOpener = false; 
+//	overlayClose = false; 
+//	transitions = false; 
+	centerVertically = true;
+	minWidth = ^treeViewWidth;
+	minHeight = ^treeViewHeight;
+	className = ^treeViewClassName;
+}
+
+ContainerNatureContratTreeView : AjaxUpdateContainer {
+	id = componentId;	
+}
+ContainerAjaxTree : AjaxUpdateContainer {
+	id = containerAjaxTreeID;	
+}
+AjaxTree : CktlAjaxTree {	
+	id = unAjaxTreeID;
+	class = "tree";
+	root = ctrl.rootNatureContrat;
+	item = ctrl.uneNatureContrat;
+	delegate = ctrl.delegate;
+	allExpanded = false;
+	showRoot = false;
+	collapsedImage = treeCollapsedImage;
+	collapsedImageFramework = treeCollapsedImageFramework;
+	expandedImage = treeExpandedImage;
+	expandedImageFramework = treeExpandedImageFramework;
+	leafImage = treeLeafImage;
+	leafImageFramework = treeLeafImageFramework;
+}
+NatureContratLink : AjaxUpdateLink {
+	string = ctrl.uneNatureContrat.tyconLibelle;
+	action = ctrl.afficherNatureContratSelectionnee;
+	updateContainerID = "ContainerNatureContratSelectionnee";
+	// onSuccess = "function() {ContainerNatureContratSelectionneeUpdate();}";
+	// onSuccess = onSuccessSelect;
+}

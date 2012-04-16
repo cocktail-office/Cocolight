@@ -1,0 +1,235 @@
+<webobject name = "HasTranches">
+  <webobject name = "ContainerAvenantBudget">
+    <webobject name = "FormAvenantBudget">
+      <h4 class="tbvTitle">Tranches annuelles</h4>
+      <webobject name = "TableViewTranchesAnnuelles">
+        <webobject name = "Toolbar">
+              <webobject name = "ValiderTranche"></webobject>
+        </webobject> 
+      </webobject>      
+        <webobject name = "ContainerBudgetDetail">
+          <webobject name = "ExoNonCree">
+                <span style="color:red;">(Cet exercice n'est pas encore créé, aucune dépense/recette n'est possible)</span>
+          </webobject>
+          <webobject name = "TabsNatureDest">
+            <webobject name = "TabDepenses">
+              <div style = "float:left;">
+                <h4 class="tbvTitle">Depenses pr&eacute;visionnelles</h4>
+                <webobject name = "TableViewDepenses"> </webobject>
+              </div>
+              <div style = "margin-left: 220px;">
+                <h4 class="tbvTitle">Cr&eacute;dits positionn&eacute;s pour la d&eacute;pense s&eacute;lectionn&eacute;e</h4>
+                <webobject name = "TableViewCreditsDepenses">
+                  <webobject name = "TableViewCreditsDepensesToolBar">
+                    <webobject name = "AjouterCreditDep" />
+                    <webobject name = "SupprimerCreditDep" />
+                  </webobject>
+                </webobject>
+              </div>
+              <div>
+                <h4 class="tbvTitle">R&eacute;capitulatif des cr&eacute;dits positionn&eacute;s en d&eacute;pense</h4>
+                <webobject name = "TableViewCreditsDepensesRecap" />
+                <div style = "float:left;margin-left:10px;"> La tranche doit &ecirc;tre valid&eacute;e pour pouvoir r&eacute;aliser des d&eacute;penses. </div>
+                D = total d&eacute;penses virtuel = total liquid&eacute; + total restant engag&eacute; 
+              </div>
+            </webobject>
+            <webobject name = "TabRecettes">
+              <div style = "float:left;">
+                <h4 class="tbvTitle">Recettes pr&eacute;visionnelles</h4>
+                <webobject name = "TableViewRecettes"> </webobject>
+              </div>
+              <div style = "margin-left: 220px;">
+                <h4 class="tbvTitle">Cr&eacute;dits positionn&eacute;s pour la recette s&eacute;lectionn&eacute;e</h4>
+                <webobject name = "TableViewCreditsRecettes">
+                  <webobject name = "TableViewCreditsRecettesToolBar">
+                    <webobject name = "AjouterCreditRec" />
+                    <webobject name = "SupprimerCreditRec" />
+                  </webobject>
+                </webobject>
+              </div>
+              <div>
+                <h4 class="tbvTitle">R&eacute;capitulatif des cr&eacute;dits positionn&eacute;s en recette</h4>
+                <webobject name = "TableViewCreditsRecettesRecap" />
+                <div style = "float:left;margin-left:10px;"> La tranche doit &ecirc;tre valid&eacute;e pour pouvoir r&eacute;aliser des recettes </div>
+              </div>
+            </webobject>
+          </webobject>
+      </webobject>
+    </webobject>
+  </webobject>
+</webobject>
+<webobject name = "HasNoTranche"> Aucune tranche encore enregistr&eacute;e : veuillez renseigner un montant et enregistrer. </webobject>
+<webobject name = "AjoutCreditDepModal">
+  <webobject name = "AjoutCreditDepContainer">
+    <webobject name = "FormCreditDep">
+      <div class = "recapPropose">
+        <label for = "DatePrevDepense" class = "etiquette">R&eacute;capitulatif :</label>
+        <table style = "margin-left:20px;">
+          <tbody>
+            <tr>
+              <th width = "200px">Total &agrave; positionner :</th>
+              <td style = "text-align:right;"><webobject name = "TotalAPositionner" /></td>
+            </tr>
+            <tr>
+              <th>Total positionn&eacute; :</th>
+              <td style = "text-align:right;"><webobject name = "TotalPositionne" /></td>
+            </tr>
+            <tr>
+              <th>Reste &agrave; positionner :</th>
+              <td style = "text-align:right;"><webobject name = "ResteAPositionner" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <label for = "DatePrevDepense" class = "etiquette">D&eacute;penses s&eacute;lectionn&eacute;s :</label>
+        <div class = "cktlajaxtableview">
+          <div class = "cktlAjaxTableView_DivHeaderAndBody">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nature</th>
+                  <th>Montant</th>
+                  <th>CR(s)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><webobject name = "NatureDepPrev" /></td>
+                  <td><webobject name = "MontantDepPrev" /></td>
+                  <td><webobject name = "CRsDepPrev" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire">Ligne budg&eacute;taire :</label>
+          </td>
+          <td colspan = "2"> <webobject name = "LigneBudg" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire"> Type cr&eacute;dit : </label>
+          </td>
+          <td colspan = "2">
+            <webobject name = "HasTypeCredit"> <webobject name = "TypeCredit" /> </webobject>
+            <webobject name = "HasNoTypeCredit"> Aucun type de cr&eacute;dit trouv&eacute; pour cet exercice et ce code nature</webobject>
+          </td>
+        </tr>
+        <webobject name = "HasTypeCredit">
+          <tr>
+            <td class = "alignToRight">
+              <label for = "LigneBudg" class = "etiquette obligatoire"> Montant &agrave; positionner: </label>
+            </td>
+            <td width = "90px">
+              <webobject name = "PctContainer">
+                <webobject name = "PctObs"><webobject name = "PctMontant" />%</webobject>
+              </webobject>
+            </td>
+            <td>
+              <webobject name = "MontantContainer">
+                <webobject name = "MontantObs">montant : <webobject name = "Montant" /></webobject>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+        <tr>
+          <td></td>
+          <td colspan = "2" style = "text-align:right;padding-top:10px;">
+            <webobject name = "Annuler" />
+            <webobject name = "Valider" />
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+</webobject>
+<webobject name = "AjoutCreditRecModal">
+  <webobject name = "AjoutCreditRecContainer">
+    <webobject name = "FormCreditRec">
+      <div class = "recapPropose">
+        <label for = "DatePrevRecette" class = "etiquette">R&eacute;capitulatif :</label>
+        <table style = "margin-left:20px;">
+          <tbody>
+            <tr>
+              <th width = "200px">Total &agrave; positionner :</th>
+              <td style = "text-align:right;"><webobject name = "TotalAPositionnerRec" /></td>
+            </tr>
+            <tr>
+              <th>Total positionn&eacute; :</th>
+              <td style = "text-align:right;"><webobject name = "TotalPositionneRec" /></td>
+            </tr>
+            <tr>
+              <th>Reste &agrave; positionner :</th>
+              <td style = "text-align:right;"><webobject name = "ResteAPositionnerRec" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <label for = "DatePrevDepense" class = "etiquette">Recettes s&eacute;lectionn&eacute;s :</label>
+        <div class = "cktlajaxtableview">
+          <div class = "cktlAjaxTableView_DivHeaderAndBody">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nature</th>
+                  <th>Montant</th>
+                  <th>CR(s)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><webobject name = "NatureRecPrev" /></td>
+                  <td><webobject name = "MontantRecPrev" /></td>
+                  <td><webobject name = "CRsRecPrev" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudg" class = "etiquette obligatoire">Ligne budg&eacute;taire :</label>
+          </td>
+          <td colspan = "2"> <webobject name = "LigneBudgRec" /> </td>
+        </tr>
+        <tr>
+          <td class = "alignToRight">
+            <label for = "LigneBudgRec" class = "etiquette obligatoire"> Type cr&eacute;dit : </label>
+          </td>
+          <td colspan = "2">
+            <webobject name = "HasTypeCreditRec"> <webobject name = "TypeCreditRec" /> </webobject>
+            <webobject name = "HasNoTypeCreditRec"> Aucun type de cr&eacute;dit trouv&eacute; pour cet exercice et ce code nature</webobject>
+          </td>
+        </tr>
+        <webobject name = "HasTypeCreditRec">
+          <tr>
+            <td class = "alignToRight">
+              <label for = "Montant" class = "etiquette obligatoire"> Montant &agrave; positionner: </label>
+            </td>
+            <td width = "90px">
+              <webobject name = "PctContainer">
+                <webobject name = "PctObs"><webobject name = "PctMontantRec" />%</webobject>
+              </webobject>
+            </td>
+            <td>
+              <webobject name = "MontantContainer">
+                <webobject name = "MontantObs">montant : <webobject name = "MontantRec" /></webobject>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+        <tr>
+          <td></td>
+          <td colspan = "2" style = "text-align:right;padding-top:10px;">
+            <webobject name = "AnnulerRec" />
+            <webobject name = "ValiderRec" />
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+</webobject>

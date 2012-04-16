@@ -1,0 +1,111 @@
+<webobject name = "Wrapper">
+  <webobject name = "FormRecherche">
+  <webobject name = "ContainerRecherche">
+    <div id = "CocolightQBERecherche">
+        <webobject name = "DefautSubmitButton" />
+        <table>
+          <tbody>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "Exercice" class = "etiquette">Num&eacute;ro</label>
+              </td>
+              <td>
+                <webobject name = "TypeContrat" />&nbsp;<webobject name = "Exercice" />-<webobject name = "Numero" />
+              </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "ServiceGestionnaire" class = "etiquette">Service gestionnaire</label>
+              </td>
+              <td>
+                <webobject name = "Services" />
+              </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "ReferenceExterne" class = "etiquette">R&eacute;f. externe</label>
+              </td>
+              <td> <webobject name = "ReferenceExterne" /> </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap ">
+                <label for = "ModeDeGestion" class = "etiquette">Mode de gestion</label>
+              </td>
+              <td> <webobject name = "ModeDeGestion" /> </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "Discipline" class = "etiquette">Discipline</label>
+              </td>
+              <td> <webobject name = "Discipline" /> </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap ">
+                <label for = "Nature" class = "etiquette">Nature</label>
+              </td>
+              <td class = "nowrap"> <webobject name = "Nature" /> </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "Objet" class = "etiquette">Objet</label>
+              </td>
+              <td><webobject name = "Objet" /></td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "DateDebutMin" class = "etiquette">D&eacute;but entre</label>
+              </td>
+              <td>
+                <webobject name = "DateDebutMin" />&nbsp;et&nbsp;<webobject name = "DateDebutMax" />
+              </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "DateFinMin" class = "etiquette">Fin entre</label>
+              </td>
+              <td>
+                <webobject name = "DateFinMin" />&nbsp;et&nbsp;<webobject name = "DateFinMax" />
+              </td>
+            </tr>
+            <tr>
+              <td class = "useMinWidth nowrap">
+                <label for = "DateSignatureMin" class = "etiquette">Signature entre</label>
+              </td>
+              <td>
+                <webobject name = "DateSignatureMin" />&nbsp;et&nbsp;<webobject name = "DateSignatureMax" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <webobject name = "ContainerRechercheMenu">
+      <center>
+        <table width = "100%" style = "padding:5px;">
+          <tbody>
+            <tr height = "100%">
+              <td width = "55%" align = "center"><webobject name = "Nettoyer" /></td>
+              <td width = "50%" align = "center"><webobject name = "Rechercher" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </webobject>
+  </webobject>
+  <webobject name = "ContainerResultats">
+    <webobject name = "TableViewContrats">
+        <webobject name = "Header">
+	        <webobject name = "NumeroCol"></webobject>
+	        <webobject name = "ObjetCol"></webobject>
+	        <webobject name = "CentreGestCol"></webobject>
+        </webobject>
+        <webobject name = "Body">
+            <td class="alignToLeft"><webobject name = "NumCell"></webobject></td>
+            <td class="alignToLeft"><webobject name = "ObjetCell"></webobject></td>
+            <td><webobject name = "CentreGestCell"></webobject></td>
+        </webobject>
+    </webobject>
+    
+    
+   </webobject>
+  </webobject>
+</webobject>

@@ -1,0 +1,47 @@
+ContainerDetailAvenant : AjaxUpdateContainer {
+	id = "ContainerDetailAvenant";
+	class = "assistantModule";
+}
+
+TabbedPanel : CCTabPanel {
+    id = "AvenantTabs";
+    selectedTab = avenantTabs.selectedTab;
+    tabs = avenantTabs.tabs;
+    tabNameKey = "libelle";
+}
+
+IsTabGeneralites : WOConditional {
+    condition = generalitesTab.isSelected;
+}
+
+IsTabEvenements : WOConditional {
+    condition = evenementsTab.isSelected;
+}
+
+IsTabDocuments : WOConditional {
+    condition = documentsTab.isSelected;
+}
+
+AvenantGeneralites : AvenantGeneralites {
+	contrat = avenant.contrat;
+	avenant = avenant;
+	applicationUser = applicationUser;
+	editingContext = generalitesTab.editingContext;
+	onEnregistrer = succesEtRafraichir;
+	onAnnuler = annulerEtRafraichir;
+}
+
+AvenantEvenements : AvenantDatesEtEvenements {
+    contrat = avenant.contrat;
+	avenant = avenant;
+	applicationUser = applicationUser;
+	editingContext = evenementsTab.editingContext;
+}
+
+Documents : AvenantDocuments {
+  contrat = avenant.contrat;
+  avenant = avenant;
+  applicationUser = applicationUser;
+  editingContext = documentsTab.editingContext;
+}
+

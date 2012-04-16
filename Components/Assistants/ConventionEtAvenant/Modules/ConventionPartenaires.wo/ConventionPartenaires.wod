@@ -1,0 +1,14 @@
+ConventionPartenairesEtContacts : ConventionPartenairesEtContacts {
+	accueil = accueil;
+	enregistrer = enregistrer;
+	consulter = consulter;
+	applicationUser = ^applicationUser;
+	contrat = ^contrat;
+    avenant = ^avenant;
+    assistant = ^assistant;
+    indexContactModuleActif = session.indexModuleActifGestionContact;
+    indexPartenaireModuleActif = session.indexModuleActifGestionPartenaire;
+    etablissementsAffectation = session.lesEtablissementsAffectation;
+    editingContext = ^editingContext;
+    updateContainerID = "ContainerAssistantMenu";
+}

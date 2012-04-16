@@ -1,0 +1,14 @@
+Wrapper : Wrapper {
+	
+}
+AssistantConvention : AssistantConvention {
+	modules = modules;
+	indexModuleActif = session.indexModuleActifCreationConvention; 
+	etapes = etapes;
+	contrat = session.contrat;
+	avenant = session.contrat.avenantZero;
+	editingContext = session.defaultEditingContext;
+	utilisateurPersId = session.applicationUser.getPersId;
+	applicationUser = applicationUser;
+	apresTerminer = apresTerminer;
+}

@@ -1,0 +1,217 @@
+Wrapper : Wrapper {
+	
+}
+
+ContainerRecherche : AjaxUpdateContainer {
+	id = "CocolightContainerRecherche";
+}
+
+
+FormRecherche : WOForm {
+	id = "FormRecherche";
+	name = "FormRecherche";
+	action = rechercher;
+}
+DefautSubmitButton : AjaxDefaultSubmitButton {
+	action = rechercher;
+  	updateContainerID = "CocolightContainerRechercheResultats";  
+}
+
+TypeContrat : WOPopUpButton {
+	list = lesTypesClassification;
+	item = unTypeClassification;
+	selection = bindings.TypeClassification; // VALID
+	displayString = unTypeClassification.tccLibelle;
+	noSelectionString = " ";
+    style = "width:100px;";
+}
+Exercice : WOTextField {
+	id = "Exercice";
+	numberformat = "#0";
+	value = bindings.exeOrdre; // VALID
+	size = "4";
+}
+Numero : WOTextField {
+	id = "Numero";
+	value = bindings.index; // VALID
+	size = "6";
+	numberformat = "#0";
+}
+Services : WOPopUpButton {
+    id = "ServiceGestionnaire";
+	list = lesServices;
+	item = currentService;
+	displayString = labelForCurrentService;
+	selection = bindings.ServiceGestionnaire; // VALID
+	noSelectionString = " ";
+	style = "width:280px;";
+}
+
+ModeDeGestion : WOPopUpButton {
+	// tabindex = "1";
+	id = "ModeDeGestion";
+	list = lesModesDeGestion;
+	item = currentModeDeGestion;
+	selection = bindings.ModeDeGestion; // VALID
+	displayString = labelForCurrentModeDeGestion;
+	noSelectionString = " ";
+    style = "width:140px;";
+}
+
+Nature : WOPopUpButton {
+	// tabindex = "5";
+	id = "Nature";
+    list = lesTypesContrat;
+    item = currentTypeContrat;
+    displayString = labelForCurrentTypeContrat;
+    selection = bindings.TypeContrat; // VALID	
+    noSelectionString = " ";
+    style = "width:280px;";
+}
+
+Discipline : WOPopUpButton {
+	// tabindex = "7";
+	id = "Discipline";
+	list = lesDisciplines;
+	item = currentDiscipline;
+	selection = bindings.Discipline; // VALID
+	displayString = labelForCurrentDiscipline;
+	noSelectionString = " ";
+    style = "width:280px;";
+}
+ReferenceExterne : WOTextField {
+	id = "ReferenceExterne";
+	value = bindings.refExterne; // VALID
+	class = "useMaxWidth";
+}
+Objet : WOText {
+	id = "Objet";
+	value = bindings.objet; // VALID
+	class = "useMaxWidth";
+}
+DateDebutMin : CktlAjaxDatePicker {
+	id = "DateDebutMin";
+	dateValue = bindings.DateDebutMin; // VALID
+}
+DateDebutMax : CktlAjaxDatePicker {
+	id = "DateDebutMax";
+	dateValue = bindings.DateDebutMax; // VALID
+}
+DateFinMin : CktlAjaxDatePicker {
+	id = "DateFinMin";
+	dateValue = bindings.DateFinMin; // VALID
+}
+DateFinMax : CktlAjaxDatePicker {
+	id = "DateFinMax";
+	dateValue = bindings.DateFinMax; // VALID
+}
+DateDebutExecMin : CktlAjaxDatePicker {
+	id = "DateDebutExecMin";
+	dateValue = bindings.DateDebutExecMin; // VALID
+}
+DateDebutExecMax : CktlAjaxDatePicker {
+	id = "DateDebutExecMax";
+	dateValue = bindings.DateDebutExecMax; // VALID
+}
+DateFinExecMin : CktlAjaxDatePicker {
+	id = "DateFinExecMin";
+	dateValue = bindings.DateFinExecMin; // VALID
+}
+DateFinExecMax : CktlAjaxDatePicker {
+	id = "DateFinExecMax";
+	dateValue = bindings.DateFinExecMax; // VALID
+}
+DateSignatureMin : CktlAjaxDatePicker {
+	id = "DateSignatureMin";
+	dateValue = bindings.DateSignatureMin; // VALID
+}
+DateSignatureMax : CktlAjaxDatePicker {
+	id = "DateSignatureMax";
+	dateValue = bindings.DateSignatureMax; // VALID
+}
+
+ContainerResultats : AjaxUpdateContainer {
+	id = "CocolightContainerRechercheResultats";
+	style = "margin-left:420px;width:auto;height:555px;";
+}
+
+TableViewContrats : CktlAjaxSimpleTableView {
+    id = "TableViewContrats";
+	displayGroup = dgContrats;
+	item = unDicoContrat;
+    height = "515px";
+    cssClassForTr = cssClassForCurrentContrat;
+    onSelect = consulterContrat;
+}
+
+NumeroCol : CktlAjaxSimpleTableViewColumn {
+	label = "Numéro";
+	sortKeypath = "CONINDEX";
+	width = "30%";
+}
+
+ObjetCol : CktlAjaxSimpleTableViewColumn {
+	label = "Objet";
+	sortKeypath = "OBJET";
+	width = "40%";
+}
+
+CentreGestCol : CktlAjaxSimpleTableViewColumn {
+	label = "Centre gestionnaire";
+	sortKeypath = "CONCR";
+	width = "30%";
+}
+
+Header : CktlAjaxSimpleTableViewHeader {
+	
+}
+
+Body : CktlAjaxSimpleTableViewBody {
+	
+}
+
+NumCell : WOString {
+	value = unDicoContrat.NUMERO; // VALID
+}
+
+ObjetCell : WOString {
+	value = unDicoContrat.OBJET; // VALID
+}
+
+CentreGestCell : WOString {
+    value = unDicoContrat.CONCR; // VALID	
+}
+
+TableViewContratsOld : CktlAjaxTableView {
+	colonnes = dicoContrats.colonnes; // VALID
+	id = "TableViewContratsOldz";
+	dg = dgContrats;
+	item = unDicoContrat;
+	selectionMultipleEnabled = false;
+	selectionEnabled = true;
+	triMultiColonneEnabled = true;
+	afficherBarreDeNavigation = false;
+	afficherBarreDeStatut = false;
+	height = "200px";
+}
+
+ContainerRechercheMenu : AjaxUpdateContainer {
+	id = "CocolightContainerRechercheMenu";
+}
+Nettoyer : CktlAjaxButton {
+	action = nettoyer;
+  	onSuccess = "function (){CocolightContainerRechercheUpdate();CocolightContainerRechercheResultatsUpdate();}";
+	text = "Nettoyer";
+	type = "cancel";
+	title = "Nettoyer les critères de recherche";
+}
+
+Rechercher : CktlAjaxSubmitButton {
+	action = rechercher;
+  	updateContainerID = "CocolightContainerRechercheResultats";  
+	text = "Rechercher";
+	type = "find";
+	title = "Lancer la recherche";
+	showBusyImage = true;
+}
+

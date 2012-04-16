@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="BudgetableSelect.java" wocomponentcontent="false">
+
+        <binding name="prevision"/>
+    <validation message="'prevision' is a required binding.">
+            <unbound name="prevision"/>
+        </validation>
+    <binding name="modeDepense"/>
+        <validation message="'modeDepense' is a required binding.">
+            <unbound name="modeDepense"/>
+        </validation>
+    <binding name="tranche"/>
+        <validation message="'tranche' is a required binding.">
+            <unbound name="tranche"/>
+        </validation>
+    <binding name="onSelect"/>
+        <validation message="'onSelect' is a required binding.">
+            <unbound name="onSelect"/>
+        </validation>
+    </wo>
+</wodefinitions>

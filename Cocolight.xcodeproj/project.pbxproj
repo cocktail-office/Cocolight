@@ -1,0 +1,1123 @@
+{
+    archiveVersion = 1; 
+    classes = {}; 
+    objectVersion = 42; 
+    objects = {
+        000000000000000000000001 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "StringUtils.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/util/StringUtils.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000002 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ExceptionUtils.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/util/ExceptionUtils.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000003 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "CtrlModule.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/CtrlModule.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000004 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionIndicateursCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/ConventionIndicateursCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000005 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionGeneralitesCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/ConventionGeneralitesCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000006 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "CktlAjaxNatureContratSelectCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/CktlAjaxNatureContratSelectCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000007 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantVoletFinancierCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/AvenantVoletFinancierCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000008 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantPartenairesEtContactsCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/AvenantPartenairesEtContactsCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000009 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantGeneralitesCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/controlers/AvenantGeneralitesCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchResultsAssistant.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/assistantpartenaire/PersonneSrchResultsAssistant.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchResults.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/assistantpartenaire/PersonneSrchResults.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchAssistant.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/assistantpartenaire/PersonneSrchAssistant.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrch.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/assistantpartenaire/PersonneSrch.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "WrapperAssistantPartenaire.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/WrapperAssistantPartenaire.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000000f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Wrapper.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Wrapper.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000010 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Timeout.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Timeout.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000011 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Synthese.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Synthese.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000012 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Recherche.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Recherche.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000013 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PartenaireGestion.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/PartenaireGestion.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000014 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ModuleCocolight.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ModuleCocolight.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000015 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Main.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Main.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000016 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "LoginCAS.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/LoginCAS.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000017 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Login.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Login.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000018 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "IModuleAssistant.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/IModuleAssistant.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000019 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Erreur.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Erreur.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionVoletFinancier.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionVoletFinancier.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionPartenairesEtContacts.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionPartenairesEtContacts.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionIndicateurs.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionIndicateurs.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionGeneralites.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionGeneralites.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionDocuments.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionDocuments.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000001f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionDetail.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionDetail.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000020 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionDatesEtEvenements.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ConventionDatesEtEvenements.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000021 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Convention.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Convention.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000022 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ContactGestion.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ContactGestion.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000023 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "CktlAjaxNatureContratSelect.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/CktlAjaxNatureContratSelect.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000024 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantVoletFinancier.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantVoletFinancier.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000025 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantPartenairesEtContacts.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantPartenairesEtContacts.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000026 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantGeneralites.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantGeneralites.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000027 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantDocuments.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantDocuments.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000028 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantDetail.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantDetail.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000029 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantDatesEtEvenements.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantDatesEtEvenements.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantCreationCtrl.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantCreationCtrl.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantCreation.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AvenantCreation.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AssistantCreationConvention.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/AssistantCreationConvention.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Assistant.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Assistant.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ApresModification.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ApresModification.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000002f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ApresEnregistrement.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/ApresEnregistrement.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000030 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Accueil.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/components/Accueil.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000031 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "VersionMe.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/VersionMe.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000032 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "VersionDatabase.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/VersionDatabase.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000033 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Version.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/Version.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000034 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Session.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/Session.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000035 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "MyWOComponent.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/MyWOComponent.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000036 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "DirectAction.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/DirectAction.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000037 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Application.java"; 
+            path = "Sources/org/cocktail/cocolight/serveur/Application.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000038 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "VersionCocktailWonder.java"; 
+            path = "Sources/fr/univlr/cri/webapp/VersionCocktailWonder.java"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000039 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = Properties; 
+            path = "Resources/Properties"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PartenaireContacts.plist"; 
+            path = "Resources/PartenaireContacts.plist"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Cocolight.config"; 
+            path = "Resources/Cocolight.config"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantTranchesAnnuelles.plist"; 
+            path = "Resources/AvenantTranchesAnnuelles.plist"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AvenantPartenaires.plist"; 
+            path = "Resources/AvenantPartenaires.plist"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "WrapperAssistantPartenaire.api"; 
+            path = "Components/WrapperAssistantPartenaire.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000003f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Main.api"; 
+            path = "Components/Main.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000040 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "Erreur.api"; 
+            path = "Components/Erreur.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000041 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "ConventionGeneralites.api"; 
+            path = "Components/ConventionGeneralites.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000042 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchResultsAssistant.api"; 
+            path = "Components/AssistantPartenaire/PersonneSrchResultsAssistant.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000043 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchResults.api"; 
+            path = "Components/AssistantPartenaire/PersonneSrchResults.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000044 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrchAssistant.api"; 
+            path = "Components/AssistantPartenaire/PersonneSrchAssistant.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000045 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "PersonneSrch.api"; 
+            path = "Components/AssistantPartenaire/PersonneSrch.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000046 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "sourcecode.java"; 
+            name = "AssistantCreationConvention.api"; 
+            path = "Components/AssistantCreationConvention.api"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000047 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = folder; 
+            name = themes; 
+            path = "WebServerResources/themes"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000048 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = folder; 
+            name = styles; 
+            path = "WebServerResources/styles"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000049 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = folder; 
+            name = images; 
+            path = "WebServerResources/styles/images"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000004a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = folder; 
+            name = scripts; 
+            path = "WebServerResources/scripts"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000004b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = folder; 
+            name = images; 
+            path = "WebServerResources/images"; 
+            sourceTree = "<group>"; 
+        }; 
+        00000000000000000000004c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "Ajax.framework"; 
+            path = "/Users/egeze/Documents/workspace/Wonder/Ajax/build/Ajax.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000004d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "CRIWebApp3.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/CRIWebApp3/build/CRIWebApp3.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000004e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "CRIWebExt3.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/CRIWebExt3/build/CRIWebExt3.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000004f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "Cocowork2.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/Cocowork2/build/Cocowork2.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000050 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "ERExtensions.framework"; 
+            path = "/Users/egeze/Documents/workspace/Wonder/ERExtensions/build/ERExtensions.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000051 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlAjaxWebExt.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlAjaxWebExt/build/FwkCktlAjaxWebExt.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000052 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlDroitsUtils.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlDroitsUtils/build/FwkCktlDroitsUtils.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000053 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlGFCGuiAjax.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlGFCGuiAjax/build/FwkCktlGFCGuiAjax.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000054 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlJefyAdmin.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlJefyAdmin/build/FwkCktlJefyAdmin.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000055 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlPersonne.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlPersonne/build/FwkCktlPersonne.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000056 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "FwkCktlPersonneGuiAjax.framework"; 
+            path = "/Users/egeze/Documents/workspace/Cocktail/Frameworks/FwkCktlPersonneGuiAjax/build/FwkCktlPersonneGuiAjax.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000057 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "WOJavaRebel.framework"; 
+            path = "/Users/egeze/Documents/workspace/Wonder/WOJavaRebel/build/WOJavaRebel.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000058 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaEOControl.framework"; 
+            path = "/Library/Frameworks/JavaEOControl.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000059 = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaWebObjects.framework"; 
+            path = "/Library/Frameworks/JavaWebObjects.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005a = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaEOAccess.framework"; 
+            path = "/Library/Frameworks/JavaEOAccess.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005b = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaXML.framework"; 
+            path = "/Library/Frameworks/JavaXML.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005c = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaJDBCAdaptor.framework"; 
+            path = "/Library/Frameworks/JavaJDBCAdaptor.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005d = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaFoundation.framework"; 
+            path = "/Library/Frameworks/JavaFoundation.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005e = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "JavaWOExtensions.framework"; 
+            path = "/Library/Frameworks/JavaWOExtensions.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        00000000000000000000005f = {
+            isa = PBXFileReference; 
+            lastKnownFileType = "wrapper.framework"; 
+            name = "ERJars.framework"; 
+            path = "/Library/Frameworks/ERJars.framework"; 
+            sourceTree = "<absolute>"; 
+        }; 
+        000000000000000000000060 = {
+            children = (
+                000000000000000000000001, 
+                000000000000000000000002, 
+                000000000000000000000003, 
+                000000000000000000000004, 
+                000000000000000000000005, 
+                000000000000000000000006, 
+                000000000000000000000007, 
+                000000000000000000000008, 
+                000000000000000000000009, 
+                00000000000000000000000a, 
+                00000000000000000000000b, 
+                00000000000000000000000c, 
+                00000000000000000000000d, 
+                00000000000000000000000e, 
+                00000000000000000000000f, 
+                000000000000000000000010, 
+                000000000000000000000011, 
+                000000000000000000000012, 
+                000000000000000000000013, 
+                000000000000000000000014, 
+                000000000000000000000015, 
+                000000000000000000000016, 
+                000000000000000000000017, 
+                000000000000000000000018, 
+                000000000000000000000019, 
+                00000000000000000000001a, 
+                00000000000000000000001b, 
+                00000000000000000000001c, 
+                00000000000000000000001d, 
+                00000000000000000000001e, 
+                00000000000000000000001f, 
+                000000000000000000000020, 
+                000000000000000000000021, 
+                000000000000000000000022, 
+                000000000000000000000023, 
+                000000000000000000000024, 
+                000000000000000000000025, 
+                000000000000000000000026, 
+                000000000000000000000027, 
+                000000000000000000000028, 
+                000000000000000000000029, 
+                00000000000000000000002a, 
+                00000000000000000000002b, 
+                00000000000000000000002c, 
+                00000000000000000000002d, 
+                00000000000000000000002e, 
+                00000000000000000000002f, 
+                000000000000000000000030, 
+                000000000000000000000031, 
+                000000000000000000000032, 
+                000000000000000000000033, 
+                000000000000000000000034, 
+                000000000000000000000035, 
+                000000000000000000000036, 
+                000000000000000000000037, 
+                000000000000000000000038
+            ); 
+            isa = PBXGroup; 
+            name = Sources; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000061 = {
+            children = (
+                000000000000000000000039, 
+                00000000000000000000003a, 
+                00000000000000000000003b, 
+                00000000000000000000003c, 
+                00000000000000000000003d, 
+                00000000000000000000003e, 
+                00000000000000000000003f, 
+                000000000000000000000040, 
+                000000000000000000000041, 
+                000000000000000000000042, 
+                000000000000000000000043, 
+                000000000000000000000044, 
+                000000000000000000000045, 
+                000000000000000000000046
+            ); 
+            isa = PBXGroup; 
+            name = Resources; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000062 = {
+            children = (
+                000000000000000000000047, 
+                000000000000000000000048, 
+                000000000000000000000049, 
+                00000000000000000000004a, 
+                00000000000000000000004b
+            ); 
+            isa = PBXGroup; 
+            name = "Web Server"; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000063 = {
+            children = (
+                00000000000000000000004c, 
+                00000000000000000000004d, 
+                00000000000000000000004e, 
+                00000000000000000000004f, 
+                000000000000000000000050, 
+                000000000000000000000051, 
+                000000000000000000000052, 
+                000000000000000000000053, 
+                000000000000000000000054, 
+                000000000000000000000055, 
+                000000000000000000000056, 
+                000000000000000000000057, 
+                000000000000000000000058, 
+                000000000000000000000059, 
+                00000000000000000000005a, 
+                00000000000000000000005b, 
+                00000000000000000000005c, 
+                00000000000000000000005d, 
+                00000000000000000000005e, 
+                00000000000000000000005f
+            ); 
+            isa = PBXGroup; 
+            name = Frameworks; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000064 = {
+            children = (
+                000000000000000000000060, 
+                000000000000000000000061, 
+                000000000000000000000062, 
+                000000000000000000000063
+            ); 
+            isa = PBXGroup; 
+            name = Root; 
+            sourceTree = "<group>"; 
+        }; 
+        000000000000000000000065 = {fileRef = 000000000000000000000001; isa = PBXBuildFile; }; 
+        000000000000000000000066 = {fileRef = 000000000000000000000002; isa = PBXBuildFile; }; 
+        000000000000000000000067 = {fileRef = 000000000000000000000003; isa = PBXBuildFile; }; 
+        000000000000000000000068 = {fileRef = 000000000000000000000004; isa = PBXBuildFile; }; 
+        000000000000000000000069 = {fileRef = 000000000000000000000005; isa = PBXBuildFile; }; 
+        00000000000000000000006a = {fileRef = 000000000000000000000006; isa = PBXBuildFile; }; 
+        00000000000000000000006b = {fileRef = 000000000000000000000007; isa = PBXBuildFile; }; 
+        00000000000000000000006c = {fileRef = 000000000000000000000008; isa = PBXBuildFile; }; 
+        00000000000000000000006d = {fileRef = 000000000000000000000009; isa = PBXBuildFile; }; 
+        00000000000000000000006e = {fileRef = 00000000000000000000000a; isa = PBXBuildFile; }; 
+        00000000000000000000006f = {fileRef = 00000000000000000000000b; isa = PBXBuildFile; }; 
+        000000000000000000000070 = {fileRef = 00000000000000000000000c; isa = PBXBuildFile; }; 
+        000000000000000000000071 = {fileRef = 00000000000000000000000d; isa = PBXBuildFile; }; 
+        000000000000000000000072 = {fileRef = 00000000000000000000000e; isa = PBXBuildFile; }; 
+        000000000000000000000073 = {fileRef = 00000000000000000000000f; isa = PBXBuildFile; }; 
+        000000000000000000000074 = {fileRef = 000000000000000000000010; isa = PBXBuildFile; }; 
+        000000000000000000000075 = {fileRef = 000000000000000000000011; isa = PBXBuildFile; }; 
+        000000000000000000000076 = {fileRef = 000000000000000000000012; isa = PBXBuildFile; }; 
+        000000000000000000000077 = {fileRef = 000000000000000000000013; isa = PBXBuildFile; }; 
+        000000000000000000000078 = {fileRef = 000000000000000000000014; isa = PBXBuildFile; }; 
+        000000000000000000000079 = {fileRef = 000000000000000000000015; isa = PBXBuildFile; }; 
+        00000000000000000000007a = {fileRef = 000000000000000000000016; isa = PBXBuildFile; }; 
+        00000000000000000000007b = {fileRef = 000000000000000000000017; isa = PBXBuildFile; }; 
+        00000000000000000000007c = {fileRef = 000000000000000000000018; isa = PBXBuildFile; }; 
+        00000000000000000000007d = {fileRef = 000000000000000000000019; isa = PBXBuildFile; }; 
+        00000000000000000000007e = {fileRef = 00000000000000000000001a; isa = PBXBuildFile; }; 
+        00000000000000000000007f = {fileRef = 00000000000000000000001b; isa = PBXBuildFile; }; 
+        000000000000000000000080 = {fileRef = 00000000000000000000001c; isa = PBXBuildFile; }; 
+        000000000000000000000081 = {fileRef = 00000000000000000000001d; isa = PBXBuildFile; }; 
+        000000000000000000000082 = {fileRef = 00000000000000000000001e; isa = PBXBuildFile; }; 
+        000000000000000000000083 = {fileRef = 00000000000000000000001f; isa = PBXBuildFile; }; 
+        000000000000000000000084 = {fileRef = 000000000000000000000020; isa = PBXBuildFile; }; 
+        000000000000000000000085 = {fileRef = 000000000000000000000021; isa = PBXBuildFile; }; 
+        000000000000000000000086 = {fileRef = 000000000000000000000022; isa = PBXBuildFile; }; 
+        000000000000000000000087 = {fileRef = 000000000000000000000023; isa = PBXBuildFile; }; 
+        000000000000000000000088 = {fileRef = 000000000000000000000024; isa = PBXBuildFile; }; 
+        000000000000000000000089 = {fileRef = 000000000000000000000025; isa = PBXBuildFile; }; 
+        00000000000000000000008a = {fileRef = 000000000000000000000026; isa = PBXBuildFile; }; 
+        00000000000000000000008b = {fileRef = 000000000000000000000027; isa = PBXBuildFile; }; 
+        00000000000000000000008c = {fileRef = 000000000000000000000028; isa = PBXBuildFile; }; 
+        00000000000000000000008d = {fileRef = 000000000000000000000029; isa = PBXBuildFile; }; 
+        00000000000000000000008e = {fileRef = 00000000000000000000002a; isa = PBXBuildFile; }; 
+        00000000000000000000008f = {fileRef = 00000000000000000000002b; isa = PBXBuildFile; }; 
+        000000000000000000000090 = {fileRef = 00000000000000000000002c; isa = PBXBuildFile; }; 
+        000000000000000000000091 = {fileRef = 00000000000000000000002d; isa = PBXBuildFile; }; 
+        000000000000000000000092 = {fileRef = 00000000000000000000002e; isa = PBXBuildFile; }; 
+        000000000000000000000093 = {fileRef = 00000000000000000000002f; isa = PBXBuildFile; }; 
+        000000000000000000000094 = {fileRef = 000000000000000000000030; isa = PBXBuildFile; }; 
+        000000000000000000000095 = {fileRef = 000000000000000000000031; isa = PBXBuildFile; }; 
+        000000000000000000000096 = {fileRef = 000000000000000000000032; isa = PBXBuildFile; }; 
+        000000000000000000000097 = {fileRef = 000000000000000000000033; isa = PBXBuildFile; }; 
+        000000000000000000000098 = {fileRef = 000000000000000000000034; isa = PBXBuildFile; }; 
+        000000000000000000000099 = {fileRef = 000000000000000000000035; isa = PBXBuildFile; }; 
+        00000000000000000000009a = {fileRef = 000000000000000000000036; isa = PBXBuildFile; }; 
+        00000000000000000000009b = {fileRef = 000000000000000000000037; isa = PBXBuildFile; }; 
+        00000000000000000000009c = {fileRef = 000000000000000000000038; isa = PBXBuildFile; }; 
+        00000000000000000000009d = {
+            files = (
+                000000000000000000000065, 
+                000000000000000000000066, 
+                000000000000000000000067, 
+                000000000000000000000068, 
+                000000000000000000000069, 
+                00000000000000000000006a, 
+                00000000000000000000006b, 
+                00000000000000000000006c, 
+                00000000000000000000006d, 
+                00000000000000000000006e, 
+                00000000000000000000006f, 
+                000000000000000000000070, 
+                000000000000000000000071, 
+                000000000000000000000072, 
+                000000000000000000000073, 
+                000000000000000000000074, 
+                000000000000000000000075, 
+                000000000000000000000076, 
+                000000000000000000000077, 
+                000000000000000000000078, 
+                000000000000000000000079, 
+                00000000000000000000007a, 
+                00000000000000000000007b, 
+                00000000000000000000007c, 
+                00000000000000000000007d, 
+                00000000000000000000007e, 
+                00000000000000000000007f, 
+                000000000000000000000080, 
+                000000000000000000000081, 
+                000000000000000000000082, 
+                000000000000000000000083, 
+                000000000000000000000084, 
+                000000000000000000000085, 
+                000000000000000000000086, 
+                000000000000000000000087, 
+                000000000000000000000088, 
+                000000000000000000000089, 
+                00000000000000000000008a, 
+                00000000000000000000008b, 
+                00000000000000000000008c, 
+                00000000000000000000008d, 
+                00000000000000000000008e, 
+                00000000000000000000008f, 
+                000000000000000000000090, 
+                000000000000000000000091, 
+                000000000000000000000092, 
+                000000000000000000000093, 
+                000000000000000000000094, 
+                000000000000000000000095, 
+                000000000000000000000096, 
+                000000000000000000000097, 
+                000000000000000000000098, 
+                000000000000000000000099, 
+                00000000000000000000009a, 
+                00000000000000000000009b, 
+                00000000000000000000009c
+            ); 
+            isa = PBXSourcesBuildPhase; 
+        }; 
+        00000000000000000000009e = {fileRef = 000000000000000000000039; isa = PBXBuildFile; }; 
+        00000000000000000000009f = {fileRef = 00000000000000000000003a; isa = PBXBuildFile; }; 
+        0000000000000000000000a0 = {fileRef = 00000000000000000000003b; isa = PBXBuildFile; }; 
+        0000000000000000000000a1 = {fileRef = 00000000000000000000003c; isa = PBXBuildFile; }; 
+        0000000000000000000000a2 = {fileRef = 00000000000000000000003d; isa = PBXBuildFile; }; 
+        0000000000000000000000a3 = {fileRef = 00000000000000000000003e; isa = PBXBuildFile; }; 
+        0000000000000000000000a4 = {fileRef = 00000000000000000000003f; isa = PBXBuildFile; }; 
+        0000000000000000000000a5 = {fileRef = 000000000000000000000040; isa = PBXBuildFile; }; 
+        0000000000000000000000a6 = {fileRef = 000000000000000000000041; isa = PBXBuildFile; }; 
+        0000000000000000000000a7 = {fileRef = 000000000000000000000042; isa = PBXBuildFile; }; 
+        0000000000000000000000a8 = {fileRef = 000000000000000000000043; isa = PBXBuildFile; }; 
+        0000000000000000000000a9 = {fileRef = 000000000000000000000044; isa = PBXBuildFile; }; 
+        0000000000000000000000aa = {fileRef = 000000000000000000000045; isa = PBXBuildFile; }; 
+        0000000000000000000000ab = {fileRef = 000000000000000000000046; isa = PBXBuildFile; }; 
+        0000000000000000000000ac = {
+            files = (
+                00000000000000000000009e, 
+                00000000000000000000009f, 
+                0000000000000000000000a0, 
+                0000000000000000000000a1, 
+                0000000000000000000000a2, 
+                0000000000000000000000a3, 
+                0000000000000000000000a4, 
+                0000000000000000000000a5, 
+                0000000000000000000000a6, 
+                0000000000000000000000a7, 
+                0000000000000000000000a8, 
+                0000000000000000000000a9, 
+                0000000000000000000000aa, 
+                0000000000000000000000ab
+            ); 
+            isa = PBXResourcesBuildPhase; 
+        }; 
+        0000000000000000000000ad = {fileRef = 000000000000000000000047; isa = PBXBuildFile; }; 
+        0000000000000000000000ae = {fileRef = 000000000000000000000048; isa = PBXBuildFile; }; 
+        0000000000000000000000af = {fileRef = 000000000000000000000049; isa = PBXBuildFile; }; 
+        0000000000000000000000b0 = {fileRef = 00000000000000000000004a; isa = PBXBuildFile; }; 
+        0000000000000000000000b1 = {fileRef = 00000000000000000000004b; isa = PBXBuildFile; }; 
+        0000000000000000000000b2 = {
+            files = (
+                0000000000000000000000ad, 
+                0000000000000000000000ae, 
+                0000000000000000000000af, 
+                0000000000000000000000b0, 
+                0000000000000000000000b1
+            ); 
+            isa = PBXResourcesBuildPhase; 
+        }; 
+        0000000000000000000000b3 = {fileRef = 00000000000000000000004c; isa = PBXBuildFile; }; 
+        0000000000000000000000b4 = {fileRef = 00000000000000000000004d; isa = PBXBuildFile; }; 
+        0000000000000000000000b5 = {fileRef = 00000000000000000000004e; isa = PBXBuildFile; }; 
+        0000000000000000000000b6 = {fileRef = 00000000000000000000004f; isa = PBXBuildFile; }; 
+        0000000000000000000000b7 = {fileRef = 000000000000000000000050; isa = PBXBuildFile; }; 
+        0000000000000000000000b8 = {fileRef = 000000000000000000000051; isa = PBXBuildFile; }; 
+        0000000000000000000000b9 = {fileRef = 000000000000000000000052; isa = PBXBuildFile; }; 
+        0000000000000000000000ba = {fileRef = 000000000000000000000053; isa = PBXBuildFile; }; 
+        0000000000000000000000bb = {fileRef = 000000000000000000000054; isa = PBXBuildFile; }; 
+        0000000000000000000000bc = {fileRef = 000000000000000000000055; isa = PBXBuildFile; }; 
+        0000000000000000000000bd = {fileRef = 000000000000000000000056; isa = PBXBuildFile; }; 
+        0000000000000000000000be = {fileRef = 000000000000000000000057; isa = PBXBuildFile; }; 
+        0000000000000000000000bf = {fileRef = 000000000000000000000058; isa = PBXBuildFile; }; 
+        0000000000000000000000c0 = {fileRef = 000000000000000000000059; isa = PBXBuildFile; }; 
+        0000000000000000000000c1 = {fileRef = 00000000000000000000005a; isa = PBXBuildFile; }; 
+        0000000000000000000000c2 = {fileRef = 00000000000000000000005b; isa = PBXBuildFile; }; 
+        0000000000000000000000c3 = {fileRef = 00000000000000000000005c; isa = PBXBuildFile; }; 
+        0000000000000000000000c4 = {fileRef = 00000000000000000000005d; isa = PBXBuildFile; }; 
+        0000000000000000000000c5 = {fileRef = 00000000000000000000005e; isa = PBXBuildFile; }; 
+        0000000000000000000000c6 = {fileRef = 00000000000000000000005f; isa = PBXBuildFile; }; 
+        0000000000000000000000c7 = {
+            files = (
+                0000000000000000000000b3, 
+                0000000000000000000000b4, 
+                0000000000000000000000b5, 
+                0000000000000000000000b6, 
+                0000000000000000000000b7, 
+                0000000000000000000000b8, 
+                0000000000000000000000b9, 
+                0000000000000000000000ba, 
+                0000000000000000000000bb, 
+                0000000000000000000000bc, 
+                0000000000000000000000bd, 
+                0000000000000000000000be, 
+                0000000000000000000000bf, 
+                0000000000000000000000c0, 
+                0000000000000000000000c1, 
+                0000000000000000000000c2, 
+                0000000000000000000000c3, 
+                0000000000000000000000c4, 
+                0000000000000000000000c5, 
+                0000000000000000000000c6
+            ); 
+            isa = PBXFrameworksBuildPhase; 
+        }; 
+        0000000000000000000000c8 = {files = (); isa = PBXSourcesBuildPhase; }; 
+        0000000000000000000000c9 = {files = (); isa = PBXResourcesBuildPhase; }; 
+        0000000000000000000000ca = {files = (); isa = PBXResourcesBuildPhase; }; 
+        0000000000000000000000cb = {files = (); isa = PBXFrameworksBuildPhase; }; 
+        0000000000000000000000cc = {
+            buildSettings = {"COPY_PHASE_STRIP" = NO; }; 
+            isa = XCBuildConfiguration; 
+            name = Debug; 
+        }; 
+        0000000000000000000000cd = {
+            buildSettings = {"COPY_PHASE_STRIP" = YES; }; 
+            isa = XCBuildConfiguration; 
+            name = Release; 
+        }; 
+        0000000000000000000000ce = {buildSettings = {}; isa = XCBuildConfiguration; name = Default; }; 
+        0000000000000000000000cf = {
+            buildConfigurations = (0000000000000000000000cc, 0000000000000000000000cd, 0000000000000000000000ce); 
+            defaultConfigurationIsVisible = 0; 
+            defaultConfigurationName = Default; 
+            isa = XCConfigurationList; 
+        }; 
+        0000000000000000000000d0 = {files = (); isa = PBXSourcesBuildPhase; }; 
+        0000000000000000000000d1 = {files = (); isa = PBXResourcesBuildPhase; }; 
+        0000000000000000000000d2 = {fileRef = 000000000000000000000047; isa = PBXBuildFile; }; 
+        0000000000000000000000d3 = {fileRef = 000000000000000000000048; isa = PBXBuildFile; }; 
+        0000000000000000000000d4 = {fileRef = 000000000000000000000049; isa = PBXBuildFile; }; 
+        0000000000000000000000d5 = {fileRef = 00000000000000000000004a; isa = PBXBuildFile; }; 
+        0000000000000000000000d6 = {fileRef = 00000000000000000000004b; isa = PBXBuildFile; }; 
+        0000000000000000000000d7 = {
+            files = (
+                0000000000000000000000d2, 
+                0000000000000000000000d3, 
+                0000000000000000000000d4, 
+                0000000000000000000000d5, 
+                0000000000000000000000d6
+            ); 
+            isa = PBXResourcesBuildPhase; 
+        }; 
+        0000000000000000000000d8 = {files = (); isa = PBXFrameworksBuildPhase; }; 
+        0000000000000000000000d9 = {
+            buildPhases = (
+                00000000000000000000009d, 
+                0000000000000000000000ac, 
+                0000000000000000000000b2, 
+                0000000000000000000000c7
+            ); 
+            buildSettings = {}; 
+            isa = PBXToolTarget; 
+            name = "Application Server"; 
+        }; 
+        0000000000000000000000da = {
+            buildArgumentsString = "-emacs $(ACTION)"; 
+            buildConfigurationList = 0000000000000000000000cf; 
+            buildPhases = (
+                0000000000000000000000c8, 
+                0000000000000000000000c9, 
+                0000000000000000000000ca, 
+                0000000000000000000000cb
+            ); 
+            buildSettings = {}; 
+            buildToolPath = "/Developer/Java/Ant/bin/ant"; 
+            isa = PBXLegacyTarget; 
+            name = Ant; 
+            passBuildSettingsInEnvironment = 1; 
+            productName = Ant; 
+        }; 
+        0000000000000000000000db = {
+            buildPhases = (
+                0000000000000000000000d0, 
+                0000000000000000000000d1, 
+                0000000000000000000000d7, 
+                0000000000000000000000d8
+            ); 
+            buildSettings = {}; 
+            isa = PBXToolTarget; 
+            name = "Web Server"; 
+        }; 
+        0000000000000000000000dc = {buildSettings = {}; isa = XCBuildConfiguration; name = Debug; }; 
+        0000000000000000000000dd = {buildSettings = {}; isa = XCBuildConfiguration; name = Release; }; 
+        0000000000000000000000de = {buildSettings = {}; isa = XCBuildConfiguration; name = Default; }; 
+        0000000000000000000000df = {
+            buildConfigurations = (0000000000000000000000dc, 0000000000000000000000dd, 0000000000000000000000de); 
+            defaultConfigurationIsVisible = 0; 
+            defaultConfigurationName = Default; 
+            isa = XCConfigurationList; 
+        }; 
+        0000000000000000000000e0 = {
+            buildSettings = {"COPY_PHASE_STRIP" = NO; }; 
+            isa = PBXBuildStyle; 
+            name = Debug; 
+        }; 
+        0000000000000000000000e1 = {
+            buildSettings = {"COPY_PHASE_STRIP" = YES; }; 
+            isa = PBXBuildStyle; 
+            name = Release; 
+        }; 
+        0000000000000000000000e2 = {
+            buildConfigurationList = 0000000000000000000000df; 
+            buildSettings = {}; 
+            buildStyles = (0000000000000000000000e0, 0000000000000000000000e1); 
+            hasScannedForEncodings = 1; 
+            isa = PBXProject; 
+            mainGroup = 000000000000000000000064; 
+            projectDirPath = "."; 
+            targets = (0000000000000000000000d9, 0000000000000000000000da, 0000000000000000000000db); 
+        }; 
+    }; 
+    rootObject = 0000000000000000000000e2; 
+}

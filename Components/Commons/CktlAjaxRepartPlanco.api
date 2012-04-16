@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CktlAjaxRepartPlanco.java" wocomponentcontent="false">
+
+        <binding name="formName"/>
+    <binding name="newRepart"/>
+        <validation message="'creerRepartPlanComptable' is a required binding.">
+            <unbound name="newRepart"/>
+        </validation>
+    <binding name="depenseOuRecette"/>
+        <validation message="'depenseOuRecette' is a required binding.">
+            <unbound name="depenseOuRecette"/>
+        </validation>
+    <binding name="typeCredit"/>
+    <validation message="'typeCredit' is a required binding.">
+            <unbound name="typeCredit"/>
+        </validation>
+    </wo>
+</wodefinitions>

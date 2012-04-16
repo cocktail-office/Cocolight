@@ -1,0 +1,161 @@
+ContainerAvenantGeneralites : AjaxUpdateContainer {
+	id = "ContainerAvenantGeneralites";
+	class = classeCss;
+	style = styleCss;
+}
+FormAvenantGeneralites : WOForm {
+  id = "FormAvenantGeneralites";
+  name="FormAvenantGeneralitesName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+CBAvenantLucratif : WOCheckBox {
+	id = "CBAvenantLucratif";
+	checked = avenant.avtLucrativiteBoolean;
+	disabled = disabled;
+}
+CBAvenantLucratifObserver : AjaxObserveField {
+	observeFieldID = "CBAvenantLucratif";
+	action = submit;
+}
+
+
+AvenantReferenceExterne : WOTextField {
+  id = "AvenantReferenceExterne";
+  value = avenant.avtRefExterne;
+  // size = 15;
+  class = "useMaxWidth";
+  disabled = disabled;
+}
+AvenantReferenceExterneObserver : AjaxObserveField {
+	observeFieldID = "AvenantReferenceExterne";
+	action = submit;
+}
+TypeAvenant : WOPopUpButton {
+	id = "TypeAvenant";
+	list = ctrl.lesTypesAvenant;
+	item = ctrl.unTypeAvenant;
+	selection = avenant.typeAvenant;
+	displayString = ctrl.unTypeAvenant.taLibelle;
+	noSelectionString = "Choisir un type";
+	disabled = disabled;
+	
+}
+TypeAvenantObserver : AjaxObserveField {
+	observeFieldID = "TypeAvenant";
+	action = submit;
+	updateContainerID = "ContainerAvenantDonneesFinancieres";
+}
+
+ObjetAvenant : WOText {
+	id = "ObjetAvenant";
+  	value = avenant.avtObjet;  	
+  	style = "width:100%;";
+  	disabled = disabled;
+}
+ObjetAvenantObserver : AjaxObserveField {
+	observeFieldID = "ObjetAvenant";
+	action = submit;
+	//updateContainerID = "ContainerGestionAvenantMenu";
+}
+
+ContainerAvenantDonneesFinancieres : AjaxUpdateContainer {
+	id = "ContainerAvenantDonneesFinancieres";
+	elementName = "tr";
+}
+
+MontantHT : WOTextField {
+	id = "MontantHT";
+	value = avenant.avtMontantHt;
+	formatter = application.app2DecimalesFormatter;
+	class = "montant";
+	size = "9";
+	disabled = financierDisabled;
+}
+MontantHTObserver : AjaxObserveField {
+	observeFieldID = "MontantHT";
+	action = submit;
+	updateContainerID = "ContainerAvenantDonneesFinancieres";
+}
+TVA : WOPopUpButton {
+	id = "TVA";
+	list = application.lesTauxDeTVA;
+	item = ctrl.unTauxDeTVA;
+	displayString = ctrl.unTauxDeTVA.tvaTaux;
+	selection = avenant.tvaRelationship;
+// 	list = ctrl.tauxDeTVA;
+//	item = ctrl.unTauxDeTVA;
+//	selection = ctrl.leTauxDeTVASelectionne;
+	class = "alignToRight";
+	disabled = financierDisabled;
+}
+TVAObserver : AjaxObserveField {
+	observeFieldID = "TVA";
+	action = submit;
+	updateContainerID = "ContainerAvenantDonneesFinancieres";
+}
+
+MontantTTC : WOTextField {
+	id = "MontantTTC";
+	value = avenant.avtMontantTtc;
+	disabled = true;
+	formatter = application.app2DecimalesFormatter;
+	class = "montant";
+	size = "9";
+}
+ObservationsAvenant : WOText {
+	id = "ObservationsAvenant";
+  	value = avenant.avtObservations;
+  	style = "width:100%;";
+  	disabled = disabled;
+}
+ObservationsAvenantObserver : AjaxObserveField {
+	observeFieldID = "ObservationsAvenant";
+	action = submit;
+}
+
+DateDebut : CktlAjaxDatePicker {
+    id = "DateDebut";
+    dateValue = avtDateDeb;
+    disabled = disabled;
+    updateContainerID = "DateSignatureAUC";
+}
+DateFin : CktlAjaxDatePicker {
+    id = "DateFin";
+    dateValue = avtDateFin;
+    disabled = disabled;
+    updateContainerID = "DateSignatureAUC";
+}
+DateSignature : CktlAjaxDatePicker {
+    id = "DateSignature";
+    dateValue = avenant.avtDateSignature;
+    disabled = disabled;
+    updateContainerID = "DateSignatureAUC";
+}
+
+DateSAUC : AjaxUpdateContainer {
+    id = "DateSignatureAUC";
+}
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Annuler : CktlAjaxButton {
+    onClickBefore = "confirm('Les données déjà saisies seront perdues pour cet avenant, êtes vous sûr ?')";
+    action = annuler;
+    title = "Annuler";
+    text = "Annuler";
+    type = "cancel";
+    updateContainerID = "ContainerAvenantGeneralites";
+}
+
+Valider : CktlAjaxButton {
+    action = enregistrer;
+    updateContainerID = "ContainerAvenantGeneralites";
+    text = "Enregistrer";
+    type = "validate";
+    title = "Valider et enregistrer";
+    showBusyImage = true;
+}

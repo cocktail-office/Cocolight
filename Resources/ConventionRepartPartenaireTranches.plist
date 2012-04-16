@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+		<dict>
+			<key>libelle</key>
+			<string>Partenaire</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRepartPartenaireTranche.contratPartenaire.partenaire.persLibelle</string>
+			</dict>
+			<key>rowCssClass</key>
+			<string>alignToLeft useMaxWidth</string>
+			<key>orderKeyPath</key>
+			<string>contratPartenaire.partenaire.persLibelle</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Montant</string>
+			<key>component</key>
+			<string>CktlAjaxTVTextFieldCell</string>
+			<key>updateContainer</key>
+			<string>Cellule</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>ctrl.uneRepartPartenaireTranche.rptMontantParticipation</string>
+				<key>formatter</key>
+				<string>application.app2DecimalesFormatter</string>
+				<key>classCss</key>
+				<string>&quot;alignToRight nowrap&quot;</string>
+				<key>disabled</key>
+				<string>ctrl.nePeutPasEditerTranche</string>
+				<key>useDecimalNumber</key>
+				<string>true</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToCenter nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToRight nowrap</string>
+			<key>orderKeyPath</key>
+			<string>rptMontantParticipation</string>
+		</dict>
+		<dict>
+            <key>libelle</key>
+            <string>Référence</string>
+            <key>associations</key>
+            <dict>
+                <key>value</key>
+                <string>ctrl.uneRepartPartenaireTranche.contratPartenaire.cpReferenceExterne</string>
+                <key>valueWhenEmpty</key>
+                <string>&quot; &nbsp; &quot;</string>
+            </dict>
+            <key>orderKeyPath</key>
+            <string>cpReferenceExterne</string>
+            <key>rowCssClass</key>
+            <string>alignToCenter useMinWidth nowrap</string>
+        </dict>
+	</array>
+</dict>
+</plist>

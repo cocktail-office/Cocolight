@@ -1,0 +1,188 @@
+Container : AjaxUpdateContainer {
+    id = containerId;
+}
+
+PrevisionEnAttente : WOConditional {
+	condition = selectedPrevision.isEnAttente;
+}
+
+LierDepenses : CktlAjaxButton {
+    text = "Rajouter des dépenses existantes";
+    dialogIDForOpen = "DepensesWindow";
+}
+
+LierRecettes : CktlAjaxButton {
+    text = "Rajouter des recettes existantes";
+    dialogIDForOpen = "RecettesWindow";
+}
+
+ModeDepenseHasDepensesLeft : WOConditional {
+    condition = modeDepenseHasDepensesLeft;
+}
+
+ModeRecetteHasRecettesLeft : WOConditional {
+    condition = modeRecetteHasRecettesLeft;
+}
+
+TypesCredit : WORepetition {
+    list = typesCredit;
+    item = currentTypeCredit;
+}
+
+TypeCredit : WOString {
+    value = currentTypeCredit.tcdCodeEtLibAbrege;
+}
+
+Lolfs : WORepetition {
+    list = lolfs;
+    item = currentLolf;
+}
+
+Natures : WORepetition {
+    list = naturesForCurrentLolf;
+    item = currentNature;
+}
+
+Nature : WOString {
+    value = currentNature.pcoNumEtLibelle;
+}
+
+Lolf : WOString {
+    value = currentLolf.libelleLong;
+}
+
+PrevGestionForTypeCredit : WOString {
+    value = prevGestionForCurrentLolfAndTypeCredit;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+PrevGestionAOuvrirForTypeCredit : WOString {
+    value = prevGestionAOuvrirForCurrentLolfAndTypeCredit;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+PrevLolfNatureForTypeCredit : WOString {
+    value = prevBudgetNatureLolfForCurrentLolfAndNatureAndTypeCredit.pvbnlMontant;
+    valueWhenEmpty = formattedZero;
+    formatter = application.app2DecimalesFormatter;
+}
+
+PrevAOuvrirLolfNatureForTypeCredit : WOTextField {
+    value = prevBudgetNatureLolfForCurrentLolfAndNatureAndTypeCredit.pvbnlAOuvrir;
+    formatter = application.app2DecimalesFormatter;
+    class = "ouvrir";
+    disabled = propositionAValiderOuHasNoDroitPropositionBudgetaire;
+    onFocus = "cocolight.focusedEltMemento.retainEltWithFocus(this);";
+}
+
+TotalForPrevGestion : WOString {
+    value = totalForCurrentLolf;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TotalAOuvrirForPrevGestion : WOString {
+    value = totalAOuvrirForCurrentLolf;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TotalForPrevLolfNature : WOString {
+    value = totalForCurrentLolfAndNature;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TotalAOuvrirForPrevLolfNature : WOString {
+    value = totalAOuvrirForCurrentLolfAndNature;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TotalForTypeCredit : WOString {
+    value = totalForCurrentTypeCredit;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TotalAOuvrirForTypeCredit : WOString {
+    value = totalAOuvrirForCurrentTypeCredit;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TdTotalAOuvrirForTypeCredit : WOGenericContainer {
+    elementName = "td";
+    class = cssTotalAOuvrirForCurrentTypeCredit;
+}
+
+AllTotal : WOString {
+    value = allTotal;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+AllTotalAOuvrir : WOString {
+    value = allTotalAOuvrir;
+    formatter = application.app2DecimalesFormatter;
+    valueWhenEmpty = formattedZero;
+}
+
+TdAllTotalAOuvrir : WOGenericContainer {
+    elementName = "td";
+    class = cssAllTotalAOuvrir;
+}
+
+
+IsPrevisionValide : WOConditional {
+    condition = selectedPrevision.isValide;
+}
+
+OuvertOuAOuvrir : WOString {
+    value = ouvertOuAOuvrir;
+}
+
+TH : WOGenericContainer {
+    elementName = "th";
+    colspan = colspan;
+}
+
+THTotal : WOGenericContainer {
+    elementName = "th";
+    colspan = colspan;
+    class = "total";
+}
+
+Obs : AjaxObserveField {
+    updateContainerID = containerId;
+    onComplete = "function() { cocolight.focusedEltMemento.focusRetainedElt(); }";
+}
+
+DepensesWindow : CktlAjaxWindow {
+    id = "DepensesWindow";
+    width = "400";
+    height = "300";
+}
+
+DBudgetableSelect : BudgetableSelect {
+	modeDepense = true;
+	prevision = selectedPrevision;
+	tranche = tranche;
+	onSelect = closeAndRefresh;
+}
+
+RecettesWindow : CktlAjaxWindow {
+    id = "RecettesWindow";
+    width = "400";
+    height = "300";
+}
+
+RBudgetableSelect : BudgetableSelect {
+	modeDepense = false;
+	prevision = selectedPrevision;
+	tranche = tranche;
+    onSelect = closeAndRefresh;
+}
+

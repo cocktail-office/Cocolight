@@ -1,0 +1,235 @@
+ContainerAvenantVoletFinancier : AjaxUpdateContainer {
+    id = "ContainerAvenantVoletFinancier";
+    class = classeCss;
+    style = styleCss;
+}
+
+FormAvenantVoletFinancier : ERXWOForm {
+  id = "FormAvenantVoletFinancier";
+  name="FormAvenantVoletFinancierName";
+  action = submit;
+  multipleSubmit = true;
+  onsubmit = "return false;";
+}
+
+ContainerTranches : AjaxUpdateContainer {
+	id = "ContainerTranches";
+}
+
+TRModeDeGestion : AjaxUpdateContainer {
+    id = "AvtVoletFin_TRModeDeGestion";
+    elementName = "tr";
+}
+
+ModeDeGestion : WOTextField {
+    id = "AvtVoletFin_ModeDeGestion";
+    disabled = true;
+    value = contrat.avenantZero.modeGestionRelationship.mgLibelle;
+    class = "useMaxWidth";
+}
+CBConventionLucrative : WOCheckBox {
+    // tabindex = "2";
+    id = "AvtVoletFin_CBConventionLucrative";
+    checked = avenant.avtLucrativiteBoolean;
+    disabled = ctrl.montantDisabled;
+}
+CBConventionLucrativeObserver : AjaxObserveField {
+    observeFieldID = "AvtVoletFin_CBConventionLucrative";
+    action = submit;
+}
+CBCreditsLimitatifs : WOCheckBox {
+    // tabindex = "3";
+    id = "AvtVoletFin_CBCreditsLimitatifs";
+    checked = contrat.avenantZero.avtLimitatifBoolean;
+    disabled = isCBCreditsLimitatifsDisabled;
+}
+CBCreditsLimitatifsObserver : AjaxObserveField {
+    observeFieldID = "AvtVoletFin_CBCreditsLimitatifs";
+    action = submit;
+}
+CBReconductible : WOCheckBox {
+    // tabindex = "4";
+    id = "AvtVoletFin_CBReconductible";
+    checked = contrat.reconductible;
+    disabled = true;
+}
+
+TrResumeFinancier : ConventionTotalFinancierView {
+    contrat = contrat;
+    updateContainerID = "ContainerAvenantVoletFinancier";
+    disabled = ctrl.montantDisabled;
+}
+
+TableViewTranchesAnnuelles : CktlAjaxEditableTableView {
+    disabled = disabled;
+    id = "TableViewTranchesAnnuelles";
+    dg = ctrl.dgTranchesAnnuelles;
+    item = currentTrancheAnnuelle;
+    colonnes = ctrl.dicoTranchesAnnuellesLight.colonnes; // VALID
+    selectionEnabled = true;
+    editionEnabled = false;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "90px";
+    callbackOnSelectionner = ctrl.selectionnerUneTrancheAnnuelle;
+    updateContainerID = "ContainerDetailTranche";
+}
+
+ContainerDetailTranche : AjaxUpdateContainer {
+    id = "ContainerDetailTranche";
+}
+
+Tranche : WOString {
+	value = ctrl.selectedTranche.exerciceCocktail.exeExercice;
+}
+
+IsTrancheSelected : WOConditional {
+    condition = trancheBudgetSelected;
+}
+
+TableViewContributeursOld : CktlAjaxEditableTableView {
+    //disabled = ctrl.nePeutPasEditerTranche;
+    id = "TableViewContributeurs";
+    dg = ctrl.dgRepartPartenaireTranches;
+    item = ctrl.uneRepartPartenaireTranche;
+    colonnes = ctrl.dicoRepartPartenaireTranches.colonnes; // VALID
+    selectionEnabled = true;
+    editionEnabled = true;
+    afficherBarreDeNavigation = false;
+    afficherBarreDeStatut = false;
+    height = "220px";
+    updateContainerID = "ContainerTranches";
+    disabled = disabled;
+}
+
+TableViewContributeurs : CktlAjaxSimpleTableView {
+    id = "TableViewContributeurs";
+	displayGroup = ctrl.dgRepartPartenaireTranches;
+	item = ctrl.uneRepartPartenaireTranche;
+	updateContainerID = "ContainerTranches";
+    height = "220px";
+}
+
+TBVContribHeader : CktlAjaxSimpleTableViewHeader {
+	
+}
+
+PartenaireCol : CktlAjaxSimpleTableViewColumn {
+	label = "Partenaire";
+	sortKeypath = "contratPartenaire.partenaire.persLibelle";
+	width = "50%";
+}
+
+MontantCol : CktlAjaxSimpleTableViewColumn {
+	label = "Montant contribution";
+    sortKeypath = "rptMontantParticipation";
+    width = "15%";
+}
+
+FraisGestionCol : CktlAjaxSimpleTableViewColumn {
+	label = "Dont prélèvements pour frais de gestion";
+    sortKeypath = "fraisGestion.fgMontant";
+    width = "35%";
+}
+
+TBVContribBody : CktlAjaxSimpleTableViewBody {
+	
+}
+
+Partenaire : WOString {
+	value = ctrl.uneRepartPartenaireTranche.contratPartenaire.partenaire.persLibelle;
+}
+
+Montant : WOTextField {
+	value = ctrl.uneRepartPartenaireTranche.rptMontantParticipation;
+	formatter = application.app2DecimalesFormatter;
+	disabled = ctrl.nePeutPasEditerTranche;
+}
+
+FraisGestion : WOTextField {
+	value = ctrl.uneRepartPartenaireTranche.fraisGestion.fgMontantIntermediaire;
+	formatter = application.app2DecimalesFormatter;
+	disabled = ctrl.nePeutPasEditerTranche;
+	placeholder = "montant";
+	size = 12;
+}
+
+FraisGestionPct : WOTextField {
+	value = ctrl.uneRepartPartenaireTranche.fraisGestion.fgPctIntermediaire;
+	formatter = application.app2DecimalesFormatter;
+	disabled = ctrl.nePeutPasEditerTranche;
+	placeholder = "pct.";
+	size = 5;
+}
+
+
+IsNotModeAssistant : WOConditional {
+    condition = isStandAlone;
+}
+
+Enregistrement : EnregistrementModuleBar {
+    contrat = contrat;
+    accueil = accueil;
+    consulter = consulter;
+    enregistrer = enregistrer;
+    updateContainerID = application.messageContainerID;
+}
+
+IsGestionTrancheManuelle : WOConditional {
+	condition = ctrl.gestionTrancheAuto;
+	negate = true;
+}
+
+Toolbar : CktlAjaxToolbar {
+	
+}
+
+AddTranche : CktlAjaxButton {
+    type = "add";
+    action = ctrl.ouvrirAjoutTranche;
+    dialogIDForOpen = "AjoutTrancheDialog";
+    disabled = ctrl.creerTrancheDisabled;
+    title = "Ajouter une tranche";
+}
+
+DelTranche : CktlAjaxButton {
+	type = "delete";
+	action = ctrl.supprimerTranche;
+	updateContainerID = "ContainerAvenantVoletFinancier";
+	onClickBefore = "confirm('Êtes-vous sûr de vouloir supprimer cette tranche ? Les dépenses, recettes et crédits seront supprimés en cascade')";
+	disabled = ctrl.supprimerTrancheDisabled;
+	title = "Supprimer la tranche";
+}
+
+AjoutTrancheDialog : CktlAjaxWindow {
+	id = "AjoutTrancheDialog";
+	afterHide = "function() { ContainerAvenantVoletFinancierUpdate(); }";
+	title = "Ajouter une tranche";
+	width = "400";
+	height = "100";
+}
+
+Form : ERXWOForm {
+    id = "AjoutTrancheDialogForm";
+    name = "AjoutTrancheDialogForm";
+	embedded = true;
+}
+
+Exercice : WOPopUpButton {
+	list = ctrl.exercicesCocktail;
+	selection = ctrl.selectedExercice;
+	item = ctrl.currentExercice;
+	displayString = ctrl.currentExercice.exeExercice;
+}
+
+CreerTranche : CktlAjaxSubmitButton {
+	action = ctrl.validerAjoutTranche;
+	text = "Valider";
+	type = "validate";
+}
+
+Annuler : CktlAjaxButton {
+	action = ctrl.annulerAjoutTranche;
+	text = "Annuler";
+	type = "cancel";
+}

@@ -1,0 +1,8 @@
+CodeNatureDepense : CktlAjaxRepartMultiSelect {
+    formName = ^formName;
+    montantTotal = montantHt;
+    newRepart = ^newRepart;
+    eoPere = depenseOuRecette;
+    toRepartKey = repartKey;
+    nomenclatureHelper = planCoHelper;
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colonnes</key>
+	<array>
+		<dict>
+			<key>libelle</key>
+			<string>Valide</string>
+			<key>component</key>
+			<string>TrancheValideColonne</string>
+			<key>associations</key>
+			<dict>
+				<key>tranche</key>
+				<string>currentTrancheAnnuelle</string>
+			</dict>
+			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>
+			<key>orderKeyPath</key>
+			<string>isValide</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Exercice</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>currentTrancheAnnuelle.exerciceCocktail.exeExercice</string>
+			</dict>
+			<key>rowCssClass</key>
+			<string>alignToCenter useMinWidth</string>
+			<key>orderKeyPath</key>
+			<string>exerciceCocktail.exeExercice</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Nature</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+                <key>value</key>
+                <string>currentTrancheAnnuelle.traNatureMontant</string>
+                <key>valueWhenEmpty</key>
+                <string>&quot;Sans impact budgétaire&quot;</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToLeft nowrap</string>
+			<key>orderKeyPath</key>
+			<string>traNatureMontant</string>
+		</dict>
+		<dict>
+			<key>libelle</key>
+			<string>Contributions</string>
+			<key>component</key>
+			<string>CktlAjaxTVStringCell</string>
+			<key>associations</key>
+			<dict>
+				<key>value</key>
+				<string>currentTrancheAnnuelle.traMontantFraisInclus</string>
+				<key>formatter</key>
+				<string>application.app2DecimalesFormatter</string>
+				<key>classCss</key>
+				<string>&quot;alignToRight numMedium&quot;</string>
+				<key>disabled</key>
+				<string>true</string>
+			</dict>
+			<key>headerCssClass</key>
+			<string>alignToCenter numMedium nowrap</string>
+			<key>rowCssClass</key>
+			<string>alignToRight numMedium nowrap</string>
+			<key>orderKeyPath</key>
+			<string>traMontant</string>
+		</dict>
+		<dict>
+            <key>libelle</key>
+            <string>Frais gestion</string>
+            <key>component</key>
+            <string>CktlAjaxTVStringCell</string>
+            <key>associations</key>
+            <dict>
+                <key>value</key>
+                <string>currentTrancheAnnuelle.fraisGestion</string>
+                <key>formatter</key>
+                <string>application.app2DecimalesFormatter</string>
+                <key>classCss</key>
+                <string>&quot;alignToRight numMedium&quot;</string>
+                <key>disabled</key>
+                <string>true</string>
+            </dict>
+            <key>headerCssClass</key>
+            <string>alignToCenter numMedium nowrap</string>
+            <key>rowCssClass</key>
+            <string>alignToRight numMedium nowrap</string>
+            <key>orderKeyPath</key>
+            <string>fraisGestion</string>
+        </dict>
+	</array>
+</dict>
+</plist>

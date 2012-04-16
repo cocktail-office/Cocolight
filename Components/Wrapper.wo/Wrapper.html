@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    
+    <title><webobject name = "Titre"></webobject></title>
+	<script  type="text/javascript">
+	  if(window.history.forward(1) != null) {
+	    window.history.forward(1);
+	  }
+	</script>
+  </head>
+  <webobject name = "Body">
+      <webobject name = "TestNavigateur">
+        <center><h1 style = "color: red;">Attention - Vous utilisez Internet Explorer. Ce navigateur n'est pas supporté par Cocolight</h1></center>
+      </webobject>  
+      <div class="logo">
+        <h1><span class="gloss"></span>Coco<span class="orange">light</span> <span class="signature"> portail des actes de partenariat dans le SI Cocktail</span></h1>
+      </div>
+      <webobject name = "ContainerPrincipal">
+        <div id="Entete" class="cktl_entete_wrapper_horizontal">
+        <span style = "top:2px;left:2px;position:absolute;">
+          <webobject name = "LinkAccueil"><webobject name = "BtnAccueil" /></webobject>
+        </span>
+        <span style = "top:2px;right:2px;position:absolute;">
+          <webobject name = "LinkQuitter"><webobject name = "BtnQuitter" /></webobject>
+        </span>
+         </div>
+      <webobject name = "Contenu" />
+      <div id = "Copyright" class = "cktl_copyright_wrapper_horizontal">
+        <span style = "float:left;"><webobject name = "Copyright" /></span>
+        <span style = "float:right;">
+          <webobject name = "Version" />
+          - 
+          <webobject name = "ServerId" />
+        </span>
+      </div>
+    </webobject>
+    <webobject name = "ContainerMessage"></webobject>
+    <webobject name = "Busy" />
+    <div id = "busydiv" style = "display: none;"> Chargement en cours ... <webobject name = "BusyImage" /> </div>
+    <webobject name = "AjaxIndicator" />
+    <webobject name = "WOLToolBar" />
+  </webobject>
+</html>

@@ -1,0 +1,57 @@
+
+PositionsTBV : CktlAjaxTableView {
+    id = "PositionsTbv";
+    colonnes = colonnes;
+    dg = positionsDg;
+    item = currentPos;
+    height = "200px";
+}
+
+PositionsTBVToolBar : CktlAjaxToolbar {
+}
+
+
+AjoutPos : CktlAjaxButton {
+    dialogIDForOpen = "AjoutPosModal";
+    type = "new";
+    title = "Ajouter une proposition de positionnement";
+    action = ajouterPositionnement;
+}
+
+TypeCreditPos :  WOPopUpButton {
+    id = "TCPos";
+    list = typesCredit;
+    item = currentTypeCredit;
+    selection = selectedTypeCredit;
+    displayString = currentTypeCredit.tcdLibelle;
+    noSelectionString = "Sélectionner un type de crédit";
+}
+
+AjoutPosModal : CktlAjaxWindow {
+    id = "AjoutPosModal";
+    width = "400";
+    height = "300";
+}
+
+SsCRPos : WOPopUpButton {
+	list = proposition.organ.organFils;
+	item = currentOrgan;
+	selection = selectedSsCR;
+	displayString = currentOrgan.orgLibelle;
+}
+
+MontantPos : WOTextField {
+	value = newPropPositionnement.prpoMontantPrevisionnel;
+}
+
+Form : ERXWOForm {
+	embedded = true;
+}
+
+Enregistrer : CktlAjaxSubmitButton {
+	action = enregistrer;
+	type = "validate";
+	text = "Enregistrer";
+	updateContainerID = "PositionsTbv";
+}
+
